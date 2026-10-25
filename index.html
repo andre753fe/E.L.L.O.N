@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>html,body{margin:0}</style>
+<title>E.L.L.O.N</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500&family=JetBrains+Mono:wght@400&family=Orbitron:wght@500;700&display=swap">
+</head>
+<body>
+<style>
+/* Layout: ecrã inteiro; a nebulosa vive na tela por trás, a voz dela por baixo, os atalhos ancorados no fundo */
+:root {
+  --void: #0b0506;
+  --ink: #ff9a88;
+  --dim: #b9505a;
+  --violet: #ff4a5c;
+  --teal: #ff5c62;
+  --rose: #ff6f7d;
+  --glass: rgba(225, 30, 55, 0.09);
+  --edge: rgba(255, 95, 45, 0.3);
+  --f-voice: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --f-body: "DM Sans", -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  color-scheme: dark;
+}
+html, body { height: 100%; }
+body {
+  background: var(--void); color: var(--ink); font-family: var(--f-body);
+  overflow: hidden; -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none; user-select: none;
+}
+#sky { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
+#ui {
+  position: fixed; inset: 0; box-sizing: border-box; height: 100vh; height: 100dvh; display: flex; flex-direction: column;
+  padding-top: calc(14px + env(safe-area-inset-top, 0px));
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-bottom: calc(max(14px, env(safe-area-inset-bottom, 0px)) + 34px);
+  pointer-events: none;
+}
+#ui > * { pointer-events: auto; }
+/* o palco central deixa os toques passar para a galáxia (núcleo e astros) */
+#ui > .stage, #ui > .status { pointer-events: none; }
+/* pensamentos do Gmail: áreas de toque invisíveis que seguem cada nó de luz desenhado na tela */
+.knot { position: fixed; z-index: 4; left: 0; top: 0; width: 64px; height: 64px; margin: -32px 0 0 -32px;
+  border-radius: 50%; display: block; -webkit-tap-highlight-color: transparent; will-change: transform; }
+.knot[hidden] { display: none; }
+.knot:focus-visible { outline: 2px solid #7fb4ff; outline-offset: 4px; }
+.knot-n { position: absolute; right: 0; top: 0; min-width: 20px; height: 20px; padding: 0 6px; border-radius: 10px;
+  font: 600 12px/20px "Orbitron", var(--f-mono); text-align: center; color: #06122a; background: #d6e8ff;
+  box-shadow: 0 0 12px rgba(150,200,255,.85); }
+.top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.clock { font-family: "Orbitron", var(--f-mono); font-weight: 500; font-size: clamp(18px, 2.6vw, 26px); letter-spacing: .14em; color: var(--ink); opacity: .85; text-shadow: 0 0 14px rgba(255,74,92,.45); text-transform: uppercase; font-variant-numeric: tabular-nums; }
+.name { font-family: var(--f-voice); font-style: italic; font-size: 20px; color: var(--ink); opacity: .8; }
+.stage { flex: 1; pointer-events: none; display: grid; place-items: end center; padding-bottom: 8px; }
+.hint { font-family: var(--f-mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); transition: opacity .6s; }
+body.awake .hint { opacity: 0; }
+
+.voice {
+  width: 100%; max-width: 680px; margin: 0 auto; max-height: 34vh; overflow-y: auto;
+  -webkit-user-select: text; user-select: text; display: flex; flex-direction: column; gap: 10px;
+}
+.voice:empty { display: none; }
+.you { font-size: 14px; color: var(--dim); text-align: right; }
+.says {
+  text-shadow: 0 0 10px var(--void), 0 0 22px var(--void);
+  font-family: var(--f-voice); font-size: 23px; line-height: 1.35; white-space: pre-wrap;
+  overflow-wrap: anywhere; text-wrap: pretty;
+}
+.says a { color: var(--teal); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.says strong { font-weight: 400; font-style: italic; color: var(--violet); }
+.status { font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--teal); min-height: 16px; }
+.warn { font-size: 14px; color: var(--rose); }
+
+.confirm {
+  border: 1px solid var(--edge); background: var(--glass); border-radius: 14px; padding: 14px;
+  display: flex; flex-direction: column; gap: 10px; font-size: 14px; backdrop-filter: blur(10px);
+}
+.confirm .k { font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--dim); }
+.confirm pre { margin: 0; font-family: var(--f-body); white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.5; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.ask {
+  width: 100%; max-width: 680px; margin: 12px auto 0; display: flex; gap: 8px; align-items: center;
+  border: 1px solid var(--edge); background: var(--glass); border-radius: 999px; padding: 6px 6px 6px 18px;
+  backdrop-filter: blur(14px); transition: opacity .5s, transform .5s;
+}
+body:not(.prog) .ask { display: none; }
+#fs { position: fixed; z-index: 5; top: calc(14px + env(safe-area-inset-top, 0px)); left: max(16px, env(safe-area-inset-left, 0px));
+  width: 40px; height: 40px; padding: 0; font-size: 18px; line-height: 1; border-radius: 12px; }
+.top { flex-direction: column; align-items: flex-end; gap: 6px; }
+.motto { font-family: "Orbitron", var(--f-mono); font-size: clamp(9px, 1.1vw, 11px); letter-spacing: .22em; text-transform: uppercase; color: var(--dim); text-align: right; }
+.motto b { font-weight: 700; color: var(--ink); text-shadow: 0 0 10px rgba(255,74,92,.45); }
+.sub { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 12px; animation: rise .35s ease-out; }
+.mini { font-size: 13px; padding: 8px 14px; }
+.sub[hidden] { display: none; }
+.ask input:focus-visible { outline: none; }
+.ask:focus-within { border-color: rgba(255,95,45,.6); }
+.tip { margin: 0; max-width: 46ch; text-align: center; font-size: 14px; line-height: 1.5; color: var(--ink); text-shadow: 0 0 10px var(--void); }
+@keyframes rise { from { opacity: 0; transform: translateY(6px); } }
+.ask { animation: rise .35s ease-out; }
+.chip.on { background: rgba(225,30,55,.26); border-color: var(--c-on, var(--edge)); }
+.chip.flash { animation: flash .9s ease-out; }
+@keyframes flash { 30% { background: rgba(225,30,55,.35); border-color: var(--c-on, #ff5f2d); } }
+.ask input {
+  flex: 1; min-width: 0; background: none; border: 0; outline: none; color: var(--ink);
+  font: 16px var(--f-body); padding: 10px 0;
+}
+.ask input::placeholder { color: var(--dim); }
+button, .chip {
+  font: 500 14px var(--f-body); color: var(--ink); background: var(--glass); border: 1px solid var(--edge);
+  border-radius: 999px; padding: 10px 16px; cursor: pointer; text-decoration: none; white-space: nowrap;
+  transition: background .2s, border-color .2s;
+}
+button:hover, .chip:hover { background: rgba(225,30,55,.2); border-color: rgba(255,95,45,.55); }
+button:focus-visible, .chip:focus-visible, .ask input:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+button.go { background: linear-gradient(135deg, #b8102e, #ff5f2d); color: #ffd6cf; border-color: #ff5f2d; }
+button.go:hover { background: linear-gradient(135deg, #e11e37, #ff7a45); }
+button:disabled { opacity: .4; cursor: default; }
+
+.dock {
+  margin-top: 14px; display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none;
+  justify-content: safe center; padding-bottom: 2px;
+}
+.dock::-webkit-scrollbar { display: none; }
+.chip { display: inline-flex; align-items: center; gap: 8px; }
+.dock .chip { font-size: 17px; padding: 14px 24px; min-height: 52px; gap: 10px; }
+.dock { gap: 12px; }
+.ask input { font-size: 18px; }
+.chip i { width: 9px; height: 9px; border-radius: 50%; background: var(--c, var(--violet)); box-shadow: 0 0 10px var(--c, var(--violet)); flex: none; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+/* mergulho no astro ao escolher um menu */
+#dive { position: fixed; inset: 0; z-index: 60; pointer-events: none; visibility: hidden; display: flex; align-items: center; justify-content: center; }
+#dive.on { visibility: visible; pointer-events: auto; }
+#dive a { display: none; font: 500 18px/1 "Orbitron", sans-serif; letter-spacing: .12em; text-transform: uppercase; color: #fff; text-decoration: none;
+  padding: 18px 28px; border-radius: 14px; border: 1px solid rgba(255,255,255,.5); background: rgba(11,5,6,.45); }
+#dive.stuck a { display: inline-flex; }
+</style>
+
+<canvas id="sky" aria-hidden="true"></canvas>
+<div id="dive" aria-live="polite"><a id="divego" href="#" target="_blank" rel="noopener">Abrir ↗</a></div>
+<button id="fs" type="button" aria-label="Ecrã inteiro" hidden>⛶</button>
+<div id="mail" aria-live="polite"></div>
+<div id="ui">
+  <div class="top">
+    <span class="clock" id="clock"></span>
+    <span class="motto"><b>E.L.L.O.N</b> · Electronic Living Learning Orbital Nexus</span>
+  </div>
+  <div class="stage"></div>
+  <div class="voice" id="voice" aria-live="polite"></div>
+  <div class="status" id="status"></div>
+  <form class="ask" id="ask" autocomplete="off" hidden>
+    <input id="q" type="text" placeholder="Diz-me o que precisas…" aria-label="Programar um pedido">
+    <button type="button" id="stop" hidden>Parar</button>
+    <button type="submit" class="go" id="send">Pedir</button>
+  </form>
+  <div class="sub" id="sub-ipad" hidden data-off>
+    <p class="tip">Para ir ao ecrã principal do iPad, desliza o dedo do fundo do ecrã para cima. Para voltar ao E.L.L.O.N, abre-o outra vez pelo ícone ou pelo Claude.</p>
+  </div>
+  <nav class="dock" aria-label="Menus">
+    <a class="chip" data-menu="ativos" href="escritorio.html"><i style="--c:rgb(255,190,80)"></i>Escritório</a>
+    <a class="chip" data-menu="mercados" href="mercados.html"><i style="--c:rgb(175,155,255)"></i>Mercados</a>
+  </nav>
+</div>
+
+<script>
+/* ---------- A nebulosa ---------- */
+const cv = document.getElementById('sky'), cx = cv.getContext('2d');
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+let W = 0, H = 0, DPR = 1;
+function size() { DPR = Math.min(2, devicePixelRatio || 1); W = innerWidth; H = innerHeight; cv.width = W * DPR; cv.height = H * DPR; cx.setTransform(DPR, 0, 0, DPR, 0, 0); }
+size(); addEventListener('resize', size);
+
+/* Paleta da nuvem, do centro para fora: núcleo quente, brasa, carmim, vinho */
+const COLORS = [[255,214,190],[255,110,55],[228,32,58],[150,12,44]];
+/* Paleta azul para quando há emails por ler: a nuvem pisca para azul a cada batida */
+const BLUE = [[205,232,255],[90,170,255],[45,110,240],[25,45,150]];
+const mixc = (a, b, k) => [a[0] + (b[0] - a[0]) * k, a[1] + (b[1] - a[1]) * k, a[2] + (b[2] - a[2]) * k].map(Math.round);
+const shade = r => r < .14 ? 0 : r < .38 ? 1 : r < .72 ? 2 : 3;
+/* Sprite de fumo: uma baforada suave pré-desenhada por cor */
+const makePuff = ([r, g, b]) => {
+  const c = document.createElement('canvas'); c.width = c.height = 128;
+  const x = c.getContext('2d'), gr = x.createRadialGradient(64, 64, 0, 64, 64, 64);
+  gr.addColorStop(0, `rgba(${r},${g},${b},1)`); gr.addColorStop(.35, `rgba(${r},${g},${b},.45)`);
+  gr.addColorStop(.7, `rgba(${r},${g},${b},.1)`); gr.addColorStop(1, `rgba(${r},${g},${b},0)`);
+  x.fillStyle = gr; x.fillRect(0, 0, 128, 128); return c;
+};
+const PUFF = COLORS.map(makePuff), PUFFB = BLUE.map(makePuff);
+/* Céu de fundo: estrelas distantes, quase paradas */
+const FAR = Array.from({ length: reduce ? 60 : 150 }, () => ({ x: Math.random(), y: Math.random(), s: Math.random() * 1.1 + .3, seed: Math.random() * 100 }));
+/* Fumo: nuvens ténues que rodam com o disco, mais escuras para fora */
+const NS = reduce ? 30 : 70;
+const SMOKE = Array.from({ length: NS }, () => {
+  const r = .1 + Math.pow(Math.random(), .8) * .95;
+  return { r, a: Math.random() * Math.PI * 2, w: 1.25 - r * .65, s: .16 + Math.random() * .3,
+    seed: Math.random() * 100, c: Math.max(1, shade(r)), z: .3 + Math.random() * .5 };
+});
+/* Estrelas do disco, ordenadas por cor para desenhar depressa; as de dentro rodam mais depressa */
+const N = reduce ? 450 : 1400;
+const P = Array.from({ length: N }, () => {
+  const r = Math.pow(Math.random(), 0.7);
+  return { r, a: Math.random() * Math.PI * 2, w: 1.3 - r * .7 + (Math.random() - .5) * .08,
+    s: Math.random() * 1.1 + .25, seed: Math.random() * 100,
+    c: shade(Math.min(1, Math.max(0, r + (Math.random() - .5) * .14))), z: Math.random() * .75 + .25 };
+}).sort((a, b) => a.c - b.c);
+/* Quatro astros, cada um com a sua órbita: raio, excentricidade, inclinação, velocidade e sentido próprios */
+const ASTROS = [
+  { menu: 'ativos',    a: .48, e: .28, inc: .60, phi: 1.9, prec: -.03, sp: -.32, th: 2.1, sz: 1.3, col: [255, 190, 80] },
+  { menu: 'mercados',  a: .66, e: .22, inc: .80, phi: 3.6, prec: .03,  sp: .24,  th: 3.3, sz: 1.3, col: [175, 155, 255] }
+].map(o => ({ ...o, trail: [], x: -999, y: -999, lit: 0 }));
+let activeMenu = null;
+/* Rotação da galáxia: inverte o sentido a cada 10 s, com abrandamento suave na viragem */
+let rot = 0;
+const core = { x: 0, y: 0, r: 0 };
+/* Tudo se move a 60% da velocidade original; o ritmo da batida (2 s) e da viragem (4 s) mantém-se */
+const SLOW = .6;
+/* Batida a cada 2 s: subida rápida, descida lenta */
+let beatT = 0;
+const beat = () => { const ph = beatT % 2; return Math.exp(-ph * 3.2) * Math.min(1, ph * 14); };
+const MODES = {
+  idle:     { R: .40, spin: .22, bright: .6,  jit: .012, tilt: .97 },
+  awake:    { R: .48, spin: .30, bright: .78, jit: .015, tilt: .97 },
+  thinking: { R: .44, spin: .75, bright: .88, jit: .03,  tilt: .94 },
+  speaking: { R: .50, spin: .38, bright: .82, jit: .02,  tilt: .98 }
+};
+let mode = 'idle', cur = { ...MODES.idle }, burst = 0, t = 0, last = performance.now();
+function setMode(m) { mode = m; }
+/* ---------- Emails por ler: o ser ouve-os chegar e guarda-os como pensamentos de luz ---------- */
+const MAIL_QUERY = 'is:unread in:inbox category:primary newer_than:2d';
+const GMAIL = 'https://mail.google.com/mail/';
+let mailMcp = null, blueK = 0;
+const mail = { n: 0, show: 0, waves: [], knots: [], box: null };
+function knotEl(i) {
+  if (!mail.box) mail.box = document.getElementById('mail');
+  let k = mail.knots[i];
+  if (!k) {
+    const a = document.createElement('a');
+    a.className = 'knot'; a.href = GMAIL; a.target = '_blank'; a.rel = 'noopener'; a.hidden = true;
+    if (i === 0) { const n = document.createElement('span'); n.className = 'knot-n'; a.append(n); }
+    mail.box.append(a);
+    k = mail.knots[i] = { el: a, fade: 0, seed: Math.random() * 10 };
+  }
+  return k;
+}
+function setMail(n) {
+  const was = mail.n; mail.n = n;
+  if (n > was) mail.waves.push({ t: 0 });        /* chegou algo novo: uma onda entra pela borda */
+  const k0 = knotEl(0), lab = n ? `${n} ${n === 1 ? 'email por ler' : 'emails por ler'}: abrir o Gmail` : '';
+  k0.el.querySelector('.knot-n').textContent = n > 19 ? '20+' : String(n);
+  for (let i = 0; i < 5; i++) knotEl(i).el.setAttribute('aria-label', lab || 'Abrir o Gmail');
+}
+function drawMail(dt) {
+  const ox = core.x, oy = core.y, R = core.r;
+  cx.globalCompositeOperation = 'lighter';
+  /* ondas: um anel azul que vem da borda do ecrã e é absorvido pelo núcleo */
+  for (let i = mail.waves.length - 1; i >= 0; i--) {
+    const w = mail.waves[i]; w.t += dt / 1.8;
+    if (w.t >= 1) { mail.waves.splice(i, 1); burst = Math.max(burst, .9); continue; }
+    const e = 1 - Math.pow(1 - w.t, 3);
+    const rad = Math.hypot(W, H) * .6 * (1 - e) + R * .12 * e;
+    const al = Math.sin(Math.PI * Math.min(1, w.t * 1.15)) * .55;
+    cx.strokeStyle = `rgba(140,195,255,${al})`; cx.lineWidth = 2 + 6 * e;
+    cx.beginPath(); cx.ellipse(ox, oy, rad, rad * cur.tilt, 0, 0, Math.PI * 2); cx.stroke();
+    cx.strokeStyle = `rgba(220,240,255,${al * .6})`; cx.lineWidth = 1;
+    cx.beginPath(); cx.ellipse(ox, oy, rad * .97, rad * .97 * cur.tilt, 0, 0, Math.PI * 2); cx.stroke();
+  }
+  /* pensamentos: um nó de luz por email (até 5), cada um a pulsar no seu próprio ritmo */
+  const shown = Math.min(5, mail.n);
+  for (let i = 0; i < 5; i++) {
+    const k = knotEl(i);
+    k.fade += ((i < shown ? 1 : 0) - k.fade) * Math.min(1, dt * 1.2);
+    if (k.fade < .02) { if (!k.el.hidden) k.el.hidden = true; continue; }
+    const dirn = i % 2 ? -1 : 1;
+    const ang = i * 2.399 + t * (.18 + i * .05) * dirn;
+    const rr = R * (.36 + .05 * Math.sin(t * .5 + k.seed));
+    const x = ox + Math.cos(ang) * rr, y = oy + Math.sin(ang) * rr * cur.tilt;
+    const pulse = .5 + .5 * Math.sin(t * (4.6 + i * .7) + k.seed);    /* fora do ritmo do coração */
+    const sz = (7 + pulse * 5) * k.fade;
+    const g = cx.createRadialGradient(x, y, 0, x, y, sz * 3);
+    g.addColorStop(0, `rgba(235,246,255,${.95 * k.fade})`);
+    g.addColorStop(.3, `rgba(120,185,255,${(.45 + .3 * pulse) * k.fade})`);
+    g.addColorStop(1, 'rgba(40,90,220,0)');
+    cx.fillStyle = g; cx.fillRect(x - sz * 3, y - sz * 3, sz * 6, sz * 6);
+    k.el.hidden = false;
+    k.el.style.transform = `translate(${x}px, ${y}px)`;
+  }
+  cx.globalCompositeOperation = 'source-over';
+}
+function watchMail() {
+  if (!mailMcp) return;
+  mailMcp.watchTool('Gmail', 'search_threads', { query: MAIL_QUERY, pageSize: 20, view: 'THREAD_VIEW_METADATA_ONLY' }, ev => {
+    if (ev.type === 'data') {
+      const p = ev.result && ev.result.payload;
+      setMail(p && Array.isArray(p.threads) ? p.threads.length : 0);
+    } else {
+      /* sem acesso ao Gmail (ligação expirada, não autorizada, bloqueada): os pensamentos apagam-se */
+      const c = ev.error && ev.error.code;
+      if (['needs_reauth', 'server_not_connected', 'not_in_manifest', 'blocked_by_policy', 'approval_required', 'not_granted', 'capability_disabled', 'selection_required'].includes(c)) setMail(0);
+    }
+  }, { refetchInterval: 60000, cache: { staleTime: 30000, gcTime: 300000 } });
+}
+
+function frame(now) {
+  const dt = Math.min(.05, (now - (frame.last || now)) / 1000); frame.last = now;
+  try { draw(now); } catch (e) { console.error(e); }
+  try { drawMail(dt); } catch (e) { console.error(e); }
+  requestAnimationFrame(frame);
+}
+function draw(now) {
+  const dt = Math.min(.05, (now - last) / 1000); last = now; t += dt * SLOW * (reduce ? .3 : 1); beatT += dt;
+  const tg = MODES[mode];
+  for (const k in cur) cur[k] += (tg[k] - cur[k]) * Math.min(1, dt * 2.2);
+  burst *= Math.pow(.2, dt);
+  const pb = reduce ? beat() * .4 : beat();
+  const dir = Math.cos(Math.PI * beatT / 4);            /* +1 → −1 → +1, vira a cada 4 s, sempre em curva suave */
+  rot += dt * cur.spin * 1.4 * SLOW * dir * (reduce ? .4 : 1);
+  const turn = 1 - Math.abs(dir);                        /* 0 a rodar, 1 no instante da viragem */
+  const ox = W / 2, oy = H * .42; core.x = ox; core.y = oy;
+  /* na viragem a nuvem recolhe-se um pouco e volta a abrir: dá-lhe o ar de respirar */
+  const R = Math.min(W, H) * cur.R * (1 + burst * .2 + pb * .06 - turn * turn * .05);
+  core.r = R;
+  const glow = cur.bright * (1 + pb * .35);
+  /* com emails por ler, cada batida puxa as cores para azul e larga-as de novo */
+  mail.show += ((mail.n > 0 ? 1 : 0) - mail.show) * Math.min(1, dt * 1.2);
+  const ph = beatT % 2;   /* sobe depressa na batida e volta ao vermelho ao longo de ~1,5 s */
+  blueK = mail.show * (reduce ? .35 : Math.min(1, Math.min(1, ph * 8) * Math.exp(-ph * 1.3) * 1.6));
+  const HA = mixc([228,32,58],[45,110,240],blueK), HB = mixc([150,12,44],[25,45,150],blueK);
+  const NA = mixc([255,224,200],[220,238,255],blueK), NB = mixc([255,110,55],[90,170,255],blueK), NC = mixc([228,32,58],[45,110,240],blueK);
+  cx.globalCompositeOperation = 'source-over';
+  cx.fillStyle = reduce ? 'rgba(11,5,6,1)' : 'rgba(11,5,6,0.24)';
+  cx.fillRect(0, 0, W, H);
+  /* céu distante */
+  cx.fillStyle = '#ffb3a6';
+  for (const f of FAR) {
+    cx.globalAlpha = .05 + .05 * Math.sin(t * 1.3 + f.seed);
+    cx.fillRect(f.x * W, f.y * H, f.s, f.s);
+  }
+  cx.globalAlpha = 1;
+  /* halo largo e núcleo que bate com o coração */
+  const g = cx.createRadialGradient(ox, oy, 0, ox, oy, R * 1.25);
+  g.addColorStop(0, `rgba(${HA},${.10 * glow})`);
+  g.addColorStop(.45, `rgba(${HB},${.05 * glow})`);
+  g.addColorStop(1, 'rgba(11,5,6,0)');
+  cx.fillStyle = g; cx.fillRect(ox - R * 1.3, oy - R * 1.3, R * 2.6, R * 2.6);
+  cx.globalCompositeOperation = 'lighter';
+  const nr = R * (.16 + pb * .03);
+  const nuc = cx.createRadialGradient(ox, oy, 0, ox, oy, nr);
+  nuc.addColorStop(0, `rgba(${NA},${.42 * glow})`);
+  nuc.addColorStop(.35, `rgba(${NB},${.16 * glow})`);
+  nuc.addColorStop(1, `rgba(${NC},0)`);
+  cx.fillStyle = nuc; cx.fillRect(ox - nr, oy - nr, nr * 2, nr * 2);
+  /* fumo do disco, com uma sombra mais ténue atrás na rotação */
+  for (const p of SMOKE) {
+    const ang = p.a + rot * p.w;
+    const rr = (p.r + Math.sin(t * .4 + p.seed) * .03 + pb * .03 + burst * .12) * R;
+    const x = ox + Math.cos(ang) * rr, y = oy + Math.sin(ang) * rr * cur.tilt;
+    const sz = R * p.s * (1 + .2 * Math.sin(t * .6 + p.seed));
+    cx.globalAlpha = Math.min(1, p.z * .075 * glow * (1 - blueK));
+    cx.drawImage(PUFF[p.c], x - sz, y - sz, sz * 2, sz * 2);
+    if (blueK > .01) { cx.globalAlpha = Math.min(1, p.z * .075 * glow * blueK); cx.drawImage(PUFFB[p.c], x - sz, y - sz, sz * 2, sz * 2); }
+    const ta = ang - cur.spin * 1.4 * SLOW * dir * p.w * .7;
+    const tx = ox + Math.cos(ta) * rr, ty = oy + Math.sin(ta) * rr * cur.tilt;
+    cx.globalAlpha = Math.min(1, p.z * .04 * glow);
+    cx.drawImage(PUFF[p.c], tx - sz * .85, ty - sz * .85, sz * 1.7, sz * 1.7);
+  }
+  /* estrelas: rasto agrupado por cor (um traço por cor) e brilho próprio de cada uma */
+  const TR = COLORS.map(() => new Path2D());
+  const RGB = COLORS.map((c, i) => `rgb(${mixc(c, BLUE[i], blueK)})`);
+  let lastC = -1;
+  for (const p of P) {
+    const ang = p.a + rot * p.w;
+    const wob = Math.sin(t * .9 + p.seed) * cur.jit + Math.sin(t * 2.3 + p.seed * 3) * cur.jit * .5;
+    const rr = Math.max(0, (p.r + wob + burst * p.r * .25) * R);
+    const cyy = oy + Math.sin(t * .5 + p.seed) * 2;
+    const x = ox + Math.cos(ang) * rr, y = cyy + Math.sin(ang) * rr * cur.tilt;
+    const vel = cur.spin * 1.4 * SLOW * dir * p.w;
+    if (!reduce && Math.abs(vel) > .02 && rr > 2) {
+      const tail = ang - vel * .9;
+      const tp = TR[p.c];
+      tp.moveTo(ox + Math.cos(tail) * rr, cyy + Math.sin(tail) * rr * cur.tilt);
+      tp.ellipse(ox, cyy, rr, rr * cur.tilt, 0, tail, ang, tail > ang);
+    }
+    const tw = .55 + .45 * Math.sin(t * 2 + p.seed * 7);
+    const flare = Math.pow(Math.max(0, Math.sin(t * .6 + p.seed * 13)), 60);
+    if (p.c !== lastC) { cx.fillStyle = RGB[p.c]; lastC = p.c; }
+    cx.globalAlpha = Math.min(1, glow * p.z * tw * (1.2 - p.r * .55) * .85 + flare * .6);
+    const s = p.s * (1 + burst * .5 + flare * 1.8);
+    cx.fillRect(x - s / 2, y - s / 2, s, s);
+  }
+  cx.lineWidth = .8;
+  for (let i = 0; i < TR.length; i++) { cx.globalAlpha = .2 * glow; cx.strokeStyle = RGB[i]; cx.stroke(TR[i]); }
+  cx.globalAlpha = 1;
+  /* os quatro astros: órbitas próprias à volta do ser, sem seguir a viragem da galáxia */
+  for (const o of ASTROS) {
+    o.th += dt * o.sp * SLOW * (reduce ? .4 : 1) * (1 + (1 - o.e * Math.cos(o.th)) * .3);
+    o.phi += dt * o.prec * SLOW;
+    const rr = o.a * (1 - o.e * o.e) / (1 + o.e * Math.cos(o.th)) * R;
+    const px = Math.cos(o.th) * rr, py = Math.sin(o.th) * rr;
+    const qx = px * Math.cos(o.phi) - py * Math.sin(o.phi);
+    const qy = px * Math.sin(o.phi) + py * Math.cos(o.phi);
+    const x = ox + qx, y = oy + qy * o.inc;
+    const depth = qy / (o.a * R);                          /* >0 à frente, <0 atrás */
+    o.trail.push(x, y); if (o.trail.length > 44) o.trail.splice(0, 2);
+    const [r, gg, b] = o.col;
+    for (let i = 2; i < o.trail.length; i += 2) {
+      cx.strokeStyle = `rgba(${r},${gg},${b},${(i / o.trail.length) * .28})`;
+      cx.lineWidth = o.sz * .6 * (i / o.trail.length);
+      cx.beginPath(); cx.moveTo(o.trail[i - 2], o.trail[i - 1]); cx.lineTo(o.trail[i], o.trail[i + 1]); cx.stroke();
+    }
+    o.x = x; o.y = y;
+    o.lit += ((activeMenu === o.menu ? 1 : 0) - o.lit) * Math.min(1, dt * 4);
+    const near = Math.min(1, (.65 + .35 * depth) * (1 + o.lit * .6));
+    const sz = o.sz * (1 + .3 * depth) * (1 + pb * .25) * (1 + o.lit * 1.2);
+    const halo = cx.createRadialGradient(x, y, 0, x, y, sz * 4);
+    halo.addColorStop(0, `rgba(${r},${gg},${b},${.45 * near})`);
+    halo.addColorStop(1, `rgba(${r},${gg},${b},0)`);
+    cx.fillStyle = halo; cx.fillRect(x - sz * 4, y - sz * 4, sz * 8, sz * 8);
+    cx.fillStyle = `rgba(255,250,245,${.9 * near})`;
+    cx.beginPath(); cx.arc(x, y, Math.max(.1, sz), 0, Math.PI * 2); cx.fill();
+  }
+}
+requestAnimationFrame(frame);
+
+/* ---------- Ecrã inteiro: só aparece onde o iPad o permite ---------- */
+const fsBtn = document.getElementById('fs');
+const fsOn = () => document.fullscreenElement || document.webkitFullscreenElement;
+if (document.fullscreenEnabled || document.webkitFullscreenEnabled) fsBtn.hidden = false;
+fsBtn.addEventListener('click', async () => {
+  const el = document.documentElement;
+  try {
+    if (fsOn()) await (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+    else await (el.requestFullscreen || el.webkitRequestFullscreen).call(el);
+  } catch (e) { fsBtn.hidden = true; }
+});
+document.addEventListener('fullscreenchange', () => { fsBtn.textContent = fsOn() ? '✕' : '⛶'; });
+document.addEventListener('webkitfullscreenchange', () => { fsBtn.textContent = fsOn() ? '✕' : '⛶'; });
+
+/* ---------- Relógio ---------- */
+const clock = document.getElementById('clock');
+function tick() { clock.textContent = new Date().toLocaleString('pt-PT', { timeZone: 'Europe/Lisbon', weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }); }
+tick(); setInterval(tick, 20000);
+
+/* ---------- Acordar ---------- */
+const q = document.getElementById('q'), voice = document.getElementById('voice'), statusEl = document.getElementById('status');
+function wake() {
+  if (!document.body.classList.contains('awake')) { document.body.classList.add('awake'); if (mode === 'idle') setMode('awake'); }
+  burst = 1;
+}
+/* ---------- Menus: cada um tem o seu astro ---------- */
+const chips = document.querySelectorAll('[data-menu]');
+const subs = { ipad: document.getElementById('sub-ipad') };
+let talk = false;            /* caixa de conversa com o ser, aberta ao tocar no núcleo */
+function openMenu(name, force) {
+  wake();
+  const chip = document.querySelector(`[data-menu="${name}"]`);
+  if (chip.tagName === 'A') {
+    /* menus que são ligações: o astro acende e o botão pisca; a ligação abre pelo próprio botão */
+    activeMenu = name;
+    chip.classList.remove('flash'); void chip.offsetWidth; chip.classList.add('flash');
+    setTimeout(() => { if (activeMenu === name) { activeMenu = null; paint(); } }, 1800);
+    paint(); return;
+  }
+  activeMenu = (activeMenu === name && !force) ? null : name;
+  paint();
+}
+function paint() {
+  document.body.classList.toggle('prog', talk);
+  for (const k in subs) subs[k].hidden = activeMenu !== k;
+  chips.forEach(c => {
+    c.classList.toggle('on', c.dataset.menu === activeMenu);
+    c.style.setProperty('--c-on', getComputedStyle(c.querySelector('i')).getPropertyValue('--c'));
+  });
+}
+/* ---------- Mergulho: o ecrã entra no astro do menu escolhido e só depois abre ---------- */
+const diveEl = document.getElementById('dive'), diveGo = document.getElementById('divego'), uiEl = document.getElementById('ui');
+let diving = null;
+function dive(name, href, label) {
+  if (diving) return;
+  const o = ASTROS.find(a => a.menu === name);
+  const x = o.x > -900 ? o.x : W / 2, y = o.y > -900 ? o.y : H / 2, [r, g, b] = o.col;
+  activeMenu = name; wake(); paint();
+  const R = Math.hypot(Math.max(x, W - x), Math.max(y, H - y)) + 20;
+  diveEl.style.background = `radial-gradient(circle at ${x}px ${y}px, #fff 0, rgb(${r},${g},${b}) ${Math.round(R * .08)}px, rgb(${Math.round(r * .45)},${Math.round(g * .25)},${Math.round(b * .3)}) ${Math.round(R * .55)}px, #0b0506 ${Math.round(R)}px)`;
+  diveEl.classList.remove('stuck'); diveEl.classList.add('on');
+  cv.style.transformOrigin = `${x}px ${y}px`;
+  const fast = reduce ? .35 : 1;
+  const anims = [
+    cv.animate([{ transform: 'scale(1)', filter: 'brightness(1)' }, { transform: 'scale(10)', filter: 'brightness(1.9)' }],
+      { duration: 900 * fast, easing: 'cubic-bezier(.55,0,.85,.4)', fill: 'forwards' }),
+    uiEl.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 380 * fast, easing: 'ease-in', fill: 'forwards' }),
+    diveEl.animate([{ clipPath: `circle(0px at ${x}px ${y}px)` }, { clipPath: `circle(${R}px at ${x}px ${y}px)` }],
+      { duration: 620 * fast, delay: 280 * fast, easing: 'cubic-bezier(.7,0,.9,.55)', fill: 'forwards' })
+  ];
+  diving = { anims, name };
+  /* o iPad deixa abrir uma janela até 1 s depois do toque; abre-se no fim do mergulho */
+  setTimeout(() => {
+    if (!href) { emerge(250); return; }
+    location.href = href;
+  }, 900 * fast);
+}
+function emerge(after) {
+  if (!diving) return;
+  const d = diving;
+  setTimeout(() => {
+    diveEl.classList.remove('stuck');
+    let left = d.anims.length;
+    d.anims.forEach(a => { a.onfinish = () => { if (--left === 0) { d.anims.forEach(x => x.cancel()); diveEl.classList.remove('on'); diving = null; if (d.name !== 'ipad') { activeMenu = null; paint(); } } }; a.reverse(); });
+  }, after);
+}
+diveGo.addEventListener('click', () => emerge(400));
+/* ao voltar com o botão «atrás», o ser sai do astro */
+addEventListener('pageshow', e => { if (e.persisted && diving) { diving.anims.forEach(x => x.cancel()); diveEl.classList.remove('on', 'stuck'); diving = null; activeMenu = null; paint(); } });
+document.addEventListener('visibilitychange', () => { if (!document.hidden && diving && diveEl.classList.contains('stuck')) emerge(200); });
+chips.forEach(c => c.addEventListener('click', e => {
+  const name = c.dataset.menu;
+  if (c.tagName === 'A') { e.preventDefault(); dive(name, c.href, c.textContent.trim()); return; }
+  if (name === 'ipad' && activeMenu !== 'ipad') { dive('ipad', null); return; }
+  openMenu(name);
+}));
+/* tocar num astro abre o seu menu; tocar no núcleo abre a conversa; o resto acorda o ser */
+cv.addEventListener('pointerdown', e => {
+  let best = null, bd = 34;
+  for (const o of ASTROS) { if (!o.menu) continue; const d = Math.hypot(e.clientX - o.x, e.clientY - o.y); if (d < bd) { bd = d; best = o; } }
+  if (best) { openMenu(best.menu); return; }
+  if (Math.hypot(e.clientX - core.x, e.clientY - core.y) < Math.max(70, core.r * .28)) {
+    /* o foco tem de acontecer dentro do próprio toque, senão o iPad não abre o teclado */
+    burst = 1; wake(); return;
+  }
+  wake();
+});
+
+/* ---------- Texto ---------- */
+function render(el, text) {
+  el.textContent = '';
+  const clean = text.replace(/^#+\s*/gm, '').replace(/^\s*[-*]\s+/gm, '· ');
+  const re = /(https?:\/\/[^\s)\]]+)|\*\*([^*]+)\*\*/g;
+  let i = 0, m;
+  while ((m = re.exec(clean))) {
+    el.append(clean.slice(i, m.index));
+    if (m[1]) { const a = document.createElement('a'); a.href = m[1]; a.target = '_blank'; a.rel = 'noopener'; a.textContent = m[1].includes('spotify') ? 'abrir no Spotify ↗' : m[1]; el.append(a); }
+    else { const s = document.createElement('strong'); s.textContent = m[2]; el.append(s); }
+    i = re.lastIndex;
+  }
+  el.append(clean.slice(i));
+}
+function line(cls, text) { const d = document.createElement('div'); d.className = cls; d.textContent = text; voice.append(d); voice.scrollTop = voice.scrollHeight; return d; }
+
+/* ---------- Ligações ---------- */
+let sample = null, mcp = null;
+const SAMPLE_ERR = {
+  not_granted: 'Para eu responder, tens de permitir que esta página use o Claude.',
+  sampling_disabled: 'O Claude não está disponível nesta conta.',
+  rate_limited: 'Estou com muitos pedidos ou chegaste ao limite de uso. Tenta daqui a pouco.',
+  session_expired: 'A tua sessão expirou. Volta a entrar no claude.ai.',
+  refused: 'Não posso ajudar com esse pedido.',
+  tools_unavailable: 'Nesta vista não consigo usar o Gmail, o Calendário nem o Spotify.',
+  upstream_error: 'A ligação falhou a meio. Tenta outra vez.',
+  empty_completion: 'Não consegui formular resposta. Tenta dizer de outra forma.'
+};
+const MCP_ERR = {
+  needs_reauth: s => `A ligação ao ${s} expirou. Volta a ligá-lo em claude.ai → Definições → Conectores.`,
+  server_not_connected: s => `O ${s} não está ligado. Liga-o em claude.ai → Definições → Conectores.`,
+  selection_required: s => `Tens mais de uma ligação ao ${s}; escolhe qual usar no aviso do Claude.`,
+  not_in_manifest: s => `Não deste permissão a esta página para usar o ${s}.`,
+  approval_required: s => `O ${s} precisa da tua aprovação para esta ação.`,
+  blocked_by_policy: s => `A tua organização bloqueia o ${s} aqui.`,
+  server_unavailable: s => `O ${s} não respondeu. Tenta daqui a pouco.`
+};
+const mcpMsg = (e, s) => (MCP_ERR[e?.code] || (x => `O ${x} devolveu um erro: ${e?.message || 'desconhecido'}`))(s);
+
+async function call(server, tool, input, signal) {
+  if (!mcp) throw new Error('Os conectores não estão disponíveis nesta vista.');
+  try {
+    const r = await mcp.callTool(server, tool, input, { signal });
+    const out = r.payload ?? r.content;
+    const s = typeof out === 'string' ? out : JSON.stringify(out);
+    return s.length > 14000 ? s.slice(0, 14000) + '…[cortado]' : s;
+  } catch (e) { throw new Error(mcpMsg(e, server)); }
+}
+
+/* ---------- Confirmações ---------- */
+function confirmCard(kind, preview, run) {
+  const box = document.createElement('div'); box.className = 'confirm';
+  const k = document.createElement('div'); k.className = 'k'; k.textContent = kind;
+  const pre = document.createElement('pre'); pre.textContent = preview;
+  const row = document.createElement('div'); row.className = 'row';
+  const ok = document.createElement('button'); ok.className = 'go'; ok.textContent = kind.startsWith('Email') ? 'Enviar' : 'Criar';
+  const no = document.createElement('button'); no.textContent = 'Cancelar';
+  row.append(ok, no); box.append(k, pre, row); voice.append(box); voice.scrollTop = voice.scrollHeight;
+  no.onclick = () => { row.replaceWith(Object.assign(document.createElement('div'), { className: 'k', textContent: 'Cancelado' })); };
+  ok.onclick = async () => {
+    ok.disabled = no.disabled = true; ok.textContent = 'A tratar…';
+    try { await run(); row.replaceWith(Object.assign(document.createElement('div'), { className: 'k', textContent: kind.startsWith('Email') ? 'Enviado ✓' : 'Criado ✓' })); burst = .8; }
+    catch (e) { ok.textContent = 'Tentar de novo'; ok.disabled = no.disabled = false; const w = document.createElement('div'); w.className = 'warn'; w.textContent = e.message; box.append(w); }
+  };
+}
+
+/* ---------- Ferramentas do E.L.L.O.N ---------- */
+const say = s => { statusEl.textContent = s; };
+const TOOLS = [
+  { name: 'gmail_procurar', description: 'Procura emails no Gmail do André com sintaxe de pesquisa do Gmail (ex.: "is:unread newer_than:2d in:inbox", "from:ana"). Devolve assuntos, remetentes, datas e excertos.',
+    inputSchema: { type: 'object', properties: { query: { type: 'string' }, pageSize: { type: 'integer' } }, required: ['query'] },
+    execute: (i, c) => { say('a consultar o Gmail'); return call('Gmail', 'search_threads', { query: String(i.query || ''), pageSize: Math.min(15, Number(i.pageSize) || 10) }, c.signal); } },
+  { name: 'gmail_rascunho', description: 'Guarda um rascunho no Gmail (não envia). Usa quando o André pede para preparar ou rever um email.',
+    inputSchema: { type: 'object', properties: { to: { type: 'array', items: { type: 'string' } }, subject: { type: 'string' }, body: { type: 'string' } }, required: ['to', 'subject', 'body'] },
+    execute: (i, c) => { say('a guardar rascunho'); return call('Gmail', 'create_draft', { to: [].concat(i.to || []).map(String), subject: String(i.subject || ''), body: String(i.body || '') }, c.signal); } },
+  { name: 'gmail_enviar', description: 'Prepara um email para enviar e mostra-o ao André para ele confirmar no ecrã. NÃO envia sozinho: só sai quando ele tocar em Enviar.',
+    inputSchema: { type: 'object', properties: { to: { type: 'array', items: { type: 'string' } }, subject: { type: 'string' }, body: { type: 'string' } }, required: ['to', 'subject', 'body'] },
+    execute: (i) => {
+      const m = { to: [].concat(i.to || []).map(String), subject: String(i.subject || ''), body: String(i.body || '') };
+      confirmCard('Email para confirmar', `Para: ${m.to.join(', ')}\nAssunto: ${m.subject}\n\n${m.body}`, () => call('Gmail', 'send_message', m));
+      return 'Mostrei o email no ecrã. Ainda NÃO foi enviado: o André tem de tocar em Enviar.';
+    } },
+  { name: 'agenda_ver', description: 'Lista eventos do Google Calendar do André. startTime/endTime em hora local ISO sem fuso (ex.: 2026-10-24T00:00:00).',
+    inputSchema: { type: 'object', properties: { startTime: { type: 'string' }, endTime: { type: 'string' }, fullText: { type: 'string' } } },
+    execute: (i, c) => { say('a ver a agenda'); const a = { orderBy: 'startTime', pageSize: 25 }; for (const k of ['startTime', 'endTime', 'fullText']) if (i[k]) a[k] = String(i[k]); return call('Google Calendar', 'list_events', a, c.signal); } },
+  { name: 'agenda_marcar', description: 'Prepara um evento no Google Calendar e mostra-o ao André para confirmar no ecrã. Horas locais ISO sem fuso.',
+    inputSchema: { type: 'object', properties: { summary: { type: 'string' }, startTime: { type: 'string' }, endTime: { type: 'string' }, location: { type: 'string' }, description: { type: 'string' } }, required: ['summary', 'startTime', 'endTime'] },
+    execute: (i) => {
+      const ev = { summary: String(i.summary), startTime: String(i.startTime), endTime: String(i.endTime) };
+      if (i.location) ev.location = String(i.location); if (i.description) ev.description = String(i.description);
+      const fmt = s => s.replace('T', ' às ').slice(0, 18);
+      confirmCard('Evento para confirmar', `${ev.summary}\n${fmt(ev.startTime)} → ${fmt(ev.endTime)}${ev.location ? '\n' + ev.location : ''}`, () => call('Google Calendar', 'create_event', ev));
+      return 'Mostrei o evento no ecrã. Ainda NÃO foi criado: o André tem de tocar em Criar.';
+    } },
+  { name: 'spotify_procurar', description: 'Pesquisa música, artistas, playlists ou podcasts no Spotify, ou recomendações pelo gosto do André. Devolve links.',
+    inputSchema: { type: 'object', properties: { prompt: { type: 'string' } }, required: ['prompt'] },
+    execute: (i, c) => { say('a procurar no Spotify'); return call('Spotify', 'search', { prompt: String(i.prompt), language: 'pt-PT', limit: 8 }, c.signal); } },
+  { name: 'spotify_playlist', description: 'Cria uma playlist privada no Spotify do André a partir de uma descrição. O prompt deve começar por "Cria".',
+    inputSchema: { type: 'object', properties: { prompt: { type: 'string' } }, required: ['prompt'] },
+    execute: (i, c) => { say('a criar a playlist'); return call('Spotify', 'generate_playlist', { prompt: String(i.prompt), language: 'pt-PT' }, c.signal); } },
+  { name: 'spotify_a_tocar', description: 'Diz o que está a tocar agora no Spotify do André.',
+    execute: (i, c) => { say('a ouvir o Spotify'); return call('Spotify', 'get_currently_playing', {}, c.signal); } }
+];
+
+function rules() {
+  const now = new Date();
+  const p = Object.fromEntries(new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Lisbon', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(now).map(x => [x.type, x.value]));
+  const longDate = now.toLocaleString('pt-PT', { timeZone: 'Europe/Lisbon', dateStyle: 'full', timeStyle: 'short' });
+  return `És o E.L.L.O.N (Electronic Living Learning Orbital Nexus), o assistente pessoal do André. Responde sempre em português de Portugal, de forma curta e calorosa (2 a 5 frases), sem títulos nem markdown.
+Agora é ${longDate} (hora local ${p.year}-${p.month}-${p.day}T${p.hour}:${p.minute}:00, Europe/Lisbon).
+Usa as ferramentas para o Gmail, o Google Calendar e o Spotify sempre que o pedido envolver email, agenda ou música.
+Para enviar um email ou marcar um evento, usa gmail_enviar ou agenda_marcar: elas mostram o pedido no ecrã para o André confirmar. Depois diz-lhe para confirmar; nunca digas que já foi enviado ou criado.
+Se faltar o email do destinatário, procura-o com gmail_procurar (from:nome OR to:nome); se não encontrares, pergunta.
+Não consegues pôr música a tocar; podes pesquisar e criar playlists e deves dar sempre os links do Spotify que as ferramentas devolverem, copiados exatamente.
+Se uma ferramenta der erro, explica ao André o que fazer, em linguagem simples.`;
+}
+
+/* ---------- Conversa ---------- */
+const turns = [];
+let ctl = null;
+const stopBtn = document.getElementById('stop'), sendBtn = document.getElementById('send');
+stopBtn.onclick = () => ctl?.abort();
+document.getElementById('ask').addEventListener('submit', e => { e.preventDefault(); ask(q.value); });
+document.querySelectorAll('[data-cmd]').forEach(b => b.addEventListener('click', () => { wake(); ask(b.dataset.cmd); }));
+
+async function ask(text) {
+  text = (text || '').trim(); if (!text || ctl) return;
+  q.value = ''; wake();
+  line('you', text);
+  const out = line('says', ''); out.textContent = '…';
+  if (!sample) { out.remove(); line('warn', 'Abre esta página dentro do Claude (claude.ai ou app) para eu poder responder.'); return; }
+  turns.push({ role: 'user', content: text });
+  ctl = new AbortController(); setMode('thinking'); say('a pensar');
+  stopBtn.hidden = false; sendBtn.disabled = true;
+  const opts = { signal: ctl.signal, modelTier: 'quick', onText: ({ text }) => { setMode('speaking'); say(''); render(out, text); voice.scrollTop = voice.scrollHeight; } };
+  if (mcp) opts.tools = TOOLS; else opts.cache = false;
+  try {
+    const r = await sample([{ role: 'user', content: rules() }, ...turns.slice(-10)], opts);
+    render(out, r.text); turns.push({ role: 'assistant', content: r.text });
+  } catch (e) {
+    if (e.text) render(out, e.text); else out.remove();
+    if (e.code !== 'cancelled') line('warn', SAMPLE_ERR[e.code] || SAMPLE_ERR.upstream_error);
+    turns.pop();
+  } finally {
+    ctl = null; say(''); stopBtn.hidden = true; sendBtn.disabled = false;
+    setMode('awake'); voice.scrollTop = voice.scrollHeight;
+  }
+}
+
+/* versão de visitante: sem conversa nem ligações */
+</script>
+
+</body>
+</html>

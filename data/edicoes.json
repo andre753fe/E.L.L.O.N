@@ -1,0 +1,88 @@
+[
+ {
+  "asOf": "2026-10-25T15:30:00Z",
+  "ideas": [
+   {
+    "market": "NYSE (ADR)",
+    "name": "Taiwan Semiconductor",
+    "risks": "Concentração geopolítica em Taiwan, volatilidade dos semicondutores e sobreposição com a NVIDIA que já tens.",
+    "sources": [
+     {
+      "title": "Yahoo Finance/Zacks, 09/10/2026",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/october-market-outlook-3-sectors-180000664.html"
+     }
+    ],
+    "thesis": "Fabrica os chips de IA de quase todo o setor; receitas de julho e agosto +44,7% e +53,3% face ao ano anterior. Zacks Rank #2 (comprar).",
+    "ticker": "TSM"
+   },
+   {
+    "market": "NYSE",
+    "name": "Entergy",
+    "risks": "Custos de financiamento mais altos com juros elevados; regulação.",
+    "sources": [
+     {
+      "title": "Yahoo Finance/Zacks, 09/10/2026",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/october-market-outlook-3-sectors-180000664.html"
+     }
+    ],
+    "thesis": "Utility regulada dos EUA com plano de 67 mil milhões de dólares de investimento em 2026–2029 para servir centros de dados e eletrificação; perfil parecido com a NEE e a WTRG que já tens. Zacks Rank #2.",
+    "ticker": "ETR"
+   },
+   {
+    "market": "NYSE",
+    "name": "HF Sinclair",
+    "risks": "Margens de refinação muito voláteis; uma descida rápida do petróleo ou acordo com o Irão inverte o tema.",
+    "sources": [
+     {
+      "title": "Yahoo Finance/Zacks, 09/10/2026",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/october-market-outlook-3-sectors-180000664.html"
+     },
+     {
+      "title": "Newsquawk, 23/10/2026",
+      "url": "https://www.newsquawk.com/headlines/newsquawk-european-market-wrap---23rd-october-2026"
+     }
+    ],
+    "thesis": "Refinadora que beneficia do petróleo e combustíveis caros; a estimativa de lucro por ação de 2026 subiu 6,02 dólares para 18,15 em 60 dias. Zacks Rank #1.",
+    "ticker": "DINO"
+   }
+  ],
+  "next": "segunda-feira de manhã",
+  "sources": [
+   {
+    "title": "Oppenheimer · Shake, Wobble, and Roll (19/10/2026)",
+    "url": "https://www.oppenheimer.com/news-media/2026/market-strategy/10-19-2026"
+   },
+   {
+    "title": "Newsquawk European Market Wrap (23/10/2026)",
+    "url": "https://www.newsquawk.com/headlines/newsquawk-european-market-wrap---23rd-october-2026"
+   },
+   {
+    "title": "Yahoo Finance/Zacks · October Market Outlook (09/10/2026)",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/october-market-outlook-3-sectors-180000664.html"
+   }
+  ],
+  "summary": "Os mercados estão numa pausa dentro de um ano positivo: o S&P 500 caiu 1,9% na semana de 16/10 mas sobe 11,9% em 2026, e a Oppenheimer mantém o alvo de 8100 pontos para o fim do ano com lucros de 2026 a crescer 35,8%. Os riscos imediatos são a inflação nos EUA, o petróleo acima de 100 dólares e as tensões com o Irão; na Europa, a França entrou em contração e a Moody's pode cortar o rating. Na próxima semana há decisão da Fed e o indicador de inflação PCE.",
+  "themes": [
+   {
+    "t": "Inteligência artificial",
+    "txt": "Continua a puxar pelos lucros (a NVIDIA cresceu 106% nas receitas do trimestre), mas os semicondutores estão voláteis: o índice SOX caiu 6,7% a 22/10."
+   },
+   {
+    "t": "Energia",
+    "txt": "Com o Brent entre 112 e 115 dólares e o Estreito de Ormuz perturbado, refinadoras e produtoras com custos disciplinados beneficiam."
+   },
+   {
+    "t": "Utilities",
+    "txt": "A procura elétrica dos centros de dados dá lucros mais previsíveis; o risco são juros altos por mais tempo."
+   },
+   {
+    "t": "Europa",
+    "txt": "Mais fraca: PMI da zona euro abaixo do esperado, França em contração, luxo pressionado pela China (Kering −16% a 23/10)."
+   },
+   {
+    "t": "Na tua carteira",
+    "txt": "A SpaceX subiu 1,8% a 23/10 depois de um acordo de antenas com a Crown Castle; a NVIDIA é a tua maior exposição a IA, por isso mais semicondutores aumentam a concentração."
+   }
+  ]
+ }
+]

@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>html,body{margin:0}</style>
+<title>Sala de Mercados</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&family=Unbounded:wght@500;700&family=Orbitron:wght@500;700&display=swap">
+</head>
+<body>
+<style>
+/* Layout: uma edição semanal do R-02 lida como um jornal — manchete, temas em colunas, oportunidades em fichas, carteira e arquivo. */
+/* mesmas cores e letras do Finanças e do resto do E.L.L.O.N */
+:root {
+  --paper: #dfe5ea;
+  --sheet: #f5f7f9;
+  --ink: #18232d;
+  --muted: #566573;
+  --rule: #c3ced8;
+  --gold: #b7791f;
+  --gold-soft: rgba(183,121,31,.13);
+  --accent: #2c58d6;
+  --accent-soft: rgba(44,88,214,.12);
+  --up: #1b7f54;
+  --down: #c2392f;
+  --hud: #b8323f; --hud2: #c2565e;
+  --display: "Unbounded", "Trebuchet MS", sans-serif;
+  --body: "IBM Plex Sans", system-ui, sans-serif;
+  --data: "IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #131a21; --sheet: #1b252f; --ink: #e6edf3; --muted: #8fa1b0; --rule: #2c3a47;
+    --gold: #e3b45a; --gold-soft: rgba(227,180,90,.13); --accent: #7c9cff; --accent-soft: rgba(124,156,255,.14);
+    --up: #3ecf8e; --down: #ff6b5e; --hud: #ff9a88; --hud2: #c9606a; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #131a21; --sheet: #1b252f; --ink: #e6edf3; --muted: #8fa1b0; --rule: #2c3a47;
+  --gold: #e3b45a; --gold-soft: rgba(227,180,90,.13); --accent: #7c9cff; --accent-soft: rgba(124,156,255,.14);
+  --up: #3ecf8e; --down: #ff6b5e; --hud: #ff9a88; --hud2: #c9606a; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.5;
+  padding-block: 20px 48px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.wrap { max-width: 1080px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; }
+a { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* cabeçalho */
+.mast { display: grid; grid-template-columns: auto 1fr auto; gap: 16px 20px; align-items: end; border-bottom: 1px solid var(--rule); padding-bottom: 14px; }
+.bot { width: 46px; height: 54px; position: relative; flex: none; }
+.bot .h { position: absolute; left: 3px; top: 8px; width: 40px; height: 30px; border-radius: 12px; background: linear-gradient(90deg, #64708a, #323a4a); }
+.bot .v { position: absolute; left: 9px; top: 15px; width: 28px; height: 16px; border-radius: 7px; background: #0f1a26; }
+.bot .v::before, .bot .v::after { content: ""; position: absolute; top: 4px; width: 5px; height: 8px; border-radius: 2px; background: #ffd36a; }
+.bot .v::before { left: 7px; } .bot .v::after { right: 7px; }
+.bot .a { position: absolute; left: 22px; top: 0; width: 2px; height: 9px; background: #64708a; }
+.bot .a::after { content: ""; position: absolute; left: -3px; top: -4px; width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+.bot .b { position: absolute; left: 10px; top: 39px; width: 26px; height: 15px; border-radius: 8px; background: #465063; }
+h1 { font-family: var(--display); font-weight: 700; font-size: clamp(22px, 4.5vw, 32px); line-height: 1.1; margin: 0; text-wrap: balance; }
+.edition { font-family: var(--data); font-size: 12px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 2px 14px; margin-top: 6px; }
+.edition b { color: var(--gold); font-weight: 600; }
+.hud { font-family: "Orbitron", var(--data); text-transform: uppercase; text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+.hclock { font-weight: 500; font-size: clamp(16px, 3vw, 30px); letter-spacing: .14em; color: var(--hud); text-shadow: 0 0 14px rgba(255,74,92,.35); font-variant-numeric: tabular-nums; }
+.hmotto { font-size: clamp(9px, 1vw, 11px); letter-spacing: .22em; color: var(--hud2); }
+.hmotto b { font-weight: 700; color: var(--hud); }
+.kicker { font-family: var(--data); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin: 0 0 6px; }
+
+/* manchete */
+.lead { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 28px; }
+.lead p.sum { font-family: var(--body); font-weight: 500; font-size: clamp(18px, 2.2vw, 22px); line-height: 1.45; margin: 0; max-width: 46ch; }
+.aside { border-left: 1px solid var(--rule); padding-left: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; color: var(--muted); }
+.aside ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 4px; }
+
+h2 { font-family: var(--display); font-weight: 700; font-size: 19px; margin: 0; text-wrap: balance; }
+.sec { display: flex; flex-direction: column; gap: 14px; }
+.sechead { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; border-top: 1px solid var(--rule); padding-top: 12px; flex-wrap: wrap; }
+.sechead .note { font-size: 13px; color: var(--muted); }
+
+/* temas em colunas */
+.themes { columns: 3 260px; column-gap: 28px; }
+.theme { break-inside: avoid; margin: 0 0 16px; }
+.theme h3 { font-family: var(--body); font-weight: 600; font-size: 15px; margin: 0 0 2px; }
+.theme p { margin: 0; font-size: 15px; max-width: 60ch; }
+
+/* oportunidades */
+.ideas { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.idea { background: var(--sheet); border: 1px solid var(--rule); border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.idea .top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.tk { font-family: var(--data); font-weight: 600; font-size: 18px; color: var(--gold); }
+.mk { font-family: var(--data); font-size: 11px; color: var(--muted); text-align: right; }
+.idea .nm { font-weight: 600; }
+.idea p { margin: 0; font-size: 15px; }
+.risk { color: var(--muted); font-size: 14px !important; }
+.risk::before { content: "Riscos · "; font-family: var(--data); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--down); }
+.src { display: flex; flex-wrap: wrap; gap: 4px 10px; font-size: 13px; }
+.chip { font-family: var(--data); font-size: 11px; padding: 2px 8px; border-radius: 999px; background: var(--gold-soft); color: var(--gold); align-self: flex-start; }
+
+/* arquivo */
+.archive { display: flex; flex-wrap: wrap; gap: 8px; }
+.archive button { font: 600 13px var(--data); color: var(--ink); background: var(--sheet); border: 1px solid var(--rule); border-radius: 8px; padding: 6px 12px; cursor: pointer; }
+.archive button[aria-pressed="true"] { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent); color: var(--accent); }
+.sources { margin: 0; padding-left: 18px; font-size: 14px; display: flex; flex-direction: column; gap: 4px; }
+.disc { font-size: 13px; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 12px; max-width: 75ch; margin: 0; }
+.empty { background: var(--sheet); border: 1px dashed var(--rule); border-radius: 10px; padding: 24px; color: var(--muted); }
+
+
+/* coluna de eventos */
+.page { max-width: 1360px; }
+.cols { display: grid; grid-template-columns: minmax(0, 1fr) 310px; gap: 32px; align-items: start; }
+.cols > .wrap { max-width: none; margin: 0; }
+.ev { position: sticky; top: 16px; max-height: calc(100vh - 32px); overflow: auto; background: var(--sheet); border: 1px solid var(--rule); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 14px; overscroll-behavior: contain; }
+.ev h2 { font-size: 17px; }
+.ev .sub { font-size: 12px; color: var(--muted); margin: 2px 0 0; }
+.ev .filt { display: flex; flex-wrap: wrap; gap: 6px; }
+.ev .filt button { font: 600 11px var(--data); color: var(--muted); background: transparent; border: 1px solid var(--rule); border-radius: 999px; padding: 4px 10px; cursor: pointer; min-height: 30px; }
+.ev .filt button[aria-pressed="true"] { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }
+.ev .mon { font-family: var(--data); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--rule); padding-bottom: 4px; margin-top: 4px; }
+.ev ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.ev li { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 10px; align-items: start; }
+.ev .dd { text-align: center; border-radius: 8px; border: 1px solid var(--rule); padding: 3px 0 4px; line-height: 1.1; background: var(--paper); }
+.ev .dd b { display: block; font-family: var(--data); font-size: 17px; }
+.ev .dd span { font-family: var(--data); font-size: 10px; color: var(--muted); text-transform: uppercase; }
+.ev li.today .dd { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent); }
+.ev .ln { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; }
+.ev .tkr { font-family: var(--data); font-weight: 600; font-size: 13px; }
+.ev .kind { font-family: var(--data); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; padding: 1px 7px; border-radius: 999px; }
+.k-earnings { color: var(--accent); background: var(--accent-soft); }
+.k-ex { color: var(--down); background: rgba(185,58,46,.10); }
+.k-pay { color: var(--up); background: rgba(27,127,84,.11); }
+.k-buy { color: var(--gold); background: var(--gold-soft); }
+.k-auto { color: var(--muted); background: rgba(90,101,119,.12); }
+.ev .tx { font-size: 13.5px; margin: 2px 0 0; color: var(--ink); }
+.ev .tx small { color: var(--muted); font-size: 12px; }
+.ev .est { font-family: var(--data); font-size: 10px; color: var(--muted); border: 1px dashed var(--rule); border-radius: 999px; padding: 0 6px; }
+.ev .tx a { font-size: 12px; }
+.ev .foot { font-size: 12px; color: var(--muted); margin: 0; border-top: 1px solid var(--rule); padding-top: 10px; }
+@media (max-width: 960px) {
+  .cols { grid-template-columns: 1fr; }
+  .ev { position: static; max-height: none; }
+}
+
+@media (max-width: 720px) {
+  .lead { grid-template-columns: 1fr; }
+  .aside { border-left: 0; padding-left: 0; border-top: 1px solid var(--rule); padding-top: 12px; }
+  .mast { grid-template-columns: auto 1fr; }
+  .hud { grid-column: 1 / -1; align-items: flex-start; text-align: left; }
+}
+@media (prefers-reduced-motion: no-preference) { .idea { transition: border-color .2s; } .idea:hover { border-color: var(--accent); } }
+</style>
+
+<div class="wrap page">
+  <header class="mast">
+    <div class="bot" aria-hidden="true"><i class="a"></i><i class="h"></i><i class="v"></i><i class="b"></i></div>
+    <div>
+      <p class="kicker"><a href="./" style="color:inherit;text-decoration:none">← E.L.L.O.N</a> · R-02 · Analista de mercados</p>
+      <h1>Sala de Mercados</h1>
+      <div class="edition" aria-live="polite"><span>Edição <b id="ed">—</b></span><span id="nx">Nova edição às segundas, 7h23</span></div>
+    </div>
+    <div class="hud" aria-live="off">
+      <div class="hclock" id="hclock"></div>
+      <div class="hmotto"><b>E.L.L.O.N</b> · Electronic Living Learning Orbital Nexus</div>
+    </div>
+  </header>
+
+  <div class="cols">
+    <main class="wrap" id="main">
+      <div class="empty" id="empty">A primeira edição do R-02 aparece aqui: resumo da semana, temas, oportunidades para estudar e notícias da tua carteira.</div>
+    </main>
+    <aside class="ev" id="ev" aria-labelledby="evh">
+      <div><h2 id="evh">Próximos eventos</h2><p class="sub" id="evsub">Resultados, dividendos e as tuas compras</p></div>
+      <div class="filt" id="evf" role="group" aria-label="Filtrar eventos"></div>
+      <div id="evl"></div>
+      <p class="foot">Ex-dividendo: tens de ter a ação <b>antes</b> deste dia para receberes. Datas marcadas «prevista» ainda não foram confirmadas pela empresa. O R-02 atualiza esta lista às segundas.</p>
+    </aside>
+  </div>
+
+  <p class="disc">Informação tirada de fontes públicas para estudares. Não são recomendações de compra nem aconselhamento financeiro; confirma sempre antes de investir.</p>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var $ = function (id) { return document.getElementById(id); };
+  function el(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
+  function when(iso) {
+    try { return new Intl.DateTimeFormat("pt-PT", { timeZone: "Europe/Lisbon", day: "2-digit", month: "long", year: "numeric" }).format(new Date(iso)); } catch (e) { return ""; }
+  }
+  function link(s) {
+    if (!s || !/^https:\/\//.test(s.url || "")) return null;
+    var a = el("a", null, s.title || "fonte"); a.href = s.url; a.target = "_blank"; a.rel = "noopener"; return a;
+  }
+  var editions = [], current = null;
+
+  function render() {
+    var main = $("main"); main.innerHTML = "";
+    var d = current;
+    if (!d) { main.appendChild(el("div", "empty", "A primeira edição do R-02 aparece aqui: resumo da semana, temas, oportunidades para estudar e notícias da tua carteira.")); return; }
+    $("ed").textContent = when(d.asOf);
+    if (d.next) $("nx").textContent = "Próxima edição: " + d.next;
+
+    var themes = (d.themes || []).filter(function (t) { return t.t !== "Na tua carteira"; });
+    var mine = (d.themes || []).filter(function (t) { return t.t === "Na tua carteira"; });
+
+    /* manchete */
+    var lead = el("section", "lead");
+    var l1 = el("div"); l1.appendChild(el("p", "kicker", "A semana")); l1.appendChild(el("p", "sum", d.summary || ""));
+    lead.appendChild(l1);
+    var aside = el("div", "aside");
+    aside.appendChild(el("p", "kicker", "Na tua carteira"));
+    if (mine.length || (d.portfolio || []).length) {
+      var ul = el("ul");
+      mine.forEach(function (t) { ul.appendChild(el("li", null, t.txt)); });
+      (d.portfolio || []).forEach(function (p) { var li = el("li"); li.appendChild(el("b", null, p.ticker + " ")); li.appendChild(document.createTextNode(p.note)); ul.appendChild(li); });
+      aside.appendChild(ul);
+    } else aside.appendChild(el("p", null, "Nada de especial sobre as tuas posições nesta edição."));
+    lead.appendChild(aside);
+    main.appendChild(lead);
+
+    /* temas */
+    if (themes.length) {
+      var s1 = el("section", "sec"); var h1 = el("div", "sechead"); h1.appendChild(el("h2", null, "Temas da semana")); s1.appendChild(h1);
+      var tg = el("div", "themes");
+      themes.forEach(function (t) { var b = el("article", "theme"); b.appendChild(el("h3", null, t.t)); b.appendChild(el("p", null, t.txt)); tg.appendChild(b); });
+      s1.appendChild(tg); main.appendChild(s1);
+    }
+
+    /* oportunidades */
+    var s2 = el("section", "sec"); var h2 = el("div", "sechead"); h2.appendChild(el("h2", null, "Oportunidades para estudar"));
+    h2.appendChild(el("span", "note", (d.ideas || []).length + " ideias, cada uma com fontes e riscos")); s2.appendChild(h2);
+    var grid = el("div", "ideas");
+    (d.ideas || []).forEach(function (it) {
+      var c = el("article", "idea");
+      var top = el("div", "top"); top.appendChild(el("span", "tk", it.ticker)); top.appendChild(el("span", "mk", it.market || "")); c.appendChild(top);
+      c.appendChild(el("span", "nm", it.name));
+      if (it.tag) c.appendChild(el("span", "chip", it.tag));
+      c.appendChild(el("p", null, it.thesis || ""));
+      if (it.risks) c.appendChild(el("p", "risk", it.risks));
+      var src = el("div", "src"); (it.sources || []).forEach(function (s) { var a = link(s); if (a) src.appendChild(a); }); c.appendChild(src);
+      grid.appendChild(c);
+    });
+    s2.appendChild(grid); main.appendChild(s2);
+
+    /* fontes e arquivo */
+    var s3 = el("section", "sec"); var h3 = el("div", "sechead"); h3.appendChild(el("h2", null, "Fontes desta edição")); s3.appendChild(h3);
+    var ol = el("ul", "sources"); (d.sources || []).forEach(function (s) { var a = link(s); if (a) { var li = el("li"); li.appendChild(a); ol.appendChild(li); } }); s3.appendChild(ol);
+    main.appendChild(s3);
+
+    if (editions.length > 1) {
+      var s4 = el("section", "sec"); var h4 = el("div", "sechead"); h4.appendChild(el("h2", null, "Arquivo")); h4.appendChild(el("span", "note", "Edições anteriores, para veres se as ideias resultaram")); s4.appendChild(h4);
+      var ar = el("div", "archive");
+      editions.forEach(function (e) {
+        var b = el("button", null, when(e.asOf)); b.type = "button"; b.setAttribute("aria-pressed", e === current ? "true" : "false");
+        b.addEventListener("click", function () { current = e; render(); window.scrollTo({ top: 0, behavior: "smooth" }); });
+        ar.appendChild(b);
+      });
+      s4.appendChild(ar); main.appendChild(s4);
+    }
+  }
+
+
+  /* ---------- próximos eventos ---------- */
+  var KIND = { earnings: "Resultados", ex: "Ex-dividendo", pay: "Pagamento", buy: "Compra", auto: "Automático" };
+  var FILTERS = [["all", "Tudo"], ["earnings", "Resultados"], ["div", "Dividendos"], ["buy", "Compras"]];
+  var evFilter = "all";
+  try { evFilter = localStorage.getItem("mercados-evf") || "all"; } catch (e) {}
+  /* reserva, caso a base de dados ainda não responda; o R-02 substitui com a versão atual */
+  var EV_SEED = { asOf: "2026-10-25", events: [
+    { d: "2026-10-28", t: "BCP", k: "earnings", txt: "Resultados dos 9 meses, às 17h (Lisboa). Conferência com analistas a 29/10 às 15h.", src: { title: "Millennium bcp · eventos", url: "https://ind.millenniumbcp.pt/pt/Institucional/investidores/Pages/Eventos.aspx" } },
+    { d: "2026-10-29", t: "VALE", k: "earnings", txt: "Resultados do 3.º trimestre depois do fecho. Conferência a 30/10, 11h de Brasília.", src: { title: "Vale · 6-K na SEC", url: "https://www.sec.gov/Archives/edgar/data/0000917851/000129281426004828/vale20261001_6k.htm" } },
+    { d: "2026-10-30", t: "O", k: "ex", txt: "Dividendo mensal de 0,2715 $ por ação. Pago a 13/11.", src: { title: "Realty Income · comunicado", url: "https://www.prnewswire.com/news-releases/realty-income-announces-676th-consecutive-common-stock-monthly-dividend-302907388.html" } },
+    { d: "2026-11-02", t: "O", k: "earnings", txt: "Resultados do 3.º trimestre depois do fecho de Nova Iorque; chamada às 22h (Lisboa).", src: { title: "Realty Income · data dos resultados", url: "https://finviz.com/news/397989/realty-income-announces-third-quarter-2026-earnings-release-date" } },
+    { d: "2026-11-03", t: "WTRG", k: "earnings", txt: "Resultados do 3.º trimestre depois do fecho; chamada a 4/11, 11h de Nova Iorque.", src: { title: "Essential Utilities · resultados", url: "https://www.stocktitan.net/news/WTRG/essential-utilities-to-report-financial-results-for-q3-e4t8vos5blgt.html" } },
+    { d: "2026-11-10", t: "WTRG", k: "ex", txt: "Dividendo de 0,3606 $ por ação. Pago a 1/12.", src: { title: "Essential Utilities · dividendo", url: "https://www.stocktitan.net/news/WTRG/essential-utilities-declares-december-2026-tmt6zewb1meo.html" } },
+    { d: "2026-11-13", t: "O", k: "pay", txt: "Pagamento do dividendo de 0,2715 $ por ação." },
+    { d: "2026-11-18", t: "NVDA", k: "earnings", est: true, txt: "Resultados do 3.º trimestre fiscal de 2027, depois do fecho (22h em Lisboa).", src: { title: "MarketBeat · data estimada", url: "https://www.marketbeat.com/earnings/reports/2026-11-18-nvidia-co-stock/" } },
+    { d: "2026-11-27", t: "NEE", k: "ex", txt: "Dividendo de 0,6232 $ por ação. Pago a 15/12.", src: { title: "NextEra Energy · dividendo", url: "https://www.investor.nexteraenergy.com/news-and-events/news-releases/2026/10-22-2026-195230923" } },
+    { d: "2026-12-01", t: "WTRG", k: "pay", txt: "Pagamento do dividendo de 0,3606 $ por ação." },
+    { d: "2026-12-15", t: "NEE", k: "pay", txt: "Pagamento do dividendo de 0,6232 $ por ação." },
+    { d: "2027-02-24", t: "BCP", k: "earnings", txt: "Resultados anuais de 2026, às 17h (Lisboa).", src: { title: "Millennium bcp · eventos", url: "https://ind.millenniumbcp.pt/pt/Institucional/investidores/Pages/Eventos.aspx" } }
+  ] };
+  var evDoc = null;
+
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function lisbonToday() {
+    try { return new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Lisbon", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date()); }
+    catch (e) { var d = new Date(); return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  }
+  /* as compras do plano, iguais à Agenda das Finanças */
+  function planEvents(from, months) {
+    var out = [], y = +from.slice(0, 4), m = +from.slice(5, 7);
+    for (var i = 0; i < months; i++) {
+      var ym = y * 12 + (m - 1), yy = Math.floor(ym / 12), mm = ym % 12 + 1, base = yy + "-" + pad(mm);
+      var wd = new Date(Date.UTC(yy, mm - 1, 20)).getUTCDay();
+      var wk = wd === 6 ? " Calha a um sábado: compra na segunda, dia 22." : wd === 0 ? " Calha a um domingo: compra na segunda, dia 21." : "";
+      var old = ym < 2027 * 12;
+      out.push({ d: base + "-05", t: "PPR", k: "auto", txt: "Débito automático de 25 € no PPR." });
+      out.push({ d: base + "-20", t: "O", k: "buy", txt: "5 ações da Realty Income · Trading 212." + wk });
+      out.push({ d: base + "-20", t: "VUAA", k: "buy", txt: "1 unidade do S&P 500 · " + (old ? "XTB, linha em dólares." : "Trading 212, Xetra, em euros.") });
+      if ((ym - (2026 * 12 + 10)) % 2 === 0) out.push({ d: base + "-20", t: "VHYL", k: "buy", txt: "1 unidade (≈82 €) · XTB, Euronext Amsterdam, em euros. Também evita a taxa de inatividade." });
+      if (!old) out.push({ d: base + "-20", t: "USDV", k: "buy", txt: "Se os dividendos juntos na Trading 212 já chegarem ao preço, compra 1 unidade (Xetra, em euros)." });
+      m++;
+    }
+    return out;
+  }
+
+  function renderEvents() {
+    var today = lisbonToday();
+    var doc = evDoc && evDoc.events ? evDoc : EV_SEED;
+    var all = (doc.events || []).concat(planEvents(today.slice(0, 7), 4))
+      .filter(function (e) { return e && e.d && e.d >= today && KIND[e.k]; })
+      .sort(function (a, b) { return a.d < b.d ? -1 : a.d > b.d ? 1 : (a.k === "buy") - (b.k === "buy"); });
+    var horizon = (function () { var d = new Date(today + "T12:00:00Z"); d.setUTCDate(d.getUTCDate() + 100); return d.toISOString().slice(0, 10); })();
+    all = all.filter(function (e) { return e.d <= horizon || e.k !== "buy" && e.k !== "auto"; });
+    var shown = all.filter(function (e) {
+      return evFilter === "all" || (evFilter === "div" ? (e.k === "ex" || e.k === "pay") : evFilter === "buy" ? (e.k === "buy" || e.k === "auto") : e.k === evFilter);
+    });
+
+    var f = $("evf"); f.innerHTML = "";
+    FILTERS.forEach(function (x) {
+      var b = el("button", null, x[1]); b.type = "button"; b.setAttribute("aria-pressed", evFilter === x[0] ? "true" : "false");
+      b.addEventListener("click", function () { evFilter = x[0]; try { localStorage.setItem("mercados-evf", evFilter); } catch (e) {} renderEvents(); });
+      f.appendChild(b);
+    });
+    $("evsub").textContent = "Atualizado a " + when(doc.asOf + "T12:00:00Z");
+
+    var box = $("evl"); box.innerHTML = "";
+    if (!shown.length) { box.appendChild(el("p", "sub", "Nada marcado para os próximos meses.")); return; }
+    var monthFmt, dayFmt;
+    try { monthFmt = new Intl.DateTimeFormat("pt-PT", { month: "long", year: "numeric", timeZone: "UTC" }); dayFmt = new Intl.DateTimeFormat("pt-PT", { weekday: "short", timeZone: "UTC" }); } catch (e) {}
+    var lastM = "", ol = null;
+    shown.forEach(function (e) {
+      var dt = new Date(e.d + "T12:00:00Z"), mk = e.d.slice(0, 7);
+      if (mk !== lastM) {
+        lastM = mk; box.appendChild(el("div", "mon", monthFmt ? monthFmt.format(dt) : mk));
+        ol = el("ol"); box.appendChild(ol);
+      }
+      var li = el("li", e.d === today ? "today" : null);
+      var dd = el("div", "dd"); dd.appendChild(el("b", null, e.d.slice(8, 10))); dd.appendChild(el("span", null, dayFmt ? dayFmt.format(dt).replace(".", "").slice(0, 3) : "")); li.appendChild(dd);
+      var body = el("div");
+      var ln = el("div", "ln"); ln.appendChild(el("span", "tkr", e.t)); ln.appendChild(el("span", "kind k-" + e.k, KIND[e.k]));
+      if (e.est) ln.appendChild(el("span", "est", "prevista"));
+      body.appendChild(ln);
+      var tx = el("p", "tx", e.txt || "");
+      var a = link(e.src); if (a) { tx.appendChild(document.createTextNode(" ")); tx.appendChild(a); }
+      body.appendChild(tx); li.appendChild(body); ol.appendChild(li);
+    });
+  }
+
+  /* edições guardadas pelo R-02 na base de dados desta página */
+  /* site público: as edições e os eventos vêm dos ficheiros data/edicoes.json e data/eventos.json */
+  function start() {
+    function get(u) { return fetch(u + "?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }, function () { return null; }); }
+    function pull() {
+      get("data/edicoes.json").then(function (list) {
+        if (!Array.isArray(list)) return;
+        var keep = current && current.asOf;
+        editions = list.filter(Boolean).sort(function (a, b) { return a.asOf < b.asOf ? 1 : -1; }).slice(0, 30);
+        current = editions.filter(function (e) { return e.asOf === keep; })[0] || editions[0] || null;
+        render();
+      });
+      get("data/eventos.json").then(function (v) { if (v && v.events) { evDoc = v; renderEvents(); } });
+    }
+    pull(); setInterval(function () { if (!document.hidden) pull(); }, 600000);
+  }
+
+  function hud() {
+    var dias = ["DOMINGO", "SEGUNDA", "TERÇA", "QUARTA", "QUINTA", "SEXTA", "SÁBADO"], P = {};
+    try { new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Lisbon", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hourCycle: "h23", weekday: "short" }).formatToParts(new Date()).forEach(function (x) { P[x.type] = x.value; }); }
+    catch (e) { var d = new Date(); P = { day: pad(d.getDate()), month: pad(d.getMonth() + 1), hour: pad(d.getHours()), minute: pad(d.getMinutes()), weekday: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][d.getDay()] }; }
+    var w = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(P.weekday);
+    $("hclock").textContent = dias[w < 0 ? 0 : w] + ", " + P.day + "/" + P.month + ", " + P.hour + ":" + P.minute;
+  }
+  hud(); setInterval(hud, 15000);
+  render(); renderEvents(); start();
+})();
+</script>
+
+</body>
+</html>
