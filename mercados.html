@@ -216,7 +216,8 @@ h2 { font-family: var(--display); font-weight: 700; font-size: 19px; margin: 0; 
       (d.portfolio || []).forEach(function (p) { var li = el("li"); li.appendChild(el("b", null, p.ticker + " ")); li.appendChild(document.createTextNode(p.note)); ul.appendChild(li); });
       aside.appendChild(ul);
     } else aside.appendChild(el("p", null, "Nada de especial sobre as tuas posições nesta edição."));
-    lead.appendChild(aside);
+    /* site público: a caixa «Na tua carteira» só aparece na página do André no Claude */
+    lead.style.gridTemplateColumns = "1fr";
     main.appendChild(lead);
 
     /* temas */
