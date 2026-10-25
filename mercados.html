@@ -112,6 +112,7 @@ h2 { font-family: var(--display); font-weight: 700; font-size: 19px; margin: 0; 
 .cols > .wrap { max-width: none; margin: 0; }
 .ev { position: sticky; top: 16px; max-height: calc(100vh - 32px); overflow: auto; background: var(--sheet); border: 1px solid var(--rule); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 14px; overscroll-behavior: contain; }
 .ev h2 { font-size: 17px; }
+.ev .evnote { font-size: 12px; margin: 6px 0 0; padding: 6px 10px; border-radius: 8px; background: var(--gold-soft); color: var(--ink); }
 .ev .sub { font-size: 12px; color: var(--muted); margin: 2px 0 0; }
 .ev .filt { display: flex; flex-wrap: wrap; gap: 6px; }
 .ev .filt button { font: 600 11px var(--data); color: var(--muted); background: transparent; border: 1px solid var(--rule); border-radius: 999px; padding: 4px 10px; cursor: pointer; min-height: 30px; }
@@ -169,7 +170,7 @@ h2 { font-family: var(--display); font-weight: 700; font-size: 19px; margin: 0; 
       <div class="empty" id="empty">A primeira edição do R-02 aparece aqui: resumo da semana, temas, oportunidades para estudar e notícias da tua carteira.</div>
     </main>
     <aside class="ev" id="ev" aria-labelledby="evh">
-      <div><h2 id="evh">Próximos eventos</h2><p class="sub" id="evsub">Resultados, dividendos e as tuas compras</p></div>
+      <div><h2 id="evh">Próximos eventos</h2><p class="sub" id="evsub">Resultados, dividendos e as tuas compras</p><p class="evnote">Só aparecem eventos dos ativos da carteira do André.</p></div>
       <div class="filt" id="evf" role="group" aria-label="Filtrar eventos"></div>
       <div id="evl"></div>
       <p class="foot">Ex-dividendo: tens de ter a ação <b>antes</b> deste dia para receberes. Datas marcadas «prevista» ainda não foram confirmadas pela empresa. O R-02 atualiza esta lista às segundas.</p>
