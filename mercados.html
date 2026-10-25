@@ -170,7 +170,7 @@ h2 { font-family: var(--display); font-weight: 700; font-size: 19px; margin: 0; 
       <div class="empty" id="empty">A primeira edição do R-02 aparece aqui: resumo da semana, temas, oportunidades para estudar e notícias da tua carteira.</div>
     </main>
     <aside class="ev" id="ev" aria-labelledby="evh">
-      <div><h2 id="evh">Próximos eventos</h2><p class="sub" id="evsub">Resultados, dividendos e as tuas compras</p><p class="evnote">Só aparecem eventos dos ativos da carteira do André.</p></div>
+      <div><h2 id="evh">Próximos eventos</h2><p class="sub" id="evsub">Resultados, dividendos e as tuas compras</p><p class="evnote">Só aparecem eventos dos ativos desta carteira.</p></div>
       <div class="filt" id="evf" role="group" aria-label="Filtrar eventos"></div>
       <div id="evl"></div>
       <p class="foot">Ex-dividendo: tens de ter a ação <b>antes</b> deste dia para receberes. Datas marcadas «prevista» ainda não foram confirmadas pela empresa. O R-02 atualiza esta lista às segundas.</p>
@@ -216,7 +216,7 @@ h2 { font-family: var(--display); font-weight: 700; font-size: 19px; margin: 0; 
       (d.portfolio || []).forEach(function (p) { var li = el("li"); li.appendChild(el("b", null, p.ticker + " ")); li.appendChild(document.createTextNode(p.note)); ul.appendChild(li); });
       aside.appendChild(ul);
     } else aside.appendChild(el("p", null, "Nada de especial sobre as tuas posições nesta edição."));
-    /* site público: a caixa «Na tua carteira» só aparece na página do André no Claude */
+    /* site público: a caixa «Na tua carteira» só aparece na página privada */
     lead.style.gridTemplateColumns = "1fr";
     main.appendChild(lead);
 
