@@ -1,104 +1,156 @@
 {
- "asOf": "2026-10-25",
+ "asOf": "2026-10-26",
  "events": [
   {
    "d": "2026-10-28",
-   "t": "BCP",
    "k": "earnings",
-   "txt": "Resultados dos 9 meses, às 17h (Lisboa). Conferência com analistas a 29/10 às 15h.",
    "src": {
     "title": "Millennium bcp · eventos",
     "url": "https://ind.millenniumbcp.pt/pt/Institucional/investidores/Pages/Eventos.aspx"
-   }
+   },
+   "t": "BCP",
+   "txt": "Resultados dos 9 meses, às 17h (Lisboa). Conferência com analistas a 29/10 às 15h."
   },
   {
    "d": "2026-10-30",
-   "t": "O",
    "k": "ex",
-   "txt": "Dividendo mensal de 0,2715 $ por ação. Pago a 13/11.",
    "src": {
     "title": "Realty Income · comunicado",
     "url": "https://www.prnewswire.com/news-releases/realty-income-announces-676th-consecutive-common-stock-monthly-dividend-302907388.html"
-   }
+   },
+   "t": "O",
+   "txt": "Dividendo mensal de 0,2715 $ por ação. Pago a 13/11."
   },
   {
    "d": "2026-11-02",
-   "t": "O",
    "k": "earnings",
-   "txt": "Resultados do 3.º trimestre depois do fecho de Nova Iorque; chamada às 22h (Lisboa).",
    "src": {
     "title": "Realty Income · data dos resultados",
     "url": "https://finviz.com/news/397989/realty-income-announces-third-quarter-2026-earnings-release-date"
-   }
+   },
+   "t": "O",
+   "txt": "Resultados do 3.º trimestre depois do fecho de Nova Iorque; chamada às 22h (Lisboa)."
   },
   {
    "d": "2026-11-03",
-   "t": "WTRG",
    "k": "earnings",
-   "txt": "Resultados do 3.º trimestre depois do fecho; chamada a 4/11, 11h de Nova Iorque.",
    "src": {
     "title": "Essential Utilities · resultados",
-    "url": "https://www.stocktitan.net/news/WTRG/essential-utilities-to-report-financial-results-for-q3-e4t8vos5blgt.html"
-   }
+    "url": "https://finviz.com/news/402734/essential-utilities-to-report-financial-results-for-q3-2026"
+   },
+   "t": "WTRG",
+   "txt": "Resultados do 3.º trimestre depois do fecho; chamada a 4/11, 11h de Nova Iorque (15h em Lisboa)."
   },
   {
    "d": "2026-11-10",
-   "t": "WTRG",
    "k": "ex",
-   "txt": "Dividendo de 0,3606 $ por ação. Pago a 1/12.",
    "src": {
     "title": "Essential Utilities · dividendo",
-    "url": "https://www.stocktitan.net/news/WTRG/essential-utilities-declares-december-2026-tmt6zewb1meo.html"
-   }
+    "url": "https://finviz.com/news/405624/essential-utilities-declares-december-2026-dividend"
+   },
+   "t": "WTRG",
+   "txt": "Dividendo de 0,3606 $ por ação. Pago a 1/12."
   },
   {
    "d": "2026-11-13",
-   "t": "O",
    "k": "pay",
+   "src": {
+    "title": "Realty Income · comunicado",
+    "url": "https://www.prnewswire.com/news-releases/realty-income-announces-676th-consecutive-common-stock-monthly-dividend-302907388.html"
+   },
+   "t": "O",
    "txt": "Pagamento do dividendo de 0,2715 $ por ação."
   },
   {
    "d": "2026-11-18",
-   "t": "NVDA",
-   "k": "earnings",
    "est": true,
-   "txt": "Resultados do 3.º trimestre fiscal de 2027, depois do fecho (22h em Lisboa).",
+   "k": "earnings",
    "src": {
     "title": "MarketBeat · data estimada",
-    "url": "https://www.marketbeat.com/earnings/reports/2026-11-18-nvidia-co-stock/"
-   }
+    "url": "https://www.marketbeat.com/stocks/NASDAQ/NVDA/earnings"
+   },
+   "t": "NVDA",
+   "txt": "Resultados do 3.º trimestre fiscal de 2027, depois do fecho (22h em Lisboa). Data ainda não confirmada pela NVIDIA."
   },
   {
    "d": "2026-11-27",
-   "t": "NEE",
    "k": "ex",
-   "txt": "Dividendo de 0,6232 $ por ação. Pago a 15/12.",
    "src": {
     "title": "NextEra Energy · dividendo",
     "url": "https://www.investor.nexteraenergy.com/news-and-events/news-releases/2026/10-22-2026-195230923"
-   }
+   },
+   "t": "NEE",
+   "txt": "Dividendo de 0,6232 $ por ação. Pago a 15/12."
   },
   {
    "d": "2026-12-01",
-   "t": "WTRG",
    "k": "pay",
+   "src": {
+    "title": "Essential Utilities · dividendo",
+    "url": "https://finviz.com/news/405624/essential-utilities-declares-december-2026-dividend"
+   },
+   "t": "WTRG",
    "txt": "Pagamento do dividendo de 0,3606 $ por ação."
   },
   {
    "d": "2026-12-15",
-   "t": "NEE",
    "k": "pay",
+   "src": {
+    "title": "NextEra Energy · dividendo",
+    "url": "https://www.investor.nexteraenergy.com/news-and-events/news-releases/2026/10-22-2026-195230923"
+   },
+   "t": "NEE",
    "txt": "Pagamento do dividendo de 0,6232 $ por ação."
   },
   {
+   "d": "2026-12-21",
+   "k": "ex",
+   "src": {
+    "title": "SSGA · calendário de dividendos 2026",
+    "url": "https://www.ssga.com/library-content/products/fund-docs/dividend-distributions/emea/2026-dividend-calender.pdf"
+   },
+   "t": "USDV",
+   "txt": "Distribuição trimestral; valor ainda por anunciar (anúncio a 14/12). Paga a 31/12."
+  },
+  {
+   "d": "2026-12-31",
+   "k": "pay",
+   "src": {
+    "title": "SSGA · calendário de dividendos 2026",
+    "url": "https://www.ssga.com/library-content/products/fund-docs/dividend-distributions/emea/2026-dividend-calender.pdf"
+   },
+   "t": "USDV",
+   "txt": "Pagamento da distribuição trimestral (valor ainda por anunciar)."
+  },
+  {
+   "d": "2027-01-06",
+   "k": "ex",
+   "src": {
+    "title": "Comcast · dividendo",
+    "url": "https://cmcsa.gcs-web.com/news-releases/news-release-details/comcast-declares-quarterly-dividend-57"
+   },
+   "t": "CMCSA",
+   "txt": "Dividendo de 0,33 $ por ação. Pago a 27/01."
+  },
+  {
+   "d": "2027-01-27",
+   "k": "pay",
+   "src": {
+    "title": "Comcast · dividendo",
+    "url": "https://cmcsa.gcs-web.com/news-releases/news-release-details/comcast-declares-quarterly-dividend-57"
+   },
+   "t": "CMCSA",
+   "txt": "Pagamento do dividendo de 0,33 $ por ação."
+  },
+  {
    "d": "2027-02-24",
-   "t": "BCP",
    "k": "earnings",
-   "txt": "Resultados anuais de 2026, às 17h (Lisboa).",
    "src": {
     "title": "Millennium bcp · eventos",
     "url": "https://ind.millenniumbcp.pt/pt/Institucional/investidores/Pages/Eventos.aspx"
-   }
+   },
+   "t": "BCP",
+   "txt": "Resultados anuais de 2026, às 17h (Lisboa). Conferência com analistas a 25/02 às 15h."
   }
  ]
 }

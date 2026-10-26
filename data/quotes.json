@@ -1,6 +1,4 @@
 {
- "asOf": "2026-10-23T20:00:00Z",
- "fx": 1.12,
  "prices": {
   "BCP": {
    "cur": "EUR",
@@ -37,11 +35,6 @@
    "p": 147.49,
    "prev": 144.75
   },
-  "VALE": {
-   "cur": "USD",
-   "p": 12.4,
-   "prev": 12.2
-  },
   "VUAA": {
    "cur": "USD",
    "p": 148.2,
@@ -53,5 +46,7 @@
    "prev": 43.3
   }
  },
- "source": "stockanalysis.com (EUA e Londres) e Jornal de Negócios (Lisboa); fecho de 23/10/2026"
+ "fx": 1.1209,
+ "asOf": "2026-10-23T20:00:00Z",
+ "source": "stockanalysis.com (EUA e Londres), Jornal de Negócios (Lisboa) e Investing.com (EUR/USD); fecho de 23/10/2026"
 }
