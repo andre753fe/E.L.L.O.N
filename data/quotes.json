@@ -2,51 +2,51 @@
  "prices": {
   "BCP": {
    "cur": "EUR",
-   "p": 1.0595,
-   "prev": 1.068
+   "p": 1.0775,
+   "prev": 1.0595
   },
   "CMCSA": {
    "cur": "USD",
-   "p": 22.69,
-   "prev": 22.84
+   "p": 22.34,
+   "prev": 22.69
   },
   "NEE": {
    "cur": "USD",
-   "p": 82.1,
-   "prev": 81.9
+   "p": 82.065,
+   "prev": 82.1
   },
   "NNE": {
    "cur": "USD",
-   "p": 12.16,
-   "prev": 12.53
+   "p": 12.01,
+   "prev": 12.16
   },
   "NVDA": {
    "cur": "USD",
-   "p": 210.96,
-   "prev": 212.21
+   "p": 217.04,
+   "prev": 210.96
   },
   "O": {
    "cur": "USD",
-   "p": 56.89,
-   "prev": 57.06
+   "p": 57.055,
+   "prev": 56.89
   },
   "SPCX": {
    "cur": "USD",
-   "p": 147.49,
-   "prev": 144.75
+   "p": 148.591,
+   "prev": 147.49
   },
   "VUAA": {
    "cur": "USD",
-   "p": 148.2,
-   "prev": 148.3
+   "p": 148.56,
+   "prev": 148.2
   },
   "WTRG": {
    "cur": "USD",
-   "p": 43.11,
-   "prev": 43.3
+   "p": 42.62,
+   "prev": 43.11
   }
  },
- "fx": 1.1209,
- "asOf": "2026-10-23T20:00:00Z",
- "source": "stockanalysis.com (EUA e Londres), Jornal de Negócios (Lisboa) e Investing.com (EUR/USD); fecho de 23/10/2026"
+ "fx": 1.1187,
+ "asOf": "2026-10-26T14:52:52Z",
+ "source": "Yahoo Finance (atualização automática do site)"
 }
