@@ -1,0 +1,594 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//E.L.L.O.N//Agenda//PT
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:E.L.L.O.N · Mercados
+X-WR-TIMEZONE:Europe/Lisbon
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:ev-df686240b7f789fe@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20261028
+DTEND;VALUE=DATE:20261029
+SUMMARY:Resultados · Millennium bcp
+DESCRIPTION:Resultados dos 9 meses\, às 17h (Lisboa). Conferência com an
+ alistas a 29/10 às 15h.\nFonte: https://ind.millenniumbcp.pt/pt/Instituci
+ onal/investidores/Pages/Eventos.aspx
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Resultados · Millennium bcp
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-c4fedf118886d00f@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261031
+SUMMARY:Data ex-dividendo · Realty Income
+DESCRIPTION:Dividendo mensal de 0\,2715 $ por ação. Pago a 13/11.\nFonte
+ : https://www.prnewswire.com/news-releases/realty-income-announces-676th-c
+ onsecutive-common-stock-monthly-dividend-302907388.html
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Data ex-dividendo · Realty Income
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-3154af549cd7387b@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+SUMMARY:Resultados · Realty Income
+DESCRIPTION:Resultados do 3.º trimestre depois do fecho de Nova Iorque\; 
+ chamada às 22h (Lisboa).\nFonte: https://finviz.com/news/397989/realty-in
+ come-announces-third-quarter-2026-earnings-release-date
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Resultados · Realty Income
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-3fe41358fed0a609@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20261103
+DTEND;VALUE=DATE:20261104
+SUMMARY:Resultados · Essential Utilities
+DESCRIPTION:Resultados do 3.º trimestre depois do fecho\; chamada a 4/11\
+ , 11h de Nova Iorque (15h em Lisboa).\nFonte: https://finviz.com/news/4027
+ 34/essential-utilities-to-report-financial-results-for-q3-2026
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Resultados · Essential Utilities
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ppr-2026-11@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20261105
+DTEND;VALUE=DATE:20261106
+SUMMARY:PPR: débito automático de 25 €
+DESCRIPTION:Optimize PPR Agressivo · automático.
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:PPR: débito automático de 25 €
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-67aa78ef2a1147a5@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261111
+SUMMARY:Data ex-dividendo · Essential Utilities
+DESCRIPTION:Dividendo de 0\,3606 $ por ação. Pago a 1/12.\nFonte: https:
+ //finviz.com/news/405624/essential-utilities-declares-december-2026-divide
+ nd
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Data ex-dividendo · Essential Utilities
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-accd48bf0ca9f197@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261114
+SUMMARY:Pagamento de dividendo · Realty Income
+DESCRIPTION:Pagamento do dividendo de 0\,2715 $ por ação.\nFonte: https:
+ //www.prnewswire.com/news-releases/realty-income-announces-676th-consecuti
+ ve-common-stock-monthly-dividend-302907388.html
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Pagamento de dividendo · Realty Income
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-e2adf0e3a66d9c30@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20261118
+DTEND;VALUE=DATE:20261119
+SUMMARY:Resultados · Nvidia
+DESCRIPTION:Resultados do 3.º trimestre fiscal de 2027\, depois do fecho 
+ (22h em Lisboa). Data ainda não confirmada pela NVIDIA.\nFonte: https://w
+ ww.marketbeat.com/stocks/NASDAQ/NVDA/earnings
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Resultados · Nvidia
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:compras-2026-11@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261121
+SUMMARY:Compras do mês
+DESCRIPTION:• 5 ações da Realty Income · Trading 212\n• 1 unidade d
+ o S&P 500 (VUAA) · XTB\, linha em dólares\n• 1 unidade de VHYL (≈82 
+ €) · XTB\, Euronext Amsterdam\, em euros
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Compras do mês
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-8c48c86f58736276@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20261127
+DTEND;VALUE=DATE:20261128
+SUMMARY:Data ex-dividendo · NextEra Energy
+DESCRIPTION:Dividendo de 0\,6232 $ por ação. Pago a 15/12.\nFonte: https
+ ://www.investor.nexteraenergy.com/news-and-events/news-releases/2026/10-22
+ -2026-195230923
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Data ex-dividendo · NextEra Energy
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-4d44e457864f6c34@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+SUMMARY:Pagamento de dividendo · Essential Utilities
+DESCRIPTION:Pagamento do dividendo de 0\,3606 $ por ação.\nFonte: https:
+ //finviz.com/news/405624/essential-utilities-declares-december-2026-divide
+ nd
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Pagamento de dividendo · Essential Utilities
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ppr-2026-12@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20261205
+DTEND;VALUE=DATE:20261206
+SUMMARY:PPR: débito automático de 25 €
+DESCRIPTION:Optimize PPR Agressivo · automático.
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:PPR: débito automático de 25 €
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-c2558c48c78f7978@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20261215
+DTEND;VALUE=DATE:20261216
+SUMMARY:Pagamento de dividendo · NextEra Energy
+DESCRIPTION:Pagamento do dividendo de 0\,6232 $ por ação.\nFonte: https:
+ //www.investor.nexteraenergy.com/news-and-events/news-releases/2026/10-22-
+ 2026-195230923
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Pagamento de dividendo · NextEra Energy
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:compras-2026-12@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20261221
+DTEND;VALUE=DATE:20261222
+SUMMARY:Compras do mês
+DESCRIPTION:• 5 ações da Realty Income · Trading 212\n• 1 unidade d
+ o S&P 500 (VUAA) · XTB\, linha em dólares\nO dia 20 calha ao fim de sema
+ na: compra na segunda\, dia 21.
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Compras do mês
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-e467df47140986d1@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20261221
+DTEND;VALUE=DATE:20261222
+SUMMARY:Data ex-dividendo · Dividend Aristocrats (USDV)
+DESCRIPTION:Distribuição trimestral\; valor ainda por anunciar (anúncio
+  a 14/12). Paga a 31/12.\nFonte: https://www.ssga.com/library-content/prod
+ ucts/fund-docs/dividend-distributions/emea/2026-dividend-calender.pdf
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Data ex-dividendo · Dividend Aristocrats (USDV)
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-d29bda53688d6eaf@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+SUMMARY:Pagamento de dividendo · Dividend Aristocrats (USDV)
+DESCRIPTION:Pagamento da distribuição trimestral (valor ainda por anunci
+ ar).\nFonte: https://www.ssga.com/library-content/products/fund-docs/divid
+ end-distributions/emea/2026-dividend-calender.pdf
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Pagamento de dividendo · Dividend Aristocrats (USDV)
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ppr-2027-01@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20270105
+DTEND;VALUE=DATE:20270106
+SUMMARY:PPR: débito automático de 25 €
+DESCRIPTION:Optimize PPR Agressivo · automático.
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:PPR: débito automático de 25 €
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-9661c81d3b0b2faf@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20270106
+DTEND;VALUE=DATE:20270107
+SUMMARY:Data ex-dividendo · Comcast
+DESCRIPTION:Dividendo de 0\,33 $ por ação. Pago a 27/01.\nFonte: https:/
+ /cmcsa.gcs-web.com/news-releases/news-release-details/comcast-declares-qua
+ rterly-dividend-57
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Data ex-dividendo · Comcast
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:compras-2027-01@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20270120
+DTEND;VALUE=DATE:20270121
+SUMMARY:Compras do mês
+DESCRIPTION:• 5 ações da Realty Income · Trading 212\n• 1 unidade d
+ o S&P 500 (VUAA) · Trading 212\, Xetra\, em euros\n• 1 unidade de VHYL 
+ (≈82 €) · XTB\, Euronext Amsterdam\, em euros\n• USDV: se os divide
+ ndos juntos na Trading 212 já chegarem ao preço\, 1 unidade (Xetra\, em 
+ euros)
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Compras do mês
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-9f893c2e7d8571bc@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20270127
+DTEND;VALUE=DATE:20270128
+SUMMARY:Pagamento de dividendo · Comcast
+DESCRIPTION:Pagamento do dividendo de 0\,33 $ por ação.\nFonte: https://
+ cmcsa.gcs-web.com/news-releases/news-release-details/comcast-declares-quar
+ terly-dividend-57
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Pagamento de dividendo · Comcast
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ppr-2027-02@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20270205
+DTEND;VALUE=DATE:20270206
+SUMMARY:PPR: débito automático de 25 €
+DESCRIPTION:Optimize PPR Agressivo · automático.
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:PPR: débito automático de 25 €
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:compras-2027-02@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20270222
+DTEND;VALUE=DATE:20270223
+SUMMARY:Compras do mês
+DESCRIPTION:• 5 ações da Realty Income · Trading 212\n• 1 unidade d
+ o S&P 500 (VUAA) · Trading 212\, Xetra\, em euros\n• USDV: se os divide
+ ndos juntos na Trading 212 já chegarem ao preço\, 1 unidade (Xetra\, em 
+ euros)\nO dia 20 calha ao fim de semana: compra na segunda\, dia 22.
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Compras do mês
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-500debd5f64b773b@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20270224
+DTEND;VALUE=DATE:20270225
+SUMMARY:Resultados · Millennium bcp
+DESCRIPTION:Resultados anuais de 2026\, às 17h (Lisboa). Conferência com
+  analistas a 25/02 às 15h.\nFonte: https://ind.millenniumbcp.pt/pt/Instit
+ ucional/investidores/Pages/Eventos.aspx
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Resultados · Millennium bcp
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ppr-2027-03@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20270305
+DTEND;VALUE=DATE:20270306
+SUMMARY:PPR: débito automático de 25 €
+DESCRIPTION:Optimize PPR Agressivo · automático.
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:PPR: débito automático de 25 €
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:compras-2027-03@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20270322
+DTEND;VALUE=DATE:20270323
+SUMMARY:Compras do mês
+DESCRIPTION:• 5 ações da Realty Income · Trading 212\n• 1 unidade d
+ o S&P 500 (VUAA) · Trading 212\, Xetra\, em euros\n• 1 unidade de VHYL 
+ (≈82 €) · XTB\, Euronext Amsterdam\, em euros\n• USDV: se os divide
+ ndos juntos na Trading 212 já chegarem ao preço\, 1 unidade (Xetra\, em 
+ euros)\nO dia 20 calha ao fim de semana: compra na segunda\, dia 22.
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Compras do mês
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ppr-2027-04@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20270405
+DTEND;VALUE=DATE:20270406
+SUMMARY:PPR: débito automático de 25 €
+DESCRIPTION:Optimize PPR Agressivo · automático.
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:PPR: débito automático de 25 €
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:compras-2027-04@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20270420
+DTEND;VALUE=DATE:20270421
+SUMMARY:Compras do mês
+DESCRIPTION:• 5 ações da Realty Income · Trading 212\n• 1 unidade d
+ o S&P 500 (VUAA) · Trading 212\, Xetra\, em euros\n• USDV: se os divide
+ ndos juntos na Trading 212 já chegarem ao preço\, 1 unidade (Xetra\, em 
+ euros)
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Compras do mês
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ppr-2027-05@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20270505
+DTEND;VALUE=DATE:20270506
+SUMMARY:PPR: débito automático de 25 €
+DESCRIPTION:Optimize PPR Agressivo · automático.
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:PPR: débito automático de 25 €
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:compras-2027-05@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20270520
+DTEND;VALUE=DATE:20270521
+SUMMARY:Compras do mês
+DESCRIPTION:• 5 ações da Realty Income · Trading 212\n• 1 unidade d
+ o S&P 500 (VUAA) · Trading 212\, Xetra\, em euros\n• 1 unidade de VHYL 
+ (≈82 €) · XTB\, Euronext Amsterdam\, em euros\n• USDV: se os divide
+ ndos juntos na Trading 212 já chegarem ao preço\, 1 unidade (Xetra\, em 
+ euros)
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Compras do mês
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ppr-2027-06@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20270605
+DTEND;VALUE=DATE:20270606
+SUMMARY:PPR: débito automático de 25 €
+DESCRIPTION:Optimize PPR Agressivo · automático.
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:PPR: débito automático de 25 €
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:compras-2027-06@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20270621
+DTEND;VALUE=DATE:20270622
+SUMMARY:Compras do mês
+DESCRIPTION:• 5 ações da Realty Income · Trading 212\n• 1 unidade d
+ o S&P 500 (VUAA) · Trading 212\, Xetra\, em euros\n• USDV: se os divide
+ ndos juntos na Trading 212 já chegarem ao preço\, 1 unidade (Xetra\, em 
+ euros)\nO dia 20 calha ao fim de semana: compra na segunda\, dia 21.
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Compras do mês
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ppr-2027-07@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20270705
+DTEND;VALUE=DATE:20270706
+SUMMARY:PPR: débito automático de 25 €
+DESCRIPTION:Optimize PPR Agressivo · automático.
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:PPR: débito automático de 25 €
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:compras-2027-07@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20270720
+DTEND;VALUE=DATE:20270721
+SUMMARY:Compras do mês
+DESCRIPTION:• 5 ações da Realty Income · Trading 212\n• 1 unidade d
+ o S&P 500 (VUAA) · Trading 212\, Xetra\, em euros\n• 1 unidade de VHYL 
+ (≈82 €) · XTB\, Euronext Amsterdam\, em euros\n• USDV: se os divide
+ ndos juntos na Trading 212 já chegarem ao preço\, 1 unidade (Xetra\, em 
+ euros)
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Compras do mês
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ppr-2027-08@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20270805
+DTEND;VALUE=DATE:20270806
+SUMMARY:PPR: débito automático de 25 €
+DESCRIPTION:Optimize PPR Agressivo · automático.
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:PPR: débito automático de 25 €
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:compras-2027-08@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20270820
+DTEND;VALUE=DATE:20270821
+SUMMARY:Compras do mês
+DESCRIPTION:• 5 ações da Realty Income · Trading 212\n• 1 unidade d
+ o S&P 500 (VUAA) · Trading 212\, Xetra\, em euros\n• USDV: se os divide
+ ndos juntos na Trading 212 já chegarem ao preço\, 1 unidade (Xetra\, em 
+ euros)
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Compras do mês
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ppr-2027-09@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20270905
+DTEND;VALUE=DATE:20270906
+SUMMARY:PPR: débito automático de 25 €
+DESCRIPTION:Optimize PPR Agressivo · automático.
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:PPR: débito automático de 25 €
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:compras-2027-09@ellon-nexus
+DTSTAMP:20261026T133347Z
+DTSTART;VALUE=DATE:20270920
+DTEND;VALUE=DATE:20270921
+SUMMARY:Compras do mês
+DESCRIPTION:• 5 ações da Realty Income · Trading 212\n• 1 unidade d
+ o S&P 500 (VUAA) · Trading 212\, Xetra\, em euros\n• 1 unidade de VHYL 
+ (≈82 €) · XTB\, Euronext Amsterdam\, em euros\n• USDV: se os divide
+ ndos juntos na Trading 212 já chegarem ao preço\, 1 unidade (Xetra\, em 
+ euros)
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Compras do mês
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+END:VCALENDAR
