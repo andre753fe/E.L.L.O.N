@@ -1,9 +1,9 @@
-# E.L.L.O.N · Visita
+# Sala de Mercados
 
-Site só de visualização do E.L.L.O.N: a galáxia de entrada, o escritório animado (percentagens de cada investimento) e a Sala de Mercados do R-02.
+Página pública só de leitura com a edição diária do R-02 (notícias, temas e oportunidades para estudar) e os próximos eventos.
 
-- `index.html` — entrada (galáxia com os astros Escritório e Mercados)
-- `escritorio.html` — escritório animado; lê `data/quotes.json`
-- `mercados.html` — Sala de Mercados; lê `data/edicoes.json` e `data/eventos.json`
+- `index.html` — Sala de Mercados; lê `data/edicoes.json` e `data/eventos.json`
+- `mercados.html` — reencaminha para a página inicial (links antigos)
+- `agenda.ics` — calendário subscrito com os eventos, gerado por `tools/agenda_ics.py`
 
-Os ficheiros em `data/` são atualizados pelas tarefas agendadas do Claude.
+Informação para estudar, não recomendação de investimento.
