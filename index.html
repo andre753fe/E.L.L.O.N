@@ -169,7 +169,7 @@ h2 { font-family: var(--display); font-weight: 700; font-size: 19px; margin: 0; 
 
   <div class="cols">
     <main class="wrap" id="main">
-      <div class="empty" id="empty">A primeira edição aparece aqui: resumo do dia, temas, ativos para estudar e fontes.</div>
+      <div class="empty" id="empty">A primeira edição aparece aqui: resumo do dia, temas, ativos na mira dos mercados e fontes.</div>
     </main>
     <aside class="ev" id="ev" hidden></aside>
   </div>
@@ -194,7 +194,7 @@ h2 { font-family: var(--display); font-weight: 700; font-size: 19px; margin: 0; 
   function render() {
     var main = $("main"); main.innerHTML = "";
     var d = current;
-    if (!d) { main.appendChild(el("div", "empty", "A primeira edição aparece aqui: resumo do dia, temas, ativos para estudar e fontes.")); return; }
+    if (!d) { main.appendChild(el("div", "empty", "A primeira edição aparece aqui: resumo do dia, temas, ativos na mira dos mercados e fontes.")); return; }
     $("ed").textContent = when(d.asOf);
     if (d.next) $("nx").textContent = "Próxima edição: " + d.next;
 
@@ -226,8 +226,8 @@ h2 { font-family: var(--display); font-weight: 700; font-size: 19px; margin: 0; 
     }
 
     /* oportunidades */
-    var s2 = el("section", "sec"); var h2 = el("div", "sechead"); h2.appendChild(el("h2", null, "Para estudar"));
-    h2.appendChild(el("span", "note", (d.ideas || []).length + " temas para pesquisar, cada um com fontes e riscos")); s2.appendChild(h2);
+    var s2 = el("section", "sec"); var h2 = el("div", "sechead"); h2.appendChild(el("h2", null, "Na mira dos mercados"));
+    h2.appendChild(el("span", "note", (d.ideas || []).length + " ativos que deram que falar hoje — com fontes e riscos, para investigares")); s2.appendChild(h2);
     var grid = el("div", "ideas");
     (d.ideas || []).forEach(function (it) {
       var c = el("article", "idea");
@@ -245,7 +245,7 @@ h2 { font-family: var(--display); font-weight: 700; font-size: 19px; margin: 0; 
     var ol = el("ul", "sources"); (d.sources || []).forEach(function (s) { var a = link(s); if (a) { var li = el("li"); li.appendChild(a); ol.appendChild(li); } }); s3.appendChild(ol);
     main.appendChild(s3);
 
-    main.appendChild(el("p", "fine", "Resumo de notícias publicadas pelas fontes indicadas. Os ativos em «Para estudar» são pontos de partida para pesquisa, com fontes e riscos; não constituem aconselhamento financeiro."));
+    main.appendChild(el("p", "fine", "Resumo de notícias publicadas pelas fontes indicadas. Os ativos «Na mira dos mercados» são escolhidos pelas notícias do dia, não por recomendação; a decisão é sempre de quem investe."));
 
     if (editions.length > 1) {
       var s4 = el("section", "sec"); var h4 = el("div", "sechead"); h4.appendChild(el("h2", null, "Arquivo")); h4.appendChild(el("span", "note", "Edições anteriores")); s4.appendChild(h4);
