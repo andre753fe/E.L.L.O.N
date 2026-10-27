@@ -1,101 +1,7 @@
 [
  {
   "asOf": "2026-10-27T08:10:52Z",
-  "ideas": [
-   {
-    "market": "NYSE",
-    "name": "Verizon",
-    "risks": "As receitas do trimestre (34,3 mil milhões) ficaram abaixo do esperado e o setor tem muita dívida e concorrência forte nos preços.",
-    "sources": [
-     {
-      "title": "HDFC Sky, 27/10/2026",
-      "url": "https://hdfcsky.com/news/first-citizens-cemex-beat-estimates-verizon-raises-outlook-as-eqt-announces-13b-gas-deal"
-     }
-    ],
-    "tag": "Telecomunicações",
-    "thesis": "Ganhou 406 mil clientes de telemóvel com contrato no 3.º trimestre, quase o dobro dos 209 mil esperados, e subiu a meta de 2026 para 1,1 a 1,2 milhões. Subiu também a meta de lucro ajustado por ação para 5,04–5,06 dólares e assinou um acordo de fibra com a AWS de mais de 2 mil milhões.",
-    "ticker": "VZ"
-   },
-   {
-    "market": "NYSE",
-    "name": "Southern Company",
-    "risks": "Com o juro a 10 anos perto dos 5%, as utilities perdem atratividade e o crescimento do dividendo é lento.",
-    "sources": [
-     {
-      "title": "24/7 Wall St., 26/10/2026",
-      "url": "https://247wallst.com/investing/2026/10/26/these-5-dividend-stocks-raised-their-payouts-are-they-worth-buying-in-november/"
-     }
-    ],
-    "tag": "Utilities",
-    "thesis": "Subiu o dividendo trimestral de 0,74 para 0,76 dólares (cerca de +2,7%), com rendimento perto de 3,3%. A data ex-dividendo é 16/11 e o pagamento a 7/12; complementa a NEE e a WTRG que já tens.",
-    "ticker": "SO"
-   },
-   {
-    "market": "NYSE",
-    "name": "EQT Corporation",
-    "risks": "A ação caiu 2,8% com o anúncio; o negócio só fecha no 1.º trimestre de 2027 e os lucros dependem do preço do gás.",
-    "sources": [
-     {
-      "title": "HDFC Sky, 27/10/2026",
-      "url": "https://hdfcsky.com/news/first-citizens-cemex-beat-estimates-verizon-raises-outlook-as-eqt-announces-13b-gas-deal"
-     },
-     {
-      "title": "TheStreet, 26/10/2026",
-      "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-26-2026"
-     }
-    ],
-    "tag": "Gás natural",
-    "thesis": "Vai comprar a Range Resources só com ações, num negócio de cerca de 13 mil milhões de dólares (0,987 ações EQT por cada ação Range). Aponta para 325 milhões de sinergias por ano em dois anos e cerca de 20 mil milhões de fluxo de caixa livre em cinco anos; apresenta contas hoje depois do fecho.",
-    "ticker": "EQT"
-   },
-   {
-    "market": "Bolsa de Londres (ADR na NYSE)",
-    "name": "HSBC",
-    "risks": "As receitas ficaram abaixo do esperado e o banco depende muito da economia de Hong Kong e da China.",
-    "sources": [
-     {
-      "title": "GuruFocus, 27/10/2026",
-      "url": "https://www.gurufocus.com/news/9143910/hsbc-reports-q3-earnings-declares-dividend-and-1b-buyback-ticker-hsbc"
-     },
-     {
-      "title": "HSBC · aviso à SEC, 14/10/2026",
-      "url": "https://www.sec.gov/Archives/edgar/data/0001089113/000165495426008935/a9341y.htm"
-     }
-    ],
-    "tag": "Bancos",
-    "thesis": "Lucro antes de impostos de 9,6 mil milhões de dólares no 3.º trimestre (+32%) e rentabilidade (RoTE) de 17,7%. Declarou um dividendo intercalar de 0,10 dólares, para quem tiver ações a 6/11 (pago a 17/12), e uma nova recompra de mil milhões.",
-    "ticker": "HSBA"
-   },
-   {
-    "market": "Cripto",
-    "name": "Solana",
-    "risks": "É um ativo muito volátil, podes perder grande parte do valor, não paga dividendos e uma melhoria técnica não garante procura.",
-    "sources": [
-     {
-      "title": "Zerocap, 26/10/2026",
-      "url": "https://zerocap.com/insights/weekly-crypto-market-wrap/weekly-crypto-market-wrap-26-october-2026/"
-     },
-     {
-      "title": "Fixygen, 26/10/2026",
-      "url": "https://www.fixygen.ua/news/20261026/bitcoin-fell-to-80000-ethereum-lost-nearly-4-over-week-fixygen-review.html"
-     }
-    ],
-    "tag": "Cripto",
-    "thesis": "Entrou em funcionamento a atualização Alpenglow, que reduz o tempo de confirmação das transações de cerca de 12,8 segundos para cerca de 150 milissegundos. A SOL valia cerca de 100,9 dólares a 25/10, com uma queda de 2,9% na semana.",
-    "ticker": "SOL"
-   }
-  ],
   "next": "amanhã de manhã",
-  "portfolio": [
-   {
-    "note": "Fechou a 26/10 nos 216 dólares (+2,4%); NVIDIA, AMD e Broadcom mostraram interesse em comprar até 5 mil milhões em ações da Meta na oferta de 22,5 mil milhões.",
-    "ticker": "NVDA"
-   },
-   {
-    "note": "Anunciou um financiamento com dívida de 40 mil milhões de dólares para chips de IA; a ação recuava cerca de 0,5% para 146,79 dólares no início da sessão de 26/10.",
-    "ticker": "SPCX"
-   }
-  ],
   "sources": [
    {
     "title": "AP via KRMG · índices dos EUA (26/10/2026)",
@@ -159,139 +65,13 @@
    {
     "t": "Cripto",
     "txt": "A bitcoin está perto dos 80 mil dólares, com a terceira semana seguida de quedas. Os ETF de bitcoin tiveram entradas líquidas de cerca de 301 milhões na semana de 19 a 23/10; os de ether perderam cerca de 221 milhões."
-   },
-   {
-    "t": "Na tua carteira",
-    "txt": "A NVIDIA subiu 2,4% com a recuperação dos chips e a SpaceX anunciou um financiamento com dívida de 40 mil milhões para chips de IA. O BCP publica os resultados dos 9 meses amanhã às 17h e a Realty Income tem data ex-dividendo a 30/10."
    }
   ],
   "id": "2026-10-27"
  },
  {
   "asOf": "2026-10-26T07:38:35Z",
-  "ideas": [
-   {
-    "market": "Borsa Italiana (ADR na NYSE)",
-    "name": "Eni",
-    "risks": "Os lucros dependem muito do preço do petróleo; a política de recompra só vale até 90 dólares por barril e a química (Versalis) dá prejuízo.",
-    "sources": [
-     {
-      "title": "Eni · resultados do 3.º trimestre, 23/10/2026",
-      "url": "https://www.eni.com/en-IT/media/press-release/2026/10/2026-third-quarter-results.html"
-     }
-    ],
-    "tag": "Energia",
-    "thesis": "Lucro ajustado de 2,8 mil milhões de euros no 3.º trimestre, mais do dobro de há um ano, e produção +7%. Subiu a recompra de ações de 2026 para 3,8 mil milhões e paga um dividendo extraordinário de 0,46 € a 9/12, além do ordinário de 1,1 € (+5%).",
-    "ticker": "ENI"
-   },
-   {
-    "market": "Bolsa de Madrid",
-    "name": "Iberdrola",
-    "risks": "Os custos financeiros subiram 45% com os juros mais altos do BCE e a dívida líquida aumentou para 54,6 mil milhões.",
-    "sources": [
-     {
-      "title": "Iberdrola · apresentação dos 9 meses, 21/10/2026",
-      "url": "https://www.iberdrola.com/documents/20125/6230700/results-269M.pdf"
-     }
-    ],
-    "tag": "Utilities",
-    "thesis": "Lucro ajustado de 5141 milhões de euros nos 9 meses (+8,8%), puxado pelas redes elétricas (+15% no EBITDA). Investiu 10 087 milhões (+13%), subiu a meta de lucro de 2026 para mais de 10% e o dividendo intercalar para 0,275 € (+8,7%).",
-    "ticker": "IBE"
-   },
-   {
-    "market": "NYSE",
-    "name": "Philip Morris International",
-    "risks": "Custos de energia mais altos com o conflito no Médio Oriente, regulação (ex.: proibição de sabores na Polónia) e litígios.",
-    "sources": [
-     {
-      "title": "Philip Morris · resultados do 3.º trimestre (SEC), 21/10/2026",
-      "url": "https://www.sec.gov/Archives/edgar/data/0001413329/000162828026066596/earningsreleasepm-ex991xq3.htm"
-     }
-    ],
-    "tag": "Dividendos",
-    "thesis": "Receitas de 11,4 mil milhões de dólares no 3.º trimestre (+7,1% orgânico) e produtos sem fumo já acima de 40% das vendas. Subiu o dividendo 8,8% para 1,60 dólares por trimestre.",
-    "ticker": "PM"
-   },
-   {
-    "market": "NYSE",
-    "name": "Elevance Health",
-    "risks": "Perdeu 487 mil membros num ano; custos médicos e mudanças nas regras do Medicaid e Medicare podem pesar.",
-    "sources": [
-     {
-      "title": "Yahoo Finance, 21/10/2026",
-      "url": "https://finance.yahoo.com/healthcare/articles/elevance-health-shares-rise-third-135355030.html"
-     }
-    ],
-    "tag": "Saúde",
-    "thesis": "Lucro ajustado de 6,99 dólares por ação no 3.º trimestre, contra 4,70 esperados, e meta de 2026 subida para pelo menos 29 dólares. Diz estar confiante em pelo menos 12% de crescimento do lucro em 2027.",
-    "ticker": "ELV"
-   },
-   {
-    "market": "NYSE",
-    "name": "Northrop Grumman",
-    "risks": "A margem operacional caiu 0,5 pontos e a meta não conta com uma paralisação prolongada do governo dos EUA ou cortes no orçamento.",
-    "sources": [
-     {
-      "title": "Northrop Grumman · resultados do 3.º trimestre (SEC), 20/10/2026",
-      "url": "https://www.sec.gov/Archives/edgar/data/0001133421/000113342126000037/noc-09302026xearningsrelea.htm"
-     }
-    ],
-    "tag": "Defesa",
-    "thesis": "Vendas de 11 122 milhões de dólares no 3.º trimestre (+7%) e carteira de encomendas recorde de 109 597 milhões (+15% desde o fim de 2025). Subiu a meta de lucro por ação de 2026 para 29,35–29,75 dólares.",
-    "ticker": "NOC"
-   },
-   {
-    "market": "Nasdaq",
-    "name": "First Trust NASDAQ Cybersecurity ETF",
-    "risks": "Um inquérito não são resultados; depois das subidas da semana as avaliações estão altas.",
-    "sources": [
-     {
-      "title": "24/7 Wall St., 23/10/2026",
-      "url": "https://247wallst.com/investing/2026/10/23/cybersecurity-stocks-rise-as-evercore-survey-flags-strengthening-demand-okta-crowdstrike-and-palo-alto-climb-4/"
-     }
-    ],
-    "tag": "Cibersegurança",
-    "thesis": "Um inquérito da Evercore ISI a parceiros do setor não vê «nenhum precipício na procura», com gastos em segurança de dados e IA, identidade e cloud. Okta, CrowdStrike e Palo Alto subiram 4% a 23/10; um ETF dilui o risco de escolher uma só empresa.",
-    "ticker": "CIBR"
-   },
-   {
-    "market": "Bolsa de Londres (ADR na NYSE)",
-    "name": "Barclays",
-    "risks": "Prevê perdas com crédito no topo do intervalo de 0,50%–0,60% em 2026 e está exposto ao consumo no Reino Unido e nos EUA.",
-    "sources": [
-     {
-      "title": "Barclays · resultados do 3.º trimestre (SEC), 22/10/2026",
-      "url": "https://www.sec.gov/Archives/edgar/data/0000312069/000165495426009079/a9532z.htm"
-     }
-    ],
-    "tag": "Bancos",
-    "thesis": "Lucro antes de impostos de 2322 milhões de libras no 3.º trimestre (+12%) e rentabilidade (RoTE) de 11,7%. Anunciou nova recompra de 500 milhões e já distribuiu 2,8 mil milhões no ano (+46%); diversifica o BCP que já tens.",
-    "ticker": "BARC"
-   }
-  ],
   "next": "segunda-feira de manhã",
-  "portfolio": [
-   {
-    "note": "Receitas de 14,6 mil milhões de dólares no 3.º trimestre (+161%) e lucro de 4,4 mil milhões; a ação subiu cerca de 12% a 21/10.",
-    "ticker": "SPCX"
-   },
-   {
-    "note": "Lucro ajustado de 1,24 dólares por ação no 3.º trimestre (1,13 há um ano); mantém a meta de 2026 e o crescimento do dividendo de cerca de 6% ao ano até 2028.",
-    "ticker": "NEE"
-   },
-   {
-    "note": "Receitas de 29,3 mil milhões no 3.º trimestre (−6,1%) e lucro ajustado de 1,07 dólares por ação (−4%); dividendo de 0,33 dólares mantido.",
-    "ticker": "CMCSA"
-   },
-   {
-    "note": "Segundo a Reuters, ByteDance, Alibaba e Tencent encomendaram mais de 3 milhões de placas RTX PRO 5500 (mais de 35 mil milhões de dólares), ainda sem confirmação; a NVIDIA também reforça a capacidade com seis parceiros.",
-    "ticker": "NVDA"
-   },
-   {
-    "note": "Assinou a 21/10 um acordo de engenharia de três anos com a IMPSA para componentes do reator KRONOS.",
-    "ticker": "NNE"
-   }
-  ],
   "sources": [
    {
     "title": "Gotrade · Week Ahead: Fed Decision, US GDP and Big Tech Earnings (26/10/2026)",
@@ -363,60 +143,11 @@
    {
     "t": "Energia e defesa",
     "txt": "Petróleo e gás lideraram a semana (+2,4% a +3,1% nos setores) com as tensões no Golfo. A defesa também subiu: a Lockheed ganhou cerca de 10% com uma carteira de encomendas recorde."
-   },
-   {
-    "t": "Na tua carteira",
-    "txt": "Semana cheia: a SpaceX disparou cerca de 12% depois de lucros fortes, a NextEra bateu estimativas e a Comcast manteve o dividendo. O BCP apresenta resultados a 28/10 às 17h."
    }
   ]
  },
  {
   "asOf": "2026-10-25T15:30:00Z",
-  "ideas": [
-   {
-    "market": "NYSE (ADR)",
-    "name": "Taiwan Semiconductor",
-    "risks": "Concentração geopolítica em Taiwan, volatilidade dos semicondutores e sobreposição com a NVIDIA que já tens.",
-    "sources": [
-     {
-      "title": "Yahoo Finance/Zacks, 09/10/2026",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/october-market-outlook-3-sectors-180000664.html"
-     }
-    ],
-    "thesis": "Fabrica os chips de IA de quase todo o setor; receitas de julho e agosto +44,7% e +53,3% face ao ano anterior. Zacks Rank #2 (comprar).",
-    "ticker": "TSM"
-   },
-   {
-    "market": "NYSE",
-    "name": "Entergy",
-    "risks": "Custos de financiamento mais altos com juros elevados; regulação.",
-    "sources": [
-     {
-      "title": "Yahoo Finance/Zacks, 09/10/2026",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/october-market-outlook-3-sectors-180000664.html"
-     }
-    ],
-    "thesis": "Utility regulada dos EUA com plano de 67 mil milhões de dólares de investimento em 2026–2029 para servir centros de dados e eletrificação; perfil parecido com a NEE e a WTRG que já tens. Zacks Rank #2.",
-    "ticker": "ETR"
-   },
-   {
-    "market": "NYSE",
-    "name": "HF Sinclair",
-    "risks": "Margens de refinação muito voláteis; uma descida rápida do petróleo ou acordo com o Irão inverte o tema.",
-    "sources": [
-     {
-      "title": "Yahoo Finance/Zacks, 09/10/2026",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/october-market-outlook-3-sectors-180000664.html"
-     },
-     {
-      "title": "Newsquawk, 23/10/2026",
-      "url": "https://www.newsquawk.com/headlines/newsquawk-european-market-wrap---23rd-october-2026"
-     }
-    ],
-    "thesis": "Refinadora que beneficia do petróleo e combustíveis caros; a estimativa de lucro por ação de 2026 subiu 6,02 dólares para 18,15 em 60 dias. Zacks Rank #1.",
-    "ticker": "DINO"
-   }
-  ],
   "next": "segunda-feira de manhã",
   "sources": [
    {
@@ -449,10 +180,6 @@
    {
     "t": "Europa",
     "txt": "Mais fraca: PMI da zona euro abaixo do esperado, França em contração, luxo pressionado pela China (Kering −16% a 23/10)."
-   },
-   {
-    "t": "Na tua carteira",
-    "txt": "A SpaceX subiu 1,8% a 23/10 depois de um acordo de antenas com a Crown Castle; a NVIDIA é a tua maior exposição a IA, por isso mais semicondutores aumentam a concentração."
    }
   ]
  }

@@ -85,6 +85,7 @@ h2 { font-family: var(--display); font-weight: 700; font-size: 19px; margin: 0; 
 .theme p { margin: 0; font-size: 15px; max-width: 60ch; }
 
 /* oportunidades */
+.disc p { font-size: 13px; color: var(--muted, #6b7785); margin: 6px 0; max-width: 80ch; }
 .ideas { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
 .idea { background: var(--sheet); border: 1px solid var(--rule); border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
 .idea .top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
@@ -167,10 +168,10 @@ h2 { font-family: var(--display); font-weight: 700; font-size: 19px; margin: 0; 
 
   <div class="cols">
     <main class="wrap" id="main">
-      <div class="empty" id="empty">A primeira edição do R-02 aparece aqui: resumo da semana, temas, oportunidades para estudar e notícias da tua carteira.</div>
+      <div class="empty" id="empty">A primeira edição aparece aqui: resumo do dia, temas e fontes.</div>
     </main>
     <aside class="ev" id="ev" aria-labelledby="evh">
-      <div><h2 id="evh">Próximos eventos</h2><p class="sub" id="evsub">Resultados, dividendos e as tuas compras</p><p class="evnote">Só aparecem eventos dos ativos desta carteira.</p></div>
+      <div><h2 id="evh">Próximos eventos</h2><p class="sub" id="evsub">Resultados e dividendos</p><p class="evnote">Só aparecem eventos dos ativos detidos por quem mantém esta página.</p></div>
       <div class="filt" id="evf" role="group" aria-label="Filtrar eventos"></div>
       <div id="evl"></div>
       <p class="foot">Ex-dividendo: tens de ter a ação <b>antes</b> deste dia para receberes. Datas marcadas «prevista» ainda não foram confirmadas pela empresa. O R-02 atualiza esta lista nos dias úteis.</p>
@@ -197,7 +198,7 @@ h2 { font-family: var(--display); font-weight: 700; font-size: 19px; margin: 0; 
   function render() {
     var main = $("main"); main.innerHTML = "";
     var d = current;
-    if (!d) { main.appendChild(el("div", "empty", "A primeira edição do R-02 aparece aqui: resumo da semana, temas, oportunidades para estudar e notícias da tua carteira.")); return; }
+    if (!d) { main.appendChild(el("div", "empty", "A primeira edição aparece aqui: resumo do dia, temas e fontes.")); return; }
     $("ed").textContent = when(d.asOf);
     if (d.next) $("nx").textContent = "Próxima edição: " + d.next;
 
@@ -222,35 +223,30 @@ h2 { font-family: var(--display); font-weight: 700; font-size: 19px; margin: 0; 
 
     /* temas */
     if (themes.length) {
-      var s1 = el("section", "sec"); var h1 = el("div", "sechead"); h1.appendChild(el("h2", null, "Temas da semana")); s1.appendChild(h1);
+      var s1 = el("section", "sec"); var h1 = el("div", "sechead"); h1.appendChild(el("h2", null, "Temas do dia")); s1.appendChild(h1);
       var tg = el("div", "themes");
       themes.forEach(function (t) { var b = el("article", "theme"); b.appendChild(el("h3", null, t.t)); b.appendChild(el("p", null, t.txt)); tg.appendChild(b); });
       s1.appendChild(tg); main.appendChild(s1);
     }
 
-    /* oportunidades */
-    var s2 = el("section", "sec"); var h2 = el("div", "sechead"); h2.appendChild(el("h2", null, "Oportunidades para estudar"));
-    h2.appendChild(el("span", "note", (d.ideas || []).length + " ideias, cada uma com fontes e riscos")); s2.appendChild(h2);
-    var grid = el("div", "ideas");
-    (d.ideas || []).forEach(function (it) {
-      var c = el("article", "idea");
-      var top = el("div", "top"); top.appendChild(el("span", "tk", it.ticker)); top.appendChild(el("span", "mk", it.market || "")); c.appendChild(top);
-      c.appendChild(el("span", "nm", it.name));
-      if (it.tag) c.appendChild(el("span", "chip", it.tag));
-      c.appendChild(el("p", null, it.thesis || ""));
-      if (it.risks) c.appendChild(el("p", "risk", it.risks));
-      var src = el("div", "src"); (it.sources || []).forEach(function (s) { var a = link(s); if (a) src.appendChild(a); }); c.appendChild(src);
-      grid.appendChild(c);
-    });
-    s2.appendChild(grid); main.appendChild(s2);
-
+    /* site público: sem oportunidades de compra (só na página privada), para não haver recomendações de investimento públicas */
     /* fontes e arquivo */
     var s3 = el("section", "sec"); var h3 = el("div", "sechead"); h3.appendChild(el("h2", null, "Fontes desta edição")); s3.appendChild(h3);
     var ol = el("ul", "sources"); (d.sources || []).forEach(function (s) { var a = link(s); if (a) { var li = el("li"); li.appendChild(a); ol.appendChild(li); } }); s3.appendChild(ol);
     main.appendChild(s3);
 
+    /* transparência: quem produz, como, quando e possíveis conflitos de interesse */
+    var s5 = el("section", "sec disc"); var h5 = el("div", "sechead"); h5.appendChild(el("h2", null, "Sobre este conteúdo")); s5.appendChild(h5);
+    [
+      "Conteúdo informativo produzido automaticamente com inteligência artificial (Claude, da Anthropic), a partir das fontes indicadas, e publicado sem revisão editorial humana. Edição de " + when(d.asOf) + ".",
+      "Não é recomendação de investimento, aconselhamento financeiro nem convite a comprar ou vender qualquer instrumento financeiro. Os factos vêm das fontes citadas; as opiniões e previsões são das entidades a quem são atribuídas.",
+      "Conflitos de interesse: quem mantém esta página detém posições nos ativos que aparecem em «Próximos eventos». Não recebe pagamentos, ofertas nem comissões de nenhuma entidade mencionada, e a página não tem conteúdo patrocinado.",
+      "Investir envolve riscos, incluindo a perda do capital. Antes de decidir, informa-te junto de fontes oficiais e, se precisares, de um intermediário financeiro registado na CMVM."
+    ].forEach(function (t) { s5.appendChild(el("p", null, t)); });
+    main.appendChild(s5);
+
     if (editions.length > 1) {
-      var s4 = el("section", "sec"); var h4 = el("div", "sechead"); h4.appendChild(el("h2", null, "Arquivo")); h4.appendChild(el("span", "note", "Edições anteriores, para veres se as ideias resultaram")); s4.appendChild(h4);
+      var s4 = el("section", "sec"); var h4 = el("div", "sechead"); h4.appendChild(el("h2", null, "Arquivo")); h4.appendChild(el("span", "note", "Edições anteriores")); s4.appendChild(h4);
       var ar = el("div", "archive");
       editions.forEach(function (e) {
         var b = el("button", null, when(e.asOf)); b.type = "button"; b.setAttribute("aria-pressed", e === current ? "true" : "false");
@@ -264,7 +260,7 @@ h2 { font-family: var(--display); font-weight: 700; font-size: 19px; margin: 0; 
 
   /* ---------- próximos eventos ---------- */
   var KIND = { earnings: "Resultados", ex: "Ex-dividendo", pay: "Pagamento", buy: "Compra", auto: "Automático" };
-  var FILTERS = [["all", "Tudo"], ["earnings", "Resultados"], ["div", "Dividendos"], ["buy", "Compras"]];
+  var FILTERS = [["all", "Tudo"], ["earnings", "Resultados"], ["div", "Dividendos"]];
   var evFilter = "all";
   try { evFilter = localStorage.getItem("mercados-evf") || "all"; } catch (e) {}
   /* reserva, caso a base de dados ainda não responda; o R-02 substitui com a versão atual */
@@ -309,7 +305,7 @@ h2 { font-family: var(--display); font-weight: 700; font-size: 19px; margin: 0; 
   function renderEvents() {
     var today = lisbonToday();
     var doc = evDoc && evDoc.events ? evDoc : EV_SEED;
-    var all = (doc.events || []).concat(planEvents(today.slice(0, 7), 4))
+    var all = (doc.events || [])
       .filter(function (e) { return e && e.d && e.d >= today && KIND[e.k]; })
       .sort(function (a, b) { return a.d < b.d ? -1 : a.d > b.d ? 1 : (a.k === "buy") - (b.k === "buy"); });
     var horizon = (function () { var d = new Date(today + "T12:00:00Z"); d.setUTCDate(d.getUTCDate() + 100); return d.toISOString().slice(0, 10); })();
