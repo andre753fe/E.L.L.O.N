@@ -1,5 +1,173 @@
 [
  {
+  "asOf": "2026-10-27T08:10:52Z",
+  "ideas": [
+   {
+    "market": "NYSE",
+    "name": "Verizon",
+    "risks": "As receitas do trimestre (34,3 mil milhões) ficaram abaixo do esperado e o setor tem muita dívida e concorrência forte nos preços.",
+    "sources": [
+     {
+      "title": "HDFC Sky, 27/10/2026",
+      "url": "https://hdfcsky.com/news/first-citizens-cemex-beat-estimates-verizon-raises-outlook-as-eqt-announces-13b-gas-deal"
+     }
+    ],
+    "tag": "Telecomunicações",
+    "thesis": "Ganhou 406 mil clientes de telemóvel com contrato no 3.º trimestre, quase o dobro dos 209 mil esperados, e subiu a meta de 2026 para 1,1 a 1,2 milhões. Subiu também a meta de lucro ajustado por ação para 5,04–5,06 dólares e assinou um acordo de fibra com a AWS de mais de 2 mil milhões.",
+    "ticker": "VZ"
+   },
+   {
+    "market": "NYSE",
+    "name": "Southern Company",
+    "risks": "Com o juro a 10 anos perto dos 5%, as utilities perdem atratividade e o crescimento do dividendo é lento.",
+    "sources": [
+     {
+      "title": "24/7 Wall St., 26/10/2026",
+      "url": "https://247wallst.com/investing/2026/10/26/these-5-dividend-stocks-raised-their-payouts-are-they-worth-buying-in-november/"
+     }
+    ],
+    "tag": "Utilities",
+    "thesis": "Subiu o dividendo trimestral de 0,74 para 0,76 dólares (cerca de +2,7%), com rendimento perto de 3,3%. A data ex-dividendo é 16/11 e o pagamento a 7/12; complementa a NEE e a WTRG que já tens.",
+    "ticker": "SO"
+   },
+   {
+    "market": "NYSE",
+    "name": "EQT Corporation",
+    "risks": "A ação caiu 2,8% com o anúncio; o negócio só fecha no 1.º trimestre de 2027 e os lucros dependem do preço do gás.",
+    "sources": [
+     {
+      "title": "HDFC Sky, 27/10/2026",
+      "url": "https://hdfcsky.com/news/first-citizens-cemex-beat-estimates-verizon-raises-outlook-as-eqt-announces-13b-gas-deal"
+     },
+     {
+      "title": "TheStreet, 26/10/2026",
+      "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-26-2026"
+     }
+    ],
+    "tag": "Gás natural",
+    "thesis": "Vai comprar a Range Resources só com ações, num negócio de cerca de 13 mil milhões de dólares (0,987 ações EQT por cada ação Range). Aponta para 325 milhões de sinergias por ano em dois anos e cerca de 20 mil milhões de fluxo de caixa livre em cinco anos; apresenta contas hoje depois do fecho.",
+    "ticker": "EQT"
+   },
+   {
+    "market": "Bolsa de Londres (ADR na NYSE)",
+    "name": "HSBC",
+    "risks": "As receitas ficaram abaixo do esperado e o banco depende muito da economia de Hong Kong e da China.",
+    "sources": [
+     {
+      "title": "GuruFocus, 27/10/2026",
+      "url": "https://www.gurufocus.com/news/9143910/hsbc-reports-q3-earnings-declares-dividend-and-1b-buyback-ticker-hsbc"
+     },
+     {
+      "title": "HSBC · aviso à SEC, 14/10/2026",
+      "url": "https://www.sec.gov/Archives/edgar/data/0001089113/000165495426008935/a9341y.htm"
+     }
+    ],
+    "tag": "Bancos",
+    "thesis": "Lucro antes de impostos de 9,6 mil milhões de dólares no 3.º trimestre (+32%) e rentabilidade (RoTE) de 17,7%. Declarou um dividendo intercalar de 0,10 dólares, para quem tiver ações a 6/11 (pago a 17/12), e uma nova recompra de mil milhões.",
+    "ticker": "HSBA"
+   },
+   {
+    "market": "Cripto",
+    "name": "Solana",
+    "risks": "É um ativo muito volátil, podes perder grande parte do valor, não paga dividendos e uma melhoria técnica não garante procura.",
+    "sources": [
+     {
+      "title": "Zerocap, 26/10/2026",
+      "url": "https://zerocap.com/insights/weekly-crypto-market-wrap/weekly-crypto-market-wrap-26-october-2026/"
+     },
+     {
+      "title": "Fixygen, 26/10/2026",
+      "url": "https://www.fixygen.ua/news/20261026/bitcoin-fell-to-80000-ethereum-lost-nearly-4-over-week-fixygen-review.html"
+     }
+    ],
+    "tag": "Cripto",
+    "thesis": "Entrou em funcionamento a atualização Alpenglow, que reduz o tempo de confirmação das transações de cerca de 12,8 segundos para cerca de 150 milissegundos. A SOL valia cerca de 100,9 dólares a 25/10, com uma queda de 2,9% na semana.",
+    "ticker": "SOL"
+   }
+  ],
+  "next": "amanhã de manhã",
+  "portfolio": [
+   {
+    "note": "Fechou a 26/10 nos 216 dólares (+2,4%); NVIDIA, AMD e Broadcom mostraram interesse em comprar até 5 mil milhões em ações da Meta na oferta de 22,5 mil milhões.",
+    "ticker": "NVDA"
+   },
+   {
+    "note": "Anunciou um financiamento com dívida de 40 mil milhões de dólares para chips de IA; a ação recuava cerca de 0,5% para 146,79 dólares no início da sessão de 26/10.",
+    "ticker": "SPCX"
+   }
+  ],
+  "sources": [
+   {
+    "title": "AP via KRMG · índices dos EUA (26/10/2026)",
+    "url": "https://krmg.com/2026/10/26/how-major-us-stock-indexes-fared-monday-10-26-2026/"
+   },
+   {
+    "title": "TheStreet · Stock Market Today (26/10/2026)",
+    "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-26-2026"
+   },
+   {
+    "title": "Yahoo Finance · Stock market today (26/10/2026)",
+    "url": "https://finance.yahoo.com/markets/live/stock-market-today-monday-october-26-dow-sp-500-nasdaq-101153035.html"
+   },
+   {
+    "title": "Gotrade · NVIDIA (27/10/2026)",
+    "url": "https://www.heygotrade.com/en/news/nvidia-nvda-stock-news-october-27-2026/"
+   },
+   {
+    "title": "ECO · Euribor desce em todos os prazos (26/10/2026)",
+    "url": "https://eco.sapo.pt/2026/10/26/euribor-desce-em-todos-os-prazos-em-semana-de-bce/"
+   },
+   {
+    "title": "Fortune via inkl · preço do petróleo (26/10/2026)",
+    "url": "https://www.inkl.com/news/current-price-of-oil-as-of-oct-26-2026"
+   },
+   {
+    "title": "Zerocap · Weekly Crypto Market Wrap (26/10/2026)",
+    "url": "https://zerocap.com/insights/weekly-crypto-market-wrap/weekly-crypto-market-wrap-26-october-2026/"
+   },
+   {
+    "title": "Fixygen · revisão semanal cripto (26/10/2026)",
+    "url": "https://www.fixygen.ua/news/20261026/bitcoin-fell-to-80000-ethereum-lost-nearly-4-over-week-fixygen-review.html"
+   },
+   {
+    "title": "HDFC Sky · Verizon, EQT e resultados (27/10/2026)",
+    "url": "https://hdfcsky.com/news/first-citizens-cemex-beat-estimates-verizon-raises-outlook-as-eqt-announces-13b-gas-deal"
+   },
+   {
+    "title": "24/7 Wall St. · dividendos aumentados (26/10/2026)",
+    "url": "https://247wallst.com/investing/2026/10/26/these-5-dividend-stocks-raised-their-payouts-are-they-worth-buying-in-november/"
+   }
+  ],
+  "summary": "Wall Street começou a semana a subir: o S&P 500 ganhou 0,70% para 7676,77 pontos e o Nasdaq 0,82%, com o pedido de entrada em bolsa da Anthropic a reanimar as ações de IA. O juro a 10 anos dos EUA ficou perto dos 4,98% e o Brent recuou para a zona dos 110–115 dólares, com esperanças de alívio na tensão entre os EUA e o Irão. A Euribor desceu em todos os prazos e a de 6 meses voltou a ficar abaixo dos 3%. Hoje começa a reunião da Fed (decisão a 28/10), o BCE decide a 29/10 e o BCP apresenta contas amanhã às 17h.",
+  "themes": [
+   {
+    "t": "Fed e BCE",
+    "txt": "Os mercados só dão cerca de 10% de hipóteses de subida dos juros da Fed nesta reunião; Kyle Rodda (Capital.com) diz que os investidores vão procurar sinais de uma subida em dezembro. O BCE deve manter as taxas a 29/10, depois de as ter subido em junho e setembro."
+   },
+   {
+    "t": "Casa e Euribor",
+    "txt": "A 26/10, a Euribor a 3 meses desceu para 2,638%, a 6 meses para 2,978% e a 12 meses para 3,225%. A de 6 meses, a mais usada nos créditos à habitação em Portugal, quebrou quatro sessões seguidas acima de 3%."
+   },
+   {
+    "t": "IA e financiamento",
+    "txt": "A Anthropic entregou o pedido público de entrada no Nasdaq. A Meta quer levantar até 95 mil milhões de dólares para infraestrutura de IA e caiu cerca de 1,9%, o que reacende as dúvidas sobre o financiamento do investimento em IA."
+   },
+   {
+    "t": "Energia e gás",
+    "txt": "O Brent recuou depois de mediadores do Catar e um ministro saudita visitarem Teerão, mas continua cerca de 13% acima de há um mês. No gás natural, a EQT vai comprar a Range Resources, cujas ações subiram cerca de 16%."
+   },
+   {
+    "t": "Cripto",
+    "txt": "A bitcoin está perto dos 80 mil dólares, com a terceira semana seguida de quedas. Os ETF de bitcoin tiveram entradas líquidas de cerca de 301 milhões na semana de 19 a 23/10; os de ether perderam cerca de 221 milhões."
+   },
+   {
+    "t": "Na tua carteira",
+    "txt": "A NVIDIA subiu 2,4% com a recuperação dos chips e a SpaceX anunciou um financiamento com dívida de 40 mil milhões para chips de IA. O BCP publica os resultados dos 9 meses amanhã às 17h e a Realty Income tem data ex-dividendo a 30/10."
+   }
+  ],
+  "id": "2026-10-27"
+ },
+ {
   "asOf": "2026-10-26T07:38:35Z",
   "ideas": [
    {
