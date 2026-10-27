@@ -85,6 +85,7 @@ h2 { font-family: var(--display); font-weight: 700; font-size: 19px; margin: 0; 
 .theme p { margin: 0; font-size: 15px; max-width: 60ch; }
 
 /* oportunidades */
+.fine { font-size: 12px; color: var(--muted, #6b7785); margin: 18px 0 0; }
 .disc p { font-size: 13px; color: var(--muted, #6b7785); margin: 6px 0; max-width: 80ch; }
 .ideas { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
 .idea { background: var(--sheet); border: 1px solid var(--rule); border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
@@ -109,7 +110,7 @@ h2 { font-family: var(--display); font-weight: 700; font-size: 19px; margin: 0; 
 
 /* coluna de eventos */
 .page { max-width: 1360px; }
-.cols { display: grid; grid-template-columns: minmax(0, 1fr) 310px; gap: 32px; align-items: start; }
+.cols { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; align-items: start; }
 .cols > .wrap { max-width: none; margin: 0; }
 .ev { position: sticky; top: 16px; max-height: calc(100vh - 32px); overflow: auto; background: var(--sheet); border: 1px solid var(--rule); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 14px; overscroll-behavior: contain; }
 .ev h2 { font-size: 17px; }
@@ -156,7 +157,7 @@ h2 { font-family: var(--display); font-weight: 700; font-size: 19px; margin: 0; 
   <header class="mast">
     <div class="bot" aria-hidden="true"><i class="a"></i><i class="h"></i><i class="v"></i><i class="b"></i></div>
     <div>
-      <p class="kicker">E.L.L.O.N · R-02 · Analista de mercados</p>
+      <p class="kicker">E.L.L.O.N · Notícias dos mercados</p>
       <h1>Sala de Mercados</h1>
       <div class="edition" aria-live="polite"><span>Edição <b id="ed">—</b></span><span id="nx">Nova edição nos dias úteis, 7h23</span></div>
     </div>
@@ -170,12 +171,7 @@ h2 { font-family: var(--display); font-weight: 700; font-size: 19px; margin: 0; 
     <main class="wrap" id="main">
       <div class="empty" id="empty">A primeira edição aparece aqui: resumo do dia, temas e fontes.</div>
     </main>
-    <aside class="ev" id="ev" aria-labelledby="evh">
-      <div><h2 id="evh">Próximos eventos</h2><p class="sub" id="evsub">Resultados e dividendos</p><p class="evnote">Só aparecem eventos dos ativos detidos por quem mantém esta página.</p></div>
-      <div class="filt" id="evf" role="group" aria-label="Filtrar eventos"></div>
-      <div id="evl"></div>
-      <p class="foot">Ex-dividendo: tens de ter a ação <b>antes</b> deste dia para receberes. Datas marcadas «prevista» ainda não foram confirmadas pela empresa. O R-02 atualiza esta lista nos dias úteis.</p>
-    </aside>
+    <aside class="ev" id="ev" hidden></aside>
   </div>
 
   <p class="disc">Informação tirada de fontes públicas para estudares. Não são recomendações de compra nem aconselhamento financeiro; confirma sempre antes de investir.</p>
@@ -235,15 +231,7 @@ h2 { font-family: var(--display); font-weight: 700; font-size: 19px; margin: 0; 
     var ol = el("ul", "sources"); (d.sources || []).forEach(function (s) { var a = link(s); if (a) { var li = el("li"); li.appendChild(a); ol.appendChild(li); } }); s3.appendChild(ol);
     main.appendChild(s3);
 
-    /* transparência: quem produz, como, quando e possíveis conflitos de interesse */
-    var s5 = el("section", "sec disc"); var h5 = el("div", "sechead"); h5.appendChild(el("h2", null, "Sobre este conteúdo")); s5.appendChild(h5);
-    [
-      "Conteúdo informativo produzido automaticamente com inteligência artificial (Claude, da Anthropic), a partir das fontes indicadas, e publicado sem revisão editorial humana. Edição de " + when(d.asOf) + ".",
-      "Não é recomendação de investimento, aconselhamento financeiro nem convite a comprar ou vender qualquer instrumento financeiro. Os factos vêm das fontes citadas; as opiniões e previsões são das entidades a quem são atribuídas.",
-      "Conflitos de interesse: quem mantém esta página detém posições nos ativos que aparecem em «Próximos eventos». Não recebe pagamentos, ofertas nem comissões de nenhuma entidade mencionada, e a página não tem conteúdo patrocinado.",
-      "Investir envolve riscos, incluindo a perda do capital. Antes de decidir, informa-te junto de fontes oficiais e, se precisares, de um intermediário financeiro registado na CMVM."
-    ].forEach(function (t) { s5.appendChild(el("p", null, t)); });
-    main.appendChild(s5);
+    main.appendChild(el("p", "fine", "Resumo de notícias publicadas pelas fontes indicadas. Informação geral; não constitui aconselhamento financeiro."));
 
     if (editions.length > 1) {
       var s4 = el("section", "sec"); var h4 = el("div", "sechead"); h4.appendChild(el("h2", null, "Arquivo")); h4.appendChild(el("span", "note", "Edições anteriores")); s4.appendChild(h4);
@@ -357,7 +345,6 @@ h2 { font-family: var(--display); font-weight: 700; font-size: 19px; margin: 0; 
         current = editions.filter(function (e) { return e.asOf === keep; })[0] || editions[0] || null;
         render();
       });
-      get("data/eventos.json").then(function (v) { if (v && v.events) { evDoc = v; renderEvents(); } });
     }
     pull(); setInterval(function () { if (!document.hidden) pull(); }, 600000);
   }
@@ -370,7 +357,7 @@ h2 { font-family: var(--display); font-weight: 700; font-size: 19px; margin: 0; 
     $("hclock").textContent = dias[w < 0 ? 0 : w] + ", " + P.day + "/" + P.month + ", " + P.hour + ":" + P.minute;
   }
   hud(); setInterval(hud, 15000);
-  render(); renderEvents(); start();
+  render(); start();
 })();
 </script>
 
