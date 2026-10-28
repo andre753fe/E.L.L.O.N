@@ -1,5 +1,169 @@
 [
  {
+  "asOf": "2026-10-28T08:20:00Z",
+  "ideas": [
+   {
+    "market": "NYSE",
+    "name": "Coca-Cola",
+    "risks": "Já é uma ação cara para o crescimento que tem e o dólar forte ou custos de matérias-primas podem pesar nas margens.",
+    "sources": [
+     {
+      "title": "Investrade, 27/10/2026",
+      "url": "https://investrade.com/market-review-october-27-2026/"
+     }
+    ],
+    "tag": "Dividendos",
+    "thesis": "Lucro ajustado por ação de 0,91 dólares no trimestre, acima dos 0,88 esperados, e subiu a previsão para 2026: crescimento do lucro por ação de pelo menos 11%. É uma empresa defensiva e conhecida pelos dividendos.",
+    "ticker": "KO"
+   },
+   {
+    "market": "Nasdaq",
+    "name": "Broadcom",
+    "risks": "Depende do investimento em IA continuar a crescer e o financiamento acentua a ligação a poucos clientes grandes.",
+    "sources": [
+     {
+      "title": "AP via KRMG, 28/10/2026",
+      "url": "https://krmg.com/2026/10/27/asian-stocks-rise-after-a-rally-on-wall-street-while-oil-prices-edge-higher"
+     },
+     {
+      "title": "Investrade, 27/10/2026",
+      "url": "https://investrade.com/market-review-october-27-2026/"
+     }
+    ],
+    "tag": "IA",
+    "thesis": "Subiu cerca de 4% a 27/10 depois de anunciar um financiamento de 63 mil milhões de dólares que dá à Anthropic acesso aos seus chips de IA. A DA Davidson subiu a recomendação para Compra, com preço-alvo de 400 dólares.",
+    "ticker": "AVGO"
+   },
+   {
+    "market": "NYSE",
+    "name": "United Parcel Service",
+    "risks": "É muito sensível à economia e ao consumo, e a concorrência e os custos de mão de obra apertam as margens.",
+    "sources": [
+     {
+      "title": "Investrade, 27/10/2026",
+      "url": "https://investrade.com/market-review-october-27-2026/"
+     }
+    ],
+    "tag": "Transportes",
+    "thesis": "Lucro ajustado por ação de 1,69 dólares (esperado 1,62) e receitas de 22,9 mil milhões (+6,7%). Subiu a previsão do lucro por ação de 2026 para 7,28 dólares.",
+    "ticker": "UPS"
+   },
+   {
+    "market": "Nasdaq",
+    "name": "First Citizens BancShares",
+    "risks": "A margem financeira desceu de 3,26% para 3,07% e a ação já subiu bastante no dia.",
+    "sources": [
+     {
+      "title": "HDFC Sky, 27/10/2026",
+      "url": "https://hdfcsky.com/news/first-citizens-cemex-beat-estimates-verizon-raises-outlook-as-eqt-announces-13b-gas-deal"
+     }
+    ],
+    "tag": "Bancos",
+    "thesis": "Lucro ajustado por ação de 55,37 dólares, contra 45,98 esperados, com receita de 2,397 mil milhões (+6,9%). A ação subiu cerca de 8%.",
+    "ticker": "FCNCA"
+   },
+   {
+    "market": "NYSE",
+    "name": "Cemex",
+    "risks": "A dívida líquida ainda é de 5,42 mil milhões e o setor da construção é muito cíclico.",
+    "sources": [
+     {
+      "title": "HDFC Sky, 27/10/2026",
+      "url": "https://hdfcsky.com/news/first-citizens-cemex-beat-estimates-verizon-raises-outlook-as-eqt-announces-13b-gas-deal"
+     }
+    ],
+    "tag": "Materiais",
+    "thesis": "Lucro ajustado de 0,28 dólares por ADS (esperado 0,24) e receita de 4,59 mil milhões, acima dos 4,45 esperados. O EBITDA operacional subiu 12% para 990 milhões.",
+    "ticker": "CX"
+   },
+   {
+    "market": "Cripto",
+    "name": "XRP (Ripple)",
+    "risks": "É um ativo muito volátil, podes perder grande parte do valor e não paga dividendos; a aprovação não garante procura pela moeda.",
+    "sources": [
+     {
+      "title": "KuCoin, 27/10/2026",
+      "url": "https://kucoin.com/news/articles/crypto-daily-market-report-october-27-2026"
+     },
+     {
+      "title": "Motley Fool, 27/10/2026",
+      "url": "https://www.fool.com/coverage/stock-market-today/2026/10/27/crypto-market-today-oct-27-bitcoin-bounces-back-but-whales-are-turning-bearish-for-the-first-time-since-june/"
+     }
+    ],
+    "tag": "Cripto",
+    "thesis": "O OCC aprovou formalmente o Ripple National Trust Bank, que vai apoiar a stablecoin RLUSD e a custódia institucional de ativos digitais. A XRP ronda 1,30 dólares e acumula uma queda de cerca de 33% no ano.",
+    "ticker": "XRP"
+   }
+  ],
+  "next": "amanhã de manhã",
+  "sources": [
+   {
+    "title": "AP via KRMG · índices dos EUA (27/10/2026)",
+    "url": "https://krmg.com/2026/10/27/how-major-us-stock-indexes-fared-tuesday-10-27-2026/"
+   },
+   {
+    "title": "Investrade · Market Review (27/10/2026)",
+    "url": "https://investrade.com/market-review-october-27-2026/"
+   },
+   {
+    "title": "AP via KRMG · Ásia e petróleo (28/10/2026)",
+    "url": "https://krmg.com/2026/10/27/asian-stocks-rise-after-a-rally-on-wall-street-while-oil-prices-edge-higher"
+   },
+   {
+    "title": "O Caça Promoções · Euribor (27/10/2026)",
+    "url": "https://www.ocacapromocoes.pt/taxas-euribor-hoje-27-de-outubro-descem-a-3-sobem-a-6-e-a-12-meses/"
+   },
+   {
+    "title": "ECO · Euribor em semana de BCE (26/10/2026)",
+    "url": "https://eco.sapo.pt/2026/10/26/euribor-desce-em-todos-os-prazos-em-semana-de-bce/"
+   },
+   {
+    "title": "Economic Times via FVBB · petróleo (27/10/2026)",
+    "url": "https://fvbb.com/ns/oil-price-today-october-27-crude-oil-below/326941"
+   },
+   {
+    "title": "Motley Fool · Crypto Market Today (27/10/2026)",
+    "url": "https://www.fool.com/coverage/stock-market-today/2026/10/27/crypto-market-today-oct-27-bitcoin-bounces-back-but-whales-are-turning-bearish-for-the-first-time-since-june/"
+   },
+   {
+    "title": "KuCoin · Crypto Daily Market Report (27/10/2026)",
+    "url": "https://kucoin.com/news/articles/crypto-daily-market-report-october-27-2026"
+   },
+   {
+    "title": "HDFC Sky · resultados e EQT (27/10/2026)",
+    "url": "https://hdfcsky.com/news/first-citizens-cemex-beat-estimates-verizon-raises-outlook-as-eqt-announces-13b-gas-deal"
+   },
+   {
+    "title": "Gotrade · NVIDIA (27/10/2026)",
+    "url": "https://www.heygotrade.com/en/news/nvidia-nvda-stock-news-october-27-2026/"
+   }
+  ],
+  "summary": "Wall Street voltou a subir na terça-feira: o S&P 500 ganhou 0,6% para 7722,60 pontos e o Nasdaq 1,2%, com as ações de IA a liderar depois de a Broadcom anunciar um financiamento de 63 mil milhões de dólares para a Anthropic. O juro a 10 anos dos EUA ficou em 4,99% e o Brent recuou com esperanças de alívio no conflito com o Irão. A Euribor a 6 meses subiu ligeiramente para 2,990%, de volta ao patamar dos 3%. Hoje a Fed anuncia a decisão de juros, o BCE decide a 29/10 e o BCP apresenta contas às 17h.",
+  "themes": [
+   {
+    "t": "Fed e BCE",
+    "txt": "A Fed decide hoje e não se espera alteração; o CME FedWatch dá 83% de probabilidade de nova subida em dezembro (Investrade). O BCE reúne-se a 28 e 29/10 e os analistas esperam uma pausa, depois das subidas de junho e setembro."
+   },
+   {
+    "t": "Casa e Euribor",
+    "txt": "A 27/10, a Euribor a 3 meses desceu para 2,618%, mas a de 6 meses subiu para 2,990% e a de 12 meses para 3,262%. A de 6 meses pesa cerca de 40% no stock de crédito à habitação com taxa variável em Portugal."
+   },
+   {
+    "t": "IA em alta",
+    "txt": "A Broadcom subiu cerca de 4% com o financiamento de 63 mil milhões para a Anthropic e a DA Davidson subiu-a para Compra com preço-alvo de 400 dólares. Samsung e SK Hynix tiveram ganhos fortes na Ásia."
+   },
+   {
+    "t": "Petróleo",
+    "txt": "O Brent ficou a cerca de 114 dólares no fecho dos EUA (-1,7%), com esperanças de resolução do conflito com o Irão, mas os ataques dos Houthis à Arábia Saudita limitam a descida. O setor da energia caiu mais de 2% em Wall Street."
+   },
+   {
+    "t": "Cripto",
+    "txt": "A bitcoin ronda os 80 mil dólares e os ETF de bitcoin somaram vários dias de saídas. Nos EUA, o OCC aprovou o Ripple National Trust Bank, que vai apoiar a stablecoin RLUSD."
+   }
+  ],
+  "id": "2026-10-28"
+ },
+ {
   "asOf": "2026-10-27T08:10:52Z",
   "next": "amanhã de manhã",
   "sources": [
