@@ -1,21 +1,60 @@
 {
- "prices": {},
- "watch": {},
- "fx": null,
- "asOf": "2026-10-29T10:55:50Z",
- "source": "Fecho diário via ; sem dados: VUAA, O, NEE, CMCSA, NVDA, WTRG, NNE, SPCX, BCP, CNQ",
- "erros": [
-  "yahoo VUAA.L: HTTP Error 429: Too Many Requests",
-  "google VUAA.L: 'NoneType' object has no attribute 'group'",
-  "stooq vuaa.uk: list index out of range",
-  "yahoo O: HTTP Error 429: Too Many Requests",
-  "google O: 'NoneType' object has no attribute 'group'",
-  "stooq o.us: list index out of range",
-  "yahoo NEE: HTTP Error 429: Too Many Requests",
-  "google NEE: 'NoneType' object has no attribute 'group'",
-  "stooq nee.us: list index out of range",
-  "yahoo CMCSA: HTTP Error 429: Too Many Requests",
-  "google CMCSA: 'NoneType' object has no attribute 'group'",
-  "stooq cmcsa.us: list index out of range"
- ]
+ "prices": {
+  "VUAA": {
+   "p": 149.54,
+   "prev": 149.8,
+   "cur": "USD"
+  },
+  "O": {
+   "p": 56.23,
+   "prev": 56.82,
+   "cur": "USD"
+  },
+  "NEE": {
+   "p": 81.02,
+   "prev": 82.42,
+   "cur": "USD"
+  },
+  "CMCSA": {
+   "p": 21.57,
+   "prev": 21.84,
+   "cur": "USD"
+  },
+  "NVDA": {
+   "p": 215.38,
+   "prev": 217.94,
+   "cur": "USD"
+  },
+  "WTRG": {
+   "p": 42.27,
+   "prev": 42.64,
+   "cur": "USD"
+  },
+  "NNE": {
+   "p": 12.39,
+   "prev": 12.34,
+   "cur": "USD"
+  },
+  "SPCX": {
+   "p": 145.23,
+   "prev": 148.58,
+   "cur": "USD"
+  },
+  "BCP": {
+   "p": 1.1105,
+   "prev": 1.0905,
+   "cur": "EUR"
+  }
+ },
+ "watch": {
+  "CNQ": {
+   "p": 54.81,
+   "prev": 54.07,
+   "cur": "USD"
+  }
+ },
+ "fx": 1.1153,
+ "asOf": "2026-10-29T21:00:00Z",
+ "source": "Fecho diário via Yahoo Finance",
+ "erros": []
 }
