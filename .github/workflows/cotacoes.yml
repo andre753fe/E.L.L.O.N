@@ -1,0 +1,20 @@
+name: Cotações (fecho)
+on:
+  schedule:
+    - cron: "40 21 * * 1-5"
+  workflow_dispatch:
+  push:
+    paths: ["tools/quotes.py", ".github/workflows/cotacoes.yml"]
+permissions:
+  contents: write
+jobs:
+  quotes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/quotes.py
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add data/quotes.json
+          git diff --cached --quiet || (git commit -m "Atualiza cotações" && git pull --rebase -q && git push)
