@@ -20,7 +20,7 @@ def yahoo(sym):
     h = yf.Ticker(sym).history(period="10d", interval="1d", auto_adjust=False)
     h = h[h["Close"].notna()]
     p, prev = float(h["Close"].iloc[-1]), float(h["Close"].iloc[-2])
-    when = h.index[-1].to_pydatetime().astimezone(timezone.utc).replace(hour=21)
+    when = min(h.index[-1].to_pydatetime().astimezone(timezone.utc).replace(hour=21), datetime.now(timezone.utc))
     try:
         cur = yf.Ticker(sym).fast_info.get("currency")
     except Exception:
