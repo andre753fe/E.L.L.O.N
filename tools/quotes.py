@@ -34,12 +34,24 @@ def stooq(sym):
     when = datetime.strptime(a["Date"], "%Y-%m-%d").replace(hour=21, tzinfo=timezone.utc)
     return round(float(a["Close"]), 4), round(float(b["Close"]), 4), when, None
 
+GOOGLE = {"VUAA.L": "VUAA:LON", "O": "O:NYSE", "NEE": "NEE:NYSE", "CMCSA": "CMCSA:NASDAQ", "NVDA": "NVDA:NASDAQ",
+          "WTRG": "WTRG:NYSE", "NNE": "NNE:NASDAQ", "SPCX": "SPCX:NASDAQ", "BCP.LS": "BCP:ELI", "CNQ": "CNQ:NYSE", "EURUSD=X": "EUR-USD"}
+
+def google(ys):
+    import re
+    h = get("https://www.google.com/finance/quote/" + GOOGLE[ys] + "?hl=en")
+    p = float(re.search(r'data-last-price="([\d.]+)"', h).group(1))
+    m = re.search(r'Previous close</div>.*?>([\d,.]+)\s*<', h, re.S) or re.search(r'Previous close.{0,400}?([\d,]+\.\d+)', h, re.S)
+    prev = float(m.group(1).replace(",", "")) if m else p
+    return round(p, 4), round(prev, 4), datetime.now(timezone.utc), None
+
+ERRS = []
 def fetch(ys, ss):
-    for fn, s in ((yahoo, ys), (stooq, ss)):
+    for fn, s in ((yahoo, ys), (google, ys), (stooq, ss)):
         try:
             return fn(s) + (fn.__name__,)
         except Exception as e:
-            print("falhou", fn.__name__, s, e, file=sys.stderr)
+            ERRS.append(f"{fn.__name__} {s}: {str(e)[:120]}")
         time.sleep(1)
     return None
 
@@ -64,6 +76,7 @@ fx = fetch("EURUSD=X", "eurusd")
 if fx and 0.9 < fx[0] < 1.4:
     out["fx"] = fx[0]; used.add(fx[4])
 out["asOf"] = (latest or datetime.now(timezone.utc)).strftime("%Y-%m-%dT%H:%M:%SZ")
-out["source"] = "Fecho diário via " + " e ".join(sorted("Yahoo Finance" if u == "yahoo" else "Stooq" for u in used)) + (f"; sem dados: {', '.join(failed)}" if failed else "")
+out["source"] = "Fecho diário via " + " e ".join(sorted({"yahoo": "Yahoo Finance", "google": "Google Finance", "stooq": "Stooq"}[u] for u in used)) + (f"; sem dados: {', '.join(failed)}" if failed else "")
+out["erros"] = ERRS[:12]
 json.dump(out, open(path, "w"), ensure_ascii=False, indent=1)
 print(json.dumps(out, ensure_ascii=False))
