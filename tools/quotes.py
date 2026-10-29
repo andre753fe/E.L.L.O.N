@@ -16,16 +16,16 @@ def get(url):
         return r.read().decode("utf-8", "replace")
 
 def yahoo(sym):
-    j = json.loads(get(f"https://query1.finance.yahoo.com/v8/finance/chart/{sym}?range=10d&interval=1d"))
-    res = j["chart"]["result"][0]
-    ts, closes = res["timestamp"], res["indicators"]["quote"][0]["close"]
-    rows = [(t, c) for t, c in zip(ts, closes) if c is not None]
-    meta = res["meta"]
-    p = meta.get("regularMarketPrice") or rows[-1][1]
-    # fecho anterior = penúltimo fecho diário (o último é o do dia do preço)
-    prev = rows[-2][1] if len(rows) > 1 else meta.get("chartPreviousClose")
-    when = datetime.fromtimestamp(meta.get("regularMarketTime") or rows[-1][0], timezone.utc)
-    return round(float(p), 4), round(float(prev), 4), when, meta.get("currency")
+    import yfinance as yf  # trata dos cookies do Yahoo e evita o erro 429
+    h = yf.Ticker(sym).history(period="10d", interval="1d", auto_adjust=False)
+    h = h[h["Close"].notna()]
+    p, prev = float(h["Close"].iloc[-1]), float(h["Close"].iloc[-2])
+    when = h.index[-1].to_pydatetime().astimezone(timezone.utc).replace(hour=21)
+    try:
+        cur = yf.Ticker(sym).fast_info.get("currency")
+    except Exception:
+        cur = None
+    return round(p, 4), round(prev, 4), when, cur
 
 def stooq(sym):
     rows = list(csv.DictReader(io.StringIO(get(f"https://stooq.com/q/d/l/?s={sym}&i=d"))))

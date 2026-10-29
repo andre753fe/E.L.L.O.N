@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: pip install -q yfinance
       - run: python3 tools/quotes.py
       - run: |
           git config user.name "github-actions[bot]"
