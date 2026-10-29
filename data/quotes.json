@@ -2,6 +2,20 @@
  "prices": {},
  "watch": {},
  "fx": null,
- "asOf": "2026-10-29T10:53:15Z",
- "source": "Fecho diário via ; sem dados: VUAA, O, NEE, CMCSA, NVDA, WTRG, NNE, SPCX, BCP, CNQ"
+ "asOf": "2026-10-29T10:55:50Z",
+ "source": "Fecho diário via ; sem dados: VUAA, O, NEE, CMCSA, NVDA, WTRG, NNE, SPCX, BCP, CNQ",
+ "erros": [
+  "yahoo VUAA.L: HTTP Error 429: Too Many Requests",
+  "google VUAA.L: 'NoneType' object has no attribute 'group'",
+  "stooq vuaa.uk: list index out of range",
+  "yahoo O: HTTP Error 429: Too Many Requests",
+  "google O: 'NoneType' object has no attribute 'group'",
+  "stooq o.us: list index out of range",
+  "yahoo NEE: HTTP Error 429: Too Many Requests",
+  "google NEE: 'NoneType' object has no attribute 'group'",
+  "stooq nee.us: list index out of range",
+  "yahoo CMCSA: HTTP Error 429: Too Many Requests",
+  "google CMCSA: 'NoneType' object has no attribute 'group'",
+  "stooq cmcsa.us: list index out of range"
+ ]
 }
