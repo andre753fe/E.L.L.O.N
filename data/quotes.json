@@ -1,7 +1,7 @@
 {
  "prices": {
   "VUAA": {
-   "p": 149.54,
+   "p": 149.5,
    "prev": 149.8,
    "cur": "USD"
   },
@@ -41,7 +41,7 @@
    "cur": "USD"
   },
   "BCP": {
-   "p": 1.1105,
+   "p": 1.111,
    "prev": 1.0905,
    "cur": "EUR"
   }
@@ -53,8 +53,8 @@
    "cur": "USD"
   }
  },
- "fx": 1.1153,
- "asOf": "2026-10-29T21:00:00Z",
+ "fx": 1.1152,
+ "asOf": "2026-10-29T11:00:02Z",
  "source": "Fecho diário via Yahoo Finance",
  "erros": []
 }
