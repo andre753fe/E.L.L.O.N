@@ -1,6 +1,145 @@
 [
  {
+  "asOf": "2026-10-29T07:26:25Z",
+  "id": "2026-10-29",
+  "ideas": [
+   {
+    "market": "NYSE",
+    "name": "GE Vernova",
+    "risks": "A compra de 9 mil milhões aumenta o risco de integração e a ação depende do investimento em redes elétricas e na procura de energia para IA.",
+    "sources": [
+     {
+      "title": "Investrade, 28/10/2026",
+      "url": "https://investrade.com/market-review-october-28-2026/"
+     }
+    ],
+    "tag": "Energia",
+    "thesis": "Lucro por ação de 4,81 dólares no terceiro trimestre (esperado: 4,01), receitas de 12,64 mil milhões e encomendas de 29 mil milhões. Vai comprar a Trench Group por 9 mil milhões e subiu a previsão de receitas de 2026 para 46,5-47,5 mil milhões.",
+    "ticker": "GEV"
+   },
+   {
+    "market": "NYSE",
+    "name": "Eli Lilly",
+    "risks": "É o resultado de um único estudo, a concorrência nos medicamentos para a obesidade é forte e há risco de pressão sobre preços.",
+    "sources": [
+     {
+      "title": "Investrade, 28/10/2026",
+      "url": "https://investrade.com/market-review-october-28-2026/"
+     }
+    ],
+    "tag": "Saúde",
+    "thesis": "O retatrutide superou o Ozempic num estudo em diabetes, segundo o resumo do Investrade. O setor da saúde foi o que mais subiu no dia (+1,04%).",
+    "ticker": "LLY"
+   },
+   {
+    "market": "NYSE",
+    "name": "Phillips 66",
+    "risks": "O negócio de refinação é muito cíclico e depende das margens e do preço do petróleo, que podem inverter-se com o fim do conflito no Irão.",
+    "sources": [
+     {
+      "title": "Investrade, 28/10/2026",
+      "url": "https://investrade.com/market-review-october-28-2026/"
+     }
+    ],
+    "tag": "Energia",
+    "thesis": "Lucro ajustado por ação de 14,08 dólares no terceiro trimestre, contra 11,73 esperados. Com o WTI acima dos 100 dólares, as refinarias estão a beneficiar de margens fortes.",
+    "ticker": "PSX"
+   },
+   {
+    "market": "Nasdaq",
+    "name": "Cheesecake Factory",
+    "risks": "Restauração é sensível ao consumo e aos custos de trabalho e alimentos; a ação já reflete um bom trimestre.",
+    "sources": [
+     {
+      "title": "Investrade, 28/10/2026",
+      "url": "https://investrade.com/market-review-october-28-2026/"
+     }
+    ],
+    "tag": "Consumo",
+    "thesis": "As vendas comparáveis subiram 15,2%, contra 9,8% esperados, e a empresa superou as estimativas e subiu a previsão. A Brinker (Chili's) também bateu as previsões, com vendas comparáveis de +9,1%.",
+    "ticker": "CAKE"
+   },
+   {
+    "market": "Cripto",
+    "name": "Bitcoin",
+    "risks": "É um ativo muito volátil, podes perder grande parte do valor e não paga dividendos; os fluxos dos ETF podem inverter-se depressa.",
+    "sources": [
+     {
+      "title": "CoinDesk, 28/10/2026",
+      "url": "https://coindesk.com/markets/2026/10/28/bitcoin-rebounds-above-usd81-000-as-asian-chip-rally-spills-into-crypto-pepe-jumps-9"
+     },
+     {
+      "title": "Motley Fool, 28/10/2026",
+      "url": "https://www.fool.com/coverage/stock-market-today/2026/10/28/crypto-market-today-oct-28-bitcoin-and-altcoins-gain-as-fed-decision-clears-the-way-for-big-tech-earnings/"
+     }
+    ],
+    "tag": "Cripto",
+    "thesis": "A bitcoin subiu acima dos 81 mil dólares a 28/10 e os ETF de bitcoin dos EUA tiveram 176 milhões de dólares de entradas na terça, o segundo dia seguido. Mantém uma queda de 3,4% em sete dias.",
+    "ticker": "BTC"
+   }
+  ],
+  "next": "amanhã de manhã",
+  "sources": [
+   {
+    "title": "AP via KRMG · índices dos EUA (28/10/2026)",
+    "url": "https://krmg.com/2026/10/28/how-major-us-stock-indexes-fared-wednesday-10-28-2026/"
+   },
+   {
+    "title": "Investrade, 28/10/2026",
+    "url": "https://investrade.com/market-review-october-28-2026/"
+   },
+   {
+    "title": "JRL Charts · Fed (28/10/2026)",
+    "url": "https://jrlcharts.com/2026/10/28/fed-holds-rates-at-4-as-wall-street-bets-on-december-hike/"
+   },
+   {
+    "title": "ECO · Euribor (28/10/2026)",
+    "url": "https://eco.sapo.pt/2026/10/28/euribor-mantem-se-a-tres-meses-cai-a-seis-e-sobe-a-12-meses/"
+   },
+   {
+    "title": "CoinDesk · bitcoin (28/10/2026)",
+    "url": "https://coindesk.com/markets/2026/10/28/bitcoin-rebounds-above-usd81-000-as-asian-chip-rally-spills-into-crypto-pepe-jumps-9"
+   },
+   {
+    "title": "Motley Fool · Crypto Market Today (28/10/2026)",
+    "url": "https://www.fool.com/coverage/stock-market-today/2026/10/28/crypto-market-today-oct-28-bitcoin-and-altcoins-gain-as-fed-decision-clears-the-way-for-big-tech-earnings/"
+   },
+   {
+    "title": "Observador · lucro do BCP (28/10/2026)",
+    "url": "https://observador.pt/2026/10/28/millennium-bcp-lucra-874-milhoes-nos-primeiros-nove-meses-do-ano-mais-126-apesar-de-contexto-muito-dificil/"
+   },
+   {
+    "title": "StockAnalysis · CNQ histórico",
+    "url": "https://stockanalysis.com/stocks/cnq/history/"
+   }
+  ],
+  "summary": "Wall Street fechou em alta ligeira na quarta-feira: o S&P 500 ganhou 0,3% para 7743,98 pontos e o Nasdaq 0,3%. A Fed manteve os juros em 3,75%-4,00% por 10 votos contra 2, com dois membros a quererem logo uma subida, e os mercados dão cerca de 78% de probabilidade a uma subida em dezembro. O juro a 10 anos dos EUA subiu para 5,03% e o petróleo reagiu em alta. Hoje decide o BCE, com pausa esperada, e a Amazon e a Intel apresentam resultados depois do fecho.",
+  "themes": [
+   {
+    "t": "Fed em pausa, dezembro em aberto",
+    "txt": "A Fed manteve a taxa em 3,75%-4,00%, depois da subida de setembro. Cook e Hammack votaram a favor de uma subida imediata e o CME FedWatch dá cerca de 78% de probabilidade a uma subida em dezembro (JRL Charts)."
+   },
+   {
+    "t": "Casa e Euribor",
+    "txt": "A 28/10, a Euribor a 3 meses ficou em 2,618%, a de 6 meses desceu para 2,960% e a de 12 meses subiu para 3,290%. A de 6 meses pesa cerca de 40% no crédito à habitação com taxa variável. O BCE decide hoje e os mercados esperam que mantenha as taxas (ECO)."
+   },
+   {
+    "t": "Resultados em força",
+    "txt": "A GE Vernova, a Phillips 66 e a Cheesecake Factory bateram as previsões, enquanto a Enphase caiu com uma previsão fraca para o trimestre. Hoje, depois do fecho, a Amazon e a Intel apresentam contas."
+   },
+   {
+    "t": "Petróleo e juros longos",
+    "txt": "O petróleo WTI subiu 2,9% para 102,78 dólares e o Brent ficou nos 111,29. O juro a 10 anos dos EUA subiu para 5,034%, e o setor imobiliário foi o que mais caiu em Wall Street (-1,11%)."
+   },
+   {
+    "t": "Cripto",
+    "txt": "A bitcoin voltou a subir acima dos 81 mil dólares, depois de ter ficado abaixo dos 80 mil na terça-feira. Os ETF de bitcoin dos EUA somaram 176 milhões de dólares de entradas na terça, o segundo dia seguido (CoinDesk)."
+   }
+  ]
+ },
+ {
   "asOf": "2026-10-28T08:20:00Z",
+  "id": "2026-10-28",
   "ideas": [
    {
     "market": "NYSE",
@@ -160,77 +299,10 @@
     "t": "Cripto",
     "txt": "A bitcoin ronda os 80 mil dólares e os ETF de bitcoin somaram vários dias de saídas. Nos EUA, o OCC aprovou o Ripple National Trust Bank, que vai apoiar a stablecoin RLUSD."
    }
-  ],
-  "id": "2026-10-28"
+  ]
  },
  {
   "asOf": "2026-10-27T08:10:52Z",
-  "next": "amanhã de manhã",
-  "sources": [
-   {
-    "title": "AP via KRMG · índices dos EUA (26/10/2026)",
-    "url": "https://krmg.com/2026/10/26/how-major-us-stock-indexes-fared-monday-10-26-2026/"
-   },
-   {
-    "title": "TheStreet · Stock Market Today (26/10/2026)",
-    "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-26-2026"
-   },
-   {
-    "title": "Yahoo Finance · Stock market today (26/10/2026)",
-    "url": "https://finance.yahoo.com/markets/live/stock-market-today-monday-october-26-dow-sp-500-nasdaq-101153035.html"
-   },
-   {
-    "title": "Gotrade · NVIDIA (27/10/2026)",
-    "url": "https://www.heygotrade.com/en/news/nvidia-nvda-stock-news-october-27-2026/"
-   },
-   {
-    "title": "ECO · Euribor desce em todos os prazos (26/10/2026)",
-    "url": "https://eco.sapo.pt/2026/10/26/euribor-desce-em-todos-os-prazos-em-semana-de-bce/"
-   },
-   {
-    "title": "Fortune via inkl · preço do petróleo (26/10/2026)",
-    "url": "https://www.inkl.com/news/current-price-of-oil-as-of-oct-26-2026"
-   },
-   {
-    "title": "Zerocap · Weekly Crypto Market Wrap (26/10/2026)",
-    "url": "https://zerocap.com/insights/weekly-crypto-market-wrap/weekly-crypto-market-wrap-26-october-2026/"
-   },
-   {
-    "title": "Fixygen · revisão semanal cripto (26/10/2026)",
-    "url": "https://www.fixygen.ua/news/20261026/bitcoin-fell-to-80000-ethereum-lost-nearly-4-over-week-fixygen-review.html"
-   },
-   {
-    "title": "HDFC Sky · Verizon, EQT e resultados (27/10/2026)",
-    "url": "https://hdfcsky.com/news/first-citizens-cemex-beat-estimates-verizon-raises-outlook-as-eqt-announces-13b-gas-deal"
-   },
-   {
-    "title": "24/7 Wall St. · dividendos aumentados (26/10/2026)",
-    "url": "https://247wallst.com/investing/2026/10/26/these-5-dividend-stocks-raised-their-payouts-are-they-worth-buying-in-november/"
-   }
-  ],
-  "summary": "Wall Street começou a semana a subir: o S&P 500 ganhou 0,70% para 7676,77 pontos e o Nasdaq 0,82%, com o pedido de entrada em bolsa da Anthropic a reanimar as ações de IA. O juro a 10 anos dos EUA ficou perto dos 4,98% e o Brent recuou para a zona dos 110–115 dólares, com esperanças de alívio na tensão entre os EUA e o Irão. A Euribor desceu em todos os prazos e a de 6 meses voltou a ficar abaixo dos 3%. Hoje começa a reunião da Fed (decisão a 28/10), o BCE decide a 29/10 e o BCP apresenta contas amanhã às 17h.",
-  "themes": [
-   {
-    "t": "Fed e BCE",
-    "txt": "Os mercados só dão cerca de 10% de hipóteses de subida dos juros da Fed nesta reunião; Kyle Rodda (Capital.com) diz que os investidores vão procurar sinais de uma subida em dezembro. O BCE deve manter as taxas a 29/10, depois de as ter subido em junho e setembro."
-   },
-   {
-    "t": "Casa e Euribor",
-    "txt": "A 26/10, a Euribor a 3 meses desceu para 2,638%, a 6 meses para 2,978% e a 12 meses para 3,225%. A de 6 meses, a mais usada nos créditos à habitação em Portugal, quebrou quatro sessões seguidas acima de 3%."
-   },
-   {
-    "t": "IA e financiamento",
-    "txt": "A Anthropic entregou o pedido público de entrada no Nasdaq. A Meta quer levantar até 95 mil milhões de dólares para infraestrutura de IA e caiu cerca de 1,9%, o que reacende as dúvidas sobre o financiamento do investimento em IA."
-   },
-   {
-    "t": "Energia e gás",
-    "txt": "O Brent recuou depois de mediadores do Catar e um ministro saudita visitarem Teerão, mas continua cerca de 13% acima de há um mês. No gás natural, a EQT vai comprar a Range Resources, cujas ações subiram cerca de 16%."
-   },
-   {
-    "t": "Cripto",
-    "txt": "A bitcoin está perto dos 80 mil dólares, com a terceira semana seguida de quedas. Os ETF de bitcoin tiveram entradas líquidas de cerca de 301 milhões na semana de 19 a 23/10; os de ether perderam cerca de 221 milhões."
-   }
-  ],
   "id": "2026-10-27",
   "ideas": [
    {
@@ -315,84 +387,76 @@
     "thesis": "Entrou em funcionamento a atualização Alpenglow, que reduz o tempo de confirmação das transações de cerca de 12,8 segundos para cerca de 150 milissegundos. A SOL valia cerca de 100,9 dólares a 25/10, com uma queda de 2,9% na semana.",
     "ticker": "SOL"
    }
+  ],
+  "next": "amanhã de manhã",
+  "sources": [
+   {
+    "title": "AP via KRMG · índices dos EUA (26/10/2026)",
+    "url": "https://krmg.com/2026/10/26/how-major-us-stock-indexes-fared-monday-10-26-2026/"
+   },
+   {
+    "title": "TheStreet · Stock Market Today (26/10/2026)",
+    "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-26-2026"
+   },
+   {
+    "title": "Yahoo Finance · Stock market today (26/10/2026)",
+    "url": "https://finance.yahoo.com/markets/live/stock-market-today-monday-october-26-dow-sp-500-nasdaq-101153035.html"
+   },
+   {
+    "title": "Gotrade · NVIDIA (27/10/2026)",
+    "url": "https://www.heygotrade.com/en/news/nvidia-nvda-stock-news-october-27-2026/"
+   },
+   {
+    "title": "ECO · Euribor desce em todos os prazos (26/10/2026)",
+    "url": "https://eco.sapo.pt/2026/10/26/euribor-desce-em-todos-os-prazos-em-semana-de-bce/"
+   },
+   {
+    "title": "Fortune via inkl · preço do petróleo (26/10/2026)",
+    "url": "https://www.inkl.com/news/current-price-of-oil-as-of-oct-26-2026"
+   },
+   {
+    "title": "Zerocap · Weekly Crypto Market Wrap (26/10/2026)",
+    "url": "https://zerocap.com/insights/weekly-crypto-market-wrap/weekly-crypto-market-wrap-26-october-2026/"
+   },
+   {
+    "title": "Fixygen · revisão semanal cripto (26/10/2026)",
+    "url": "https://www.fixygen.ua/news/20261026/bitcoin-fell-to-80000-ethereum-lost-nearly-4-over-week-fixygen-review.html"
+   },
+   {
+    "title": "HDFC Sky · Verizon, EQT e resultados (27/10/2026)",
+    "url": "https://hdfcsky.com/news/first-citizens-cemex-beat-estimates-verizon-raises-outlook-as-eqt-announces-13b-gas-deal"
+   },
+   {
+    "title": "24/7 Wall St. · dividendos aumentados (26/10/2026)",
+    "url": "https://247wallst.com/investing/2026/10/26/these-5-dividend-stocks-raised-their-payouts-are-they-worth-buying-in-november/"
+   }
+  ],
+  "summary": "Wall Street começou a semana a subir: o S&P 500 ganhou 0,70% para 7676,77 pontos e o Nasdaq 0,82%, com o pedido de entrada em bolsa da Anthropic a reanimar as ações de IA. O juro a 10 anos dos EUA ficou perto dos 4,98% e o Brent recuou para a zona dos 110–115 dólares, com esperanças de alívio na tensão entre os EUA e o Irão. A Euribor desceu em todos os prazos e a de 6 meses voltou a ficar abaixo dos 3%. Hoje começa a reunião da Fed (decisão a 28/10), o BCE decide a 29/10 e o BCP apresenta contas amanhã às 17h.",
+  "themes": [
+   {
+    "t": "Fed e BCE",
+    "txt": "Os mercados só dão cerca de 10% de hipóteses de subida dos juros da Fed nesta reunião; Kyle Rodda (Capital.com) diz que os investidores vão procurar sinais de uma subida em dezembro. O BCE deve manter as taxas a 29/10, depois de as ter subido em junho e setembro."
+   },
+   {
+    "t": "Casa e Euribor",
+    "txt": "A 26/10, a Euribor a 3 meses desceu para 2,638%, a 6 meses para 2,978% e a 12 meses para 3,225%. A de 6 meses, a mais usada nos créditos à habitação em Portugal, quebrou quatro sessões seguidas acima de 3%."
+   },
+   {
+    "t": "IA e financiamento",
+    "txt": "A Anthropic entregou o pedido público de entrada no Nasdaq. A Meta quer levantar até 95 mil milhões de dólares para infraestrutura de IA e caiu cerca de 1,9%, o que reacende as dúvidas sobre o financiamento do investimento em IA."
+   },
+   {
+    "t": "Energia e gás",
+    "txt": "O Brent recuou depois de mediadores do Catar e um ministro saudita visitarem Teerão, mas continua cerca de 13% acima de há um mês. No gás natural, a EQT vai comprar a Range Resources, cujas ações subiram cerca de 16%."
+   },
+   {
+    "t": "Cripto",
+    "txt": "A bitcoin está perto dos 80 mil dólares, com a terceira semana seguida de quedas. Os ETF de bitcoin tiveram entradas líquidas de cerca de 301 milhões na semana de 19 a 23/10; os de ether perderam cerca de 221 milhões."
+   }
   ]
  },
  {
   "asOf": "2026-10-26T07:38:35Z",
-  "next": "segunda-feira de manhã",
-  "sources": [
-   {
-    "title": "Gotrade · Week Ahead: Fed Decision, US GDP and Big Tech Earnings (26/10/2026)",
-    "url": "https://www.heygotrade.com/en/news/weekly-economic-outlook-2026-10-26/"
-   },
-   {
-    "title": "TradingKey · US Stock Weekly Report (26/10/2026)",
-    "url": "https://tradingkey.com/tools/market-update/us-stock-market-this-week-20261026"
-   },
-   {
-    "title": "Babypips · Fundies Cheat Sheet, Oct 26–30 (25/10/2026)",
-    "url": "https://www.babypips.com/analysis/fundies-cheat-sheet-2026-10-26-fed-big-tech-oil-saudi"
-   },
-   {
-    "title": "Schaeffer's · The Week Ahead (22/10/2026)",
-    "url": "https://www.schaeffersresearch.com/content/news/2026/10/22/the-week-ahead-wall-street-awaits-october-fed-decision"
-   },
-   {
-    "title": "Benzinga · Mike Wilson, Morgan Stanley (20/10/2026)",
-    "url": "https://www.benzinga.com/markets/prediction-markets/26/10/62475470/mike-wilson-market-correction-sp500-8500"
-   },
-   {
-    "title": "investingLive · BCE e Morgan Stanley (26/10/2026)",
-    "url": "https://investinglive.com/central-banks/ecb-set-to-hold-at-2-50-as-morgan-stanley-sees-december-as-natural-moment-for-next-hike/"
-   },
-   {
-    "title": "Diário de Coimbra · prestações de novembro (21/10/2026)",
-    "url": "https://www.diariocoimbra.pt/2026/10/21/novembro-trara-aumento-nas-prestacoes-da-habitacao-mesmo-com-estabilizacao-das-euribor/"
-   },
-   {
-    "title": "idealista · Euribor de outubro 2026",
-    "url": "https://www.idealista.pt/news/euribor/mensal/mes-atual/"
-   },
-   {
-    "title": "ComparaJá · Euribor hoje (25/10/2026)",
-    "url": "https://www.comparaja.pt/credito-habitacao/euribor-hoje"
-   },
-   {
-    "title": "SpaceX · resultados do 3.º trimestre (20/10/2026)",
-    "url": "https://s21.q4cdn.com/184289198/files/content_files/SpaceX-Reports-Third-Quarter-2026-Results.pdf"
-   },
-   {
-    "title": "NextEra Energy · resultados do 3.º trimestre (SEC, 21/10/2026)",
-    "url": "https://www.sec.gov/Archives/edgar/data/0000753308/000075330826000077/neeq32026exhibit99.htm"
-   },
-   {
-    "title": "Comcast · resultados do 3.º trimestre (SEC, 22/10/2026)",
-    "url": "https://www.sec.gov/Archives/edgar/data/0001166691/000162828026066783/ex991-9302026.htm"
-   },
-   {
-    "title": "RTTNews/Reuters · encomendas chinesas à NVIDIA (20/10/2026)",
-    "url": "https://www.rttnews.com/3700721/bytedance-alibaba-tencent-order-over-35-bln-of-nvidia-chips-reports.aspx?type=alleco"
-   }
-  ],
-  "summary": "Semana mista em Wall Street: o S&P 500 fechou a 7623,68 pontos, cerca de 0,5% abaixo da semana anterior, com o juro a 10 anos dos EUA perto dos 5% e o petróleo acima dos 100 dólares. A época de resultados continua forte, com os lucros do S&P 500 a crescer cerca de 29,5% no 3.º trimestre (FactSet). Esta semana decidem a Fed (28/10, espera-se manutenção em 3,75%–4,00%) e o BCE (29/10, espera-se manutenção em 2,5%), e publicam contas Microsoft, Alphabet, Amazon e o BCP. A Euribor a 6 meses está nos 3,01% e as prestações da casa revistas em novembro vão subir.",
-  "themes": [
-   {
-    "t": "Juros e bancos centrais",
-    "txt": "Os futuros dão cerca de 90% de hipóteses de a Fed manter os juros a 28/10, mas cerca de 80% de nova subida em dezembro. O Morgan Stanley espera que o BCE mantenha em outubro e veja dezembro como o momento natural para mexer."
-   },
-   {
-    "t": "Casa e Euribor",
-    "txt": "A Euribor a 6 meses passou de 2,92% a 14/10 para 3,01% a 25/10 e a média de outubro (2,975%) é a mais alta do ano. A DECO avisa que quem tem revisão em novembro paga mais; nos novos créditos, 87% já são de taxa mista, com taxa média de 2,86%."
-   },
-   {
-    "t": "Inteligência artificial",
-    "txt": "Mike Wilson (Morgan Stanley) acha que a correção está «nas últimas entradas» e vê o S&P 500 em 8300 a meio de 2027, mas defende que a próxima fase favorece quem usa IA, não tanto quem fabrica chips. A Meta caiu quase 7% a 22/10 com dúvidas sobre o investimento financiado com dívida."
-   },
-   {
-    "t": "Energia e defesa",
-    "txt": "Petróleo e gás lideraram a semana (+2,4% a +3,1% nos setores) com as tensões no Golfo. A defesa também subiu: a Lockheed ganhou cerca de 10% com uma carteira de encomendas recorde."
-   }
-  ],
   "ideas": [
    {
     "market": "Borsa Italiana (ADR na NYSE)",
@@ -492,44 +556,84 @@
     "thesis": "Lucro antes de impostos de 2322 milhões de libras no 3.º trimestre (+12%) e rentabilidade (RoTE) de 11,7%. Anunciou nova recompra de 500 milhões e já distribuiu 2,8 mil milhões no ano (+46%); diversifica o BCP que já tens.",
     "ticker": "BARC"
    }
+  ],
+  "next": "segunda-feira de manhã",
+  "sources": [
+   {
+    "title": "Gotrade · Week Ahead: Fed Decision, US GDP and Big Tech Earnings (26/10/2026)",
+    "url": "https://www.heygotrade.com/en/news/weekly-economic-outlook-2026-10-26/"
+   },
+   {
+    "title": "TradingKey · US Stock Weekly Report (26/10/2026)",
+    "url": "https://tradingkey.com/tools/market-update/us-stock-market-this-week-20261026"
+   },
+   {
+    "title": "Babypips · Fundies Cheat Sheet, Oct 26–30 (25/10/2026)",
+    "url": "https://www.babypips.com/analysis/fundies-cheat-sheet-2026-10-26-fed-big-tech-oil-saudi"
+   },
+   {
+    "title": "Schaeffer's · The Week Ahead (22/10/2026)",
+    "url": "https://www.schaeffersresearch.com/content/news/2026/10/22/the-week-ahead-wall-street-awaits-october-fed-decision"
+   },
+   {
+    "title": "Benzinga · Mike Wilson, Morgan Stanley (20/10/2026)",
+    "url": "https://www.benzinga.com/markets/prediction-markets/26/10/62475470/mike-wilson-market-correction-sp500-8500"
+   },
+   {
+    "title": "investingLive · BCE e Morgan Stanley (26/10/2026)",
+    "url": "https://investinglive.com/central-banks/ecb-set-to-hold-at-2-50-as-morgan-stanley-sees-december-as-natural-moment-for-next-hike/"
+   },
+   {
+    "title": "Diário de Coimbra · prestações de novembro (21/10/2026)",
+    "url": "https://www.diariocoimbra.pt/2026/10/21/novembro-trara-aumento-nas-prestacoes-da-habitacao-mesmo-com-estabilizacao-das-euribor/"
+   },
+   {
+    "title": "idealista · Euribor de outubro 2026",
+    "url": "https://www.idealista.pt/news/euribor/mensal/mes-atual/"
+   },
+   {
+    "title": "ComparaJá · Euribor hoje (25/10/2026)",
+    "url": "https://www.comparaja.pt/credito-habitacao/euribor-hoje"
+   },
+   {
+    "title": "SpaceX · resultados do 3.º trimestre (20/10/2026)",
+    "url": "https://s21.q4cdn.com/184289198/files/content_files/SpaceX-Reports-Third-Quarter-2026-Results.pdf"
+   },
+   {
+    "title": "NextEra Energy · resultados do 3.º trimestre (SEC, 21/10/2026)",
+    "url": "https://www.sec.gov/Archives/edgar/data/0000753308/000075330826000077/neeq32026exhibit99.htm"
+   },
+   {
+    "title": "Comcast · resultados do 3.º trimestre (SEC, 22/10/2026)",
+    "url": "https://www.sec.gov/Archives/edgar/data/0001166691/000162828026066783/ex991-9302026.htm"
+   },
+   {
+    "title": "RTTNews/Reuters · encomendas chinesas à NVIDIA (20/10/2026)",
+    "url": "https://www.rttnews.com/3700721/bytedance-alibaba-tencent-order-over-35-bln-of-nvidia-chips-reports.aspx?type=alleco"
+   }
+  ],
+  "summary": "Semana mista em Wall Street: o S&P 500 fechou a 7623,68 pontos, cerca de 0,5% abaixo da semana anterior, com o juro a 10 anos dos EUA perto dos 5% e o petróleo acima dos 100 dólares. A época de resultados continua forte, com os lucros do S&P 500 a crescer cerca de 29,5% no 3.º trimestre (FactSet). Esta semana decidem a Fed (28/10, espera-se manutenção em 3,75%–4,00%) e o BCE (29/10, espera-se manutenção em 2,5%), e publicam contas Microsoft, Alphabet, Amazon e o BCP. A Euribor a 6 meses está nos 3,01% e as prestações da casa revistas em novembro vão subir.",
+  "themes": [
+   {
+    "t": "Juros e bancos centrais",
+    "txt": "Os futuros dão cerca de 90% de hipóteses de a Fed manter os juros a 28/10, mas cerca de 80% de nova subida em dezembro. O Morgan Stanley espera que o BCE mantenha em outubro e veja dezembro como o momento natural para mexer."
+   },
+   {
+    "t": "Casa e Euribor",
+    "txt": "A Euribor a 6 meses passou de 2,92% a 14/10 para 3,01% a 25/10 e a média de outubro (2,975%) é a mais alta do ano. A DECO avisa que quem tem revisão em novembro paga mais; nos novos créditos, 87% já são de taxa mista, com taxa média de 2,86%."
+   },
+   {
+    "t": "Inteligência artificial",
+    "txt": "Mike Wilson (Morgan Stanley) acha que a correção está «nas últimas entradas» e vê o S&P 500 em 8300 a meio de 2027, mas defende que a próxima fase favorece quem usa IA, não tanto quem fabrica chips. A Meta caiu quase 7% a 22/10 com dúvidas sobre o investimento financiado com dívida."
+   },
+   {
+    "t": "Energia e defesa",
+    "txt": "Petróleo e gás lideraram a semana (+2,4% a +3,1% nos setores) com as tensões no Golfo. A defesa também subiu: a Lockheed ganhou cerca de 10% com uma carteira de encomendas recorde."
+   }
   ]
  },
  {
   "asOf": "2026-10-25T15:30:00Z",
-  "next": "segunda-feira de manhã",
-  "sources": [
-   {
-    "title": "Oppenheimer · Shake, Wobble, and Roll (19/10/2026)",
-    "url": "https://www.oppenheimer.com/news-media/2026/market-strategy/10-19-2026"
-   },
-   {
-    "title": "Newsquawk European Market Wrap (23/10/2026)",
-    "url": "https://www.newsquawk.com/headlines/newsquawk-european-market-wrap---23rd-october-2026"
-   },
-   {
-    "title": "Yahoo Finance/Zacks · October Market Outlook (09/10/2026)",
-    "url": "https://finance.yahoo.com/markets/stocks/articles/october-market-outlook-3-sectors-180000664.html"
-   }
-  ],
-  "summary": "Os mercados estão numa pausa dentro de um ano positivo: o S&P 500 caiu 1,9% na semana de 16/10 mas sobe 11,9% em 2026, e a Oppenheimer mantém o alvo de 8100 pontos para o fim do ano com lucros de 2026 a crescer 35,8%. Os riscos imediatos são a inflação nos EUA, o petróleo acima de 100 dólares e as tensões com o Irão; na Europa, a França entrou em contração e a Moody's pode cortar o rating. Na próxima semana há decisão da Fed e o indicador de inflação PCE.",
-  "themes": [
-   {
-    "t": "Inteligência artificial",
-    "txt": "Continua a puxar pelos lucros (a NVIDIA cresceu 106% nas receitas do trimestre), mas os semicondutores estão voláteis: o índice SOX caiu 6,7% a 22/10."
-   },
-   {
-    "t": "Energia",
-    "txt": "Com o Brent entre 112 e 115 dólares e o Estreito de Ormuz perturbado, refinadoras e produtoras com custos disciplinados beneficiam."
-   },
-   {
-    "t": "Utilities",
-    "txt": "A procura elétrica dos centros de dados dá lucros mais previsíveis; o risco são juros altos por mais tempo."
-   },
-   {
-    "t": "Europa",
-    "txt": "Mais fraca: PMI da zona euro abaixo do esperado, França em contração, luxo pressionado pela China (Kering −16% a 23/10)."
-   }
-  ],
   "ideas": [
    {
     "market": "NYSE (ADR)",
@@ -573,6 +677,40 @@
     ],
     "thesis": "Refinadora que beneficia do petróleo e combustíveis caros; a estimativa de lucro por ação de 2026 subiu 6,02 dólares para 18,15 em 60 dias. Zacks Rank #1.",
     "ticker": "DINO"
+   }
+  ],
+  "next": "segunda-feira de manhã",
+  "sources": [
+   {
+    "title": "Oppenheimer · Shake, Wobble, and Roll (19/10/2026)",
+    "url": "https://www.oppenheimer.com/news-media/2026/market-strategy/10-19-2026"
+   },
+   {
+    "title": "Newsquawk European Market Wrap (23/10/2026)",
+    "url": "https://www.newsquawk.com/headlines/newsquawk-european-market-wrap---23rd-october-2026"
+   },
+   {
+    "title": "Yahoo Finance/Zacks · October Market Outlook (09/10/2026)",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/october-market-outlook-3-sectors-180000664.html"
+   }
+  ],
+  "summary": "Os mercados estão numa pausa dentro de um ano positivo: o S&P 500 caiu 1,9% na semana de 16/10 mas sobe 11,9% em 2026, e a Oppenheimer mantém o alvo de 8100 pontos para o fim do ano com lucros de 2026 a crescer 35,8%. Os riscos imediatos são a inflação nos EUA, o petróleo acima de 100 dólares e as tensões com o Irão; na Europa, a França entrou em contração e a Moody's pode cortar o rating. Na próxima semana há decisão da Fed e o indicador de inflação PCE.",
+  "themes": [
+   {
+    "t": "Inteligência artificial",
+    "txt": "Continua a puxar pelos lucros (a NVIDIA cresceu 106% nas receitas do trimestre), mas os semicondutores estão voláteis: o índice SOX caiu 6,7% a 22/10."
+   },
+   {
+    "t": "Energia",
+    "txt": "Com o Brent entre 112 e 115 dólares e o Estreito de Ormuz perturbado, refinadoras e produtoras com custos disciplinados beneficiam."
+   },
+   {
+    "t": "Utilities",
+    "txt": "A procura elétrica dos centros de dados dá lucros mais previsíveis; o risco são juros altos por mais tempo."
+   },
+   {
+    "t": "Europa",
+    "txt": "Mais fraca: PMI da zona euro abaixo do esperado, França em contração, luxo pressionado pela China (Kering −16% a 23/10)."
    }
   ]
  }
