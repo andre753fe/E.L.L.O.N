@@ -1,5 +1,163 @@
 [
  {
+  "asOf": "2026-10-30T07:45:00Z",
+  "id": "2026-10-30",
+  "ideas": [
+   {
+    "market": "NYSE",
+    "name": "Eli Lilly",
+    "risks": "A previsão de lucro por ação desceu para 35 a 36 dólares por causa de custos de investigação adquirida e a ação está muito valorizada.",
+    "sources": [
+     {
+      "title": "Lilly via Yahoo Finance, 29/10/2026",
+      "url": "https://finance.yahoo.com/healthcare/articles/lilly-reports-third-quarter-2026-104500507.html"
+     },
+     {
+      "title": "Yahoo Finance, 29/10/2026",
+      "url": "https://finance.yahoo.com/healthcare/articles/merck-rises-5-earnings-beat-150657003.html"
+     }
+    ],
+    "tag": "Saúde",
+    "thesis": "A receita do 3.º trimestre subiu 39% para 24,4 mil milhões de dólares, com o Mounjaro a vender 10,7 mil milhões (+65%). A empresa subiu a previsão de receita de 2026 para 91 a 92 mil milhões e a ação subiu cerca de 7% a 29/10.",
+    "ticker": "LLY"
+   },
+   {
+    "market": "NYSE",
+    "name": "Merck",
+    "risks": "A margem operacional desceu de 37,7% para 30,7%, o lucro por ação caiu face ao ano anterior e há mais de 2 mil milhões de dólares de pressão de genéricos em 2027.",
+    "sources": [
+     {
+      "title": "24/7 Wall St via Yahoo Finance, 29/10/2026",
+      "url": "https://finance.yahoo.com/healthcare/articles/merck-rises-5-earnings-beat-150657003.html"
+     }
+    ],
+    "tag": "Saúde",
+    "thesis": "Lucro ajustado por ação de 2,49 dólares contra 2,09 esperados e receita de 18,09 mil milhões. Subiu a previsão do lucro de 2026 para 2,77 a 2,82 dólares e a ação ganhou cerca de 5%, para perto de 147 dólares.",
+    "ticker": "MRK"
+   },
+   {
+    "market": "Nasdaq",
+    "name": "Microsoft",
+    "risks": "O investimento em IA continua a pesar no fluxo de caixa do setor e há notícias de um programa de saídas voluntárias que pode abranger cerca de 60.000 pessoas.",
+    "sources": [
+     {
+      "title": "Investing.com, 29/10/2026",
+      "url": "https://www.investing.com/news/stock-market-news/us-stock-futures-drop-as-alphabet-slides-on-soft-earnings-microsoft-firms-4981271"
+     }
+    ],
+    "tag": "IA",
+    "thesis": "Os resultados ficaram acima das estimativas e a empresa aponta para um crescimento do Azure de 49% a 50% em moeda constante. Perdeu só 0,2% no dia em que a Alphabet caiu cerca de 13%.",
+    "ticker": "MSFT"
+   },
+   {
+    "market": "Nasdaq",
+    "name": "Alphabet",
+    "risks": "A queda pode continuar se o investimento em IA não render e o mercado deixar de perdoar fluxos de caixa negativos.",
+    "sources": [
+     {
+      "title": "HDFC Sky, 30/10/2026",
+      "url": "https://hdfcsky.com/news/nasdaq-falls-1-4percent-as-ai-spending-concerns-and-mixed-earnings-drive-broader-us-decline"
+     },
+     {
+      "title": "Investing.com, 29/10/2026",
+      "url": "https://www.investing.com/news/stock-market-news/us-stock-futures-drop-as-alphabet-slides-on-soft-earnings-microsoft-firms-4981271"
+     }
+    ],
+    "tag": "IA",
+    "thesis": "Caiu cerca de 13% a 29/10, a pior sessão desde que entrou em bolsa em 2004, depois de a receita publicitária crescer ao ritmo mais lento em cinco trimestres. O fluxo de caixa livre foi negativo em 9,07 mil milhões de dólares e o investimento previsto para o ano é de 195 a 205 mil milhões. Pode interessar a quem quer estudar uma queda forte numa empresa grande.",
+    "ticker": "GOOGL"
+   },
+   {
+    "market": "Cripto",
+    "name": "Bitcoin",
+    "risks": "É um ativo muito volátil, podes perder grande parte do valor e não paga dividendos; os preços em fontes diferentes não coincidem.",
+    "sources": [
+     {
+      "title": "Motley Fool, 29/10/2026",
+      "url": "https://www.fool.com/coverage/stock-market-today/2026/10/29/crypto-market-today-oct-29-bitcoin-slides-below-usd80k-as-big-tech-earnings-uncertainty-and-market-volatility-intensify/"
+     },
+     {
+      "title": "KuCoin · Strategy, 29/10/2026",
+      "url": "https://www.kucoin.com/news/flash/microstrategy-posts-record-21b-operating-income-on-bitcoin-gain-btc-per-share-falls-3-7"
+     },
+     {
+      "title": "KuCoin · relatório diário, 29/10/2026",
+      "url": "https://www.kucoin.com/news/articles/crypto-daily-market-report-october-29-2026"
+     }
+    ],
+    "tag": "Cripto",
+    "thesis": "Ronda os 80 mil dólares (80.298 a 29/10), com 356 milhões de dólares em liquidações de futuros num dia de risco em baixa. A Strategy tem 848.517 bitcoins, mas as compras semanais caíram 84% em duas semanas.",
+    "ticker": "BTC"
+   }
+  ],
+  "next": "segunda-feira de manhã",
+  "sources": [
+   {
+    "title": "Investing.com · Nasdaq cai (29/10/2026)",
+    "url": "https://www.investing.com/news/stock-market-news/us-stock-futures-drop-as-alphabet-slides-on-soft-earnings-microsoft-firms-4981271"
+   },
+   {
+    "title": "HDFC Sky · Nasdaq cai (30/10/2026)",
+    "url": "https://hdfcsky.com/news/nasdaq-falls-1-4percent-as-ai-spending-concerns-and-mixed-earnings-drive-broader-us-decline"
+   },
+   {
+    "title": "IC Markets · futuros (30/10/2026)",
+    "url": "https://www.icmarkets.com.au/blog/friday-30th-oct-2026-u-s-stock-futures-slide-as-amazon-and-intel-plunge-on-earnings-concerns/"
+   },
+   {
+    "title": "HDFC Sky · mercados globais (30/10/2026)",
+    "url": "https://hdfcsky.com/news/global-markets-today-october-30-2026-asian-stocks-tumble-on-ai-spending-fears-oil-surges-india-stares-at-lower-open"
+   },
+   {
+    "title": "ECO · Euribor e prestação (30/10/2026)",
+    "url": "https://eco.sapo.pt/2026/10/30/euribor-cede-mas-prestacao-da-casa-volta-a-subir-em-novembro"
+   },
+   {
+    "title": "Motley Fool · cripto (29/10/2026)",
+    "url": "https://www.fool.com/coverage/stock-market-today/2026/10/29/crypto-market-today-oct-29-bitcoin-slides-below-usd80k-as-big-tech-earnings-uncertainty-and-market-volatility-intensify/"
+   },
+   {
+    "title": "KuCoin · relatório cripto (29/10/2026)",
+    "url": "https://www.kucoin.com/news/articles/crypto-daily-market-report-october-29-2026"
+   },
+   {
+    "title": "KuCoin · Strategy (29/10/2026)",
+    "url": "https://www.kucoin.com/news/flash/microstrategy-posts-record-21b-operating-income-on-bitcoin-gain-btc-per-share-falls-3-7"
+   },
+   {
+    "title": "Yahoo Finance · Merck (29/10/2026)",
+    "url": "https://finance.yahoo.com/healthcare/articles/merck-rises-5-earnings-beat-150657003.html"
+   },
+   {
+    "title": "Yahoo Finance · Lilly (29/10/2026)",
+    "url": "https://finance.yahoo.com/healthcare/articles/lilly-reports-third-quarter-2026-104500507.html"
+   }
+  ],
+  "summary": "Wall Street fechou em baixa na quinta-feira: o Nasdaq caiu 1,4% e o S&P 500 0,3%, com a Alphabet a afundar cerca de 13% por causa dos gastos em IA. Depois do fecho, a Amazon caiu cerca de 6% e a Intel mais de 20%, os futuros do Nasdaq 100 recuam cerca de 2% e a Ásia caiu forte, com o Kospi a perder 5%. A Fed manteve os juros e o BCE fez uma pausa, enquanto o petróleo sobe com os ataques à Arábia Saudita. Hoje há ainda os resultados da Coinbase.",
+  "themes": [
+   {
+    "t": "Tecnológicas em queda",
+    "txt": "A Alphabet caiu cerca de 13% depois de a receita publicitária crescer ao ritmo mais lento em cinco trimestres e de o investimento do trimestre chegar a 51,4 mil milhões de dólares. A Microsoft quase não se mexeu (-0,2%) e as ações de Amazon e Intel afundam fora de horas."
+   },
+   {
+    "t": "Fed e BCE",
+    "txt": "A Fed manteve os juros, com dois membros a pedir uma subida de 0,25 pontos. O PIB dos EUA cresceu 3,4% no 3.º trimestre e a inflação PCE de setembro foi de 3,6%. O BCE pausou a 29/10 e o mercado ainda conta com mais uma subida até ao fim do ano."
+   },
+   {
+    "t": "Casa e Euribor",
+    "txt": "Mesmo com uma ligeira descida das Euribor em outubro, a prestação da casa volta a subir em novembro. Num crédito de 150 mil euros a 30 anos, quem revê a 12 meses paga cerca de 89 euros a mais."
+   },
+   {
+    "t": "Petróleo",
+    "txt": "O Brent ronda os 112 a 116 dólares e vai a caminho de uma subida de cerca de 14% em outubro. Os ataques dos Houthis a refinarias sauditas e as dúvidas sobre as negociações entre os EUA e o Irão pesam no mercado."
+   },
+   {
+    "t": "Cripto",
+    "txt": "A bitcoin ronda os 80 mil dólares, a ether os 2.300 e a XRP os 1,27 dólares, num dia de risco em baixa e de 356 milhões de dólares em liquidações. A Strategy anunciou um ganho contabilístico recorde de cerca de 21 mil milhões, mas quase parou de comprar bitcoin."
+   }
+  ]
+ },
+ {
   "asOf": "2026-10-29T07:26:25Z",
   "id": "2026-10-29",
   "ideas": [

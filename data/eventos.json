@@ -1,5 +1,5 @@
 {
- "asOf": "2026-10-29",
+ "asOf": "2026-10-30",
  "events": [
   {
    "d": "2026-10-30",
@@ -131,16 +131,6 @@
    },
    "t": "CMCSA",
    "txt": "Pagamento do dividendo de 0,33 $ por ação."
-  },
-  {
-   "d": "2027-02-24",
-   "k": "earnings",
-   "src": {
-    "title": "Millennium bcp · eventos",
-    "url": "https://ind.millenniumbcp.pt/pt/Institucional/investidores/Pages/Eventos.aspx"
-   },
-   "t": "BCP",
-   "txt": "Resultados anuais de 2026, às 17h (Lisboa). Conferência com analistas a 25/02 às 15h."
   }
  ]
 }
