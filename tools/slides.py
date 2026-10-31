@@ -6,9 +6,33 @@ import io, json, os, re, sys, textwrap, urllib.parse, urllib.request
 from datetime import datetime
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
-VERSION = 5
+VERSION = 6
 W, H = 1080, 1350
 DARK, MID, LIGHT = (38, 12, 69), (116, 36, 208), (226, 210, 248)
+LOGO = "logo-roxo.png"
+# uma cor por dia útil, a rodar (a grelha do Instagram fica variada): começa no roxo a 30/10/2026
+import colorsys
+PALETAS = [("roxo", 268, .70), ("laranja", 28, .92), ("azul", 222, .85), ("verde", 152, .75), ("vermelho", 352, .80)]
+
+
+def rgb(h, l, s):
+    r, g, b = colorsys.hls_to_rgb(h / 360, l, s)
+    return (int(r * 255), int(g * 255), int(b * 255))
+
+
+def paleta(day):
+    from datetime import date, timedelta
+    d0, d = date(2026, 10, 30), datetime.strptime(day, "%Y-%m-%d").date()
+    n, step = 0, timedelta(days=1)
+    a, b = (d0, d) if d >= d0 else (d, d0)
+    while a < b:
+        a += step
+        if a.weekday() < 5:
+            n += 1
+    if d < d0:
+        n = -n
+    nome, h, s = PALETAS[n % len(PALETAS)]
+    return nome, rgb(h, .16, s), rgb(h, .46, s), rgb(h, .90, s * .7)
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 F = os.path.join(ROOT, "assets", "fonts")
 UA = {"User-Agent": "ConjunturaDiaria/1.0 (+https://ellon-nexus.github.io/E.L.L.O.N/)"}
@@ -83,7 +107,7 @@ def background(img):
             t = i / 1400
             d.line([(0, i), (W, i)], fill=tuple(int(DARK[k] + (MID[k] - DARK[k]) * (1 - t) * 0.55) for k in range(3)))
         for r in range(80, 1500, 70):
-            d.ellipse((W // 2 - r, 380 - r, W // 2 + r, 380 + r), outline=(80, 40, 130), width=2)
+            d.ellipse((W // 2 - r, 380 - r, W // 2 + r, 380 + r), outline=tuple(int((DARK[k] + MID[k]) / 2) for k in range(3)), width=2)
         return bg
     bg = cover_crop(img, W, H)
     # tom roxo: mistura leve com a cor da marca
@@ -124,7 +148,7 @@ def wrap(draw, text, font, width):
 
 def header(im, date_txt):
     d = ImageDraw.Draw(im)
-    logo = Image.open(os.path.join(ROOT, "assets", "logo-roxo.png")).convert("RGBA").resize((118, 118), Image.LANCZOS)
+    logo = Image.open(os.path.join(ROOT, "assets", LOGO)).convert("RGBA").resize((118, 118), Image.LANCZOS)
     im.alpha_composite(logo, (60, 54))
     d.text((196, 72), "CONJUNTURA DIÁRIA", font=sans(40, True), fill=(255, 255, 255))
     d.text((198, 122), date_txt, font=sans(30), fill=LIGHT)
@@ -181,7 +205,7 @@ def slide_cover(ed, n, total, date_txt, used, credits, heads):
     credits.append(cred)
     im = overlay(background(img), 0.10 if img else 0.0)
     d = ImageDraw.Draw(im)
-    logo = Image.open(os.path.join(ROOT, "assets", "logo-roxo.png")).convert("RGBA").resize((210, 210), Image.LANCZOS)
+    logo = Image.open(os.path.join(ROOT, "assets", LOGO)).convert("RGBA").resize((210, 210), Image.LANCZOS)
     im.alpha_composite(logo, ((W - 210) // 2, 120))
     d.text((W // 2, 360), "CONJUNTURA DIÁRIA", font=sans(52, True), fill=(255, 255, 255), anchor="ma")
     d.text((W // 2, 422), date_txt, font=sans(34), fill=LIGHT, anchor="ma")
@@ -203,7 +227,7 @@ def slide_cover(ed, n, total, date_txt, used, credits, heads):
 def slide_end(n, total, date_txt):
     im = overlay(background(None), 0.0)
     d = ImageDraw.Draw(im)
-    logo = Image.open(os.path.join(ROOT, "assets", "logo-roxo.png")).convert("RGBA").resize((260, 260), Image.LANCZOS)
+    logo = Image.open(os.path.join(ROOT, "assets", LOGO)).convert("RGBA").resize((260, 260), Image.LANCZOS)
     im.alpha_composite(logo, ((W - 260) // 2, 260))
     d.text((W // 2, 590), "Amanhã há mais.", font=serif(78), fill=(255, 255, 255), anchor="ma")
     for i, ln in enumerate(["Segue a Conjuntura Diária para receberes", "as notícias dos mercados todas as manhãs."]):
@@ -227,7 +251,10 @@ def build_slides(ed):
 
 
 def render(ed, force=False):
+    global DARK, MID, LIGHT, LOGO
     day = ed["id"]
+    cor, DARK, MID, LIGHT = paleta(day)
+    LOGO = f"logo-{cor}.png"
     outdir = os.path.join(ROOT, "slides", day)
     ip = os.path.join(outdir, "info.json")
     if os.path.exists(ip) and not force:
