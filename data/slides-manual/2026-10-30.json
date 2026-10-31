@@ -1,0 +1,14 @@
+{
+ "id": "2026-10-30",
+ "capa_titulo": "Outubro acabou com um tombo nas tecnológicas",
+ "capa_foto": "wall street new york stock exchange",
+ "slides": [
+  {"tipo": "ultima_hora", "tag": "Wall Street", "titulo": "Nasdaq afunda 2,8%: pior dia desde junho", "texto": "Wall Street fechou outubro em queda forte: Nasdaq −2,8%, S&P 500 −1,8% e Dow Jones −1,1%. O medo do «índice do pânico» (VIX) subiu mais de 30%. Quem tem fundos ou PPR expostos aos EUA viu o mês acabar a vermelho.", "foto": "stock market screen red numbers"},
+  {"tipo": "ultima_hora", "tag": "Tecnologia", "titulo": "Intel cai 29%, o pior dia desde 1974", "texto": "Previsões fracas para o fim do ano, computadores a vender menos e um acidente numa fábrica em Israel. A queda arrastou a AMD (−12%) e a Nvidia (−5%).", "foto": "computer processor chip closeup"},
+  {"tipo": "noticia", "tag": "Inteligência artificial", "titulo": "IA: as gigantes gastam mais do que ganham", "texto": "A Amazon queimou 42 mil milhões de dólares em 12 meses por causa da IA e a Alphabet perdeu quase 13% na semana. Os investidores começam a exigir resultados e não apenas promessas.", "foto": "data center server racks blue light"},
+  {"tipo": "noticia", "tag": "Energia", "titulo": "Brent perto dos 118 dólares", "texto": "Ataques dos Houthis a refinarias sauditas e minas no Estreito de Ormuz fizeram o petróleo subir 2,5%. Se continuar assim, abastecer o carro em Portugal fica mais caro nas próximas semanas.", "foto": "oil tanker ship sea"},
+  {"tipo": "noticia", "tag": "Cripto", "titulo": "Ataque à Binance de 6,3 mil milhões", "texto": "A bitcoin caiu 3,3%, para perto de 77 mil dólares, depois de um ataque informático à maior bolsa de cripto. A Binance promete cobrir as perdas e retomar os levantamentos em 48 horas.", "foto": "bitcoin gold coins"},
+  {"tipo": "noticia", "tag": "Contraciclo", "titulo": "Nem tudo caiu: saúde e petróleo resistem", "texto": "A Eli Lilly subiu 11% na semana, a AstraZeneca e a Sanofi ganharam perto de 4% na Europa e a Exxon e a Chevron bateram as estimativas com as margens das refinarias.", "foto": "pharmacy medicine laboratory"}
+ ],
+ "legenda": "Outubro despediu-se com um tombo em Wall Street: o Nasdaq caiu 2,8%, no pior dia desde junho, com a Intel a afundar 29% e os gastos em inteligência artificial a assustar os investidores. O petróleo voltou a subir com novos ataques no Médio Oriente e a bitcoin recuou depois de um ataque informático à Binance. Nem tudo foi negativo: farmacêuticas e petrolíferas fecharam a semana em alta.\n\nInformação compilada de fontes públicas; não é recomendação de investimento.\n\n#mercados #economia #bolsa #wallstreet #nasdaq #intel #petroleo #bitcoin #investimentos #stockmarket"
+}

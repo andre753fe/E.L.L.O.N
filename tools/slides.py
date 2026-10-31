@@ -6,7 +6,7 @@ import io, json, os, re, sys, textwrap, urllib.parse, urllib.request
 from datetime import datetime
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
-VERSION = 3
+VERSION = 4
 W, H = 1080, 1350
 DARK, MID, LIGHT = (38, 12, 69), (116, 36, 208), (226, 210, 248)
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -223,20 +223,14 @@ def build_slides(ed):
     return out[:6]
 
 
-def main():
-    eds = json.load(open(os.path.join(ROOT, "data", "edicoes.json"), encoding="utf-8"))
-    eds = [e for e in eds if e.get("id")]
-    if not eds:
-        print("sem edições"); return
-    ed = sorted(eds, key=lambda e: e["id"])[-1]
+def render(ed, force=False):
     day = ed["id"]
     outdir = os.path.join(ROOT, "slides", day)
-    force = os.environ.get("FORCE") == "1"
     ip = os.path.join(outdir, "info.json")
     if os.path.exists(ip) and not force:
         old = json.load(open(ip))
         sem_fotos = os.environ.get("PIXABAY_KEY") and not any(old.get("creditos") or [])
-        if old.get("v") == VERSION and not sem_fotos:
+        if old.get("v") == VERSION and old.get("fonte") == ed.get("_fonte") and not sem_fotos:
             print("já existem slides para", day); return
     os.makedirs(outdir, exist_ok=True)
     for f in os.listdir(outdir):
@@ -254,13 +248,32 @@ def main():
     for i, im in enumerate(ims):
         im.convert("RGB").save(os.path.join(outdir, f"{i + 1:02d}.png"), optimize=True)
     caption = ed.get("legenda") or (ed.get("summary", "")[:600] + "\n\n#mercados #economia #bolsa #investimentos #portugal")
-    json.dump({"v": VERSION, "dia": day, "slides": [f"{i + 1:02d}.png" for i in range(len(ims))], "creditos": credits, "legenda": caption}, open(os.path.join(outdir, "info.json"), "w"), ensure_ascii=False, indent=1)
+    json.dump({"v": VERSION, "fonte": ed.get("_fonte"), "dia": day, "slides": [f"{i + 1:02d}.png" for i in range(len(ims))], "creditos": credits, "legenda": caption}, open(ip, "w"), ensure_ascii=False, indent=1)
     idx_path = os.path.join(ROOT, "slides", "index.json")
     idx = json.load(open(idx_path)) if os.path.exists(idx_path) else []
     idx = [x for x in idx if x.get("dia") != day]
     idx.insert(0, {"dia": day, "n": len(ims)})
     json.dump(sorted(idx, key=lambda x: x["dia"], reverse=True)[:30], open(idx_path, "w"), ensure_ascii=False, indent=1)
     print("slides", day, len(ims))
+
+
+def main():
+    force = os.environ.get("FORCE") == "1"
+    todo = {}
+    eds = [e for e in json.load(open(os.path.join(ROOT, "data", "edicoes.json"), encoding="utf-8")) if e.get("id")]
+    if eds:
+        ed = sorted(eds, key=lambda e: e["id"])[-1]
+        ed["_fonte"] = "edicao"
+        todo[ed["id"]] = ed
+    md = os.path.join(ROOT, "data", "slides-manual")
+    if os.path.isdir(md):  # slides feitos à mão (têm prioridade sobre a edição do mesmo dia)
+        for f in sorted(os.listdir(md))[-3:]:
+            if f.endswith(".json"):
+                ed = json.load(open(os.path.join(md, f), encoding="utf-8"))
+                ed["_fonte"] = "manual"
+                todo[ed["id"]] = ed
+    for day in sorted(todo):
+        render(todo[day], force)
 
 
 if __name__ == "__main__":
