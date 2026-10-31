@@ -1,0 +1,22 @@
+name: Slides do Instagram
+on:
+  push:
+    paths: ["data/edicoes.json", "tools/slides.py", ".github/workflows/slides.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  slides:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q pillow
+      - run: python3 tools/slides.py
+        env:
+          PIXABAY_KEY: ${{ secrets.PIXABAY_KEY }}
+          FORCE: ${{ github.event_name != 'push' || contains(join(github.event.commits.*.modified, ','), 'tools/slides.py') && '1' || '0' }}
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add slides
+          git diff --cached --quiet || (git commit -m "Slides do Instagram" && git pull --rebase -q && git push)

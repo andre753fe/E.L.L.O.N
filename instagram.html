@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><title>Conjuntura Diária · slides</title>
+<style>
+:root{--bg:#1a0b2e;--ink:#f3ecfb;--muted:#c6b3e6;--acc:#7424d0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,sans-serif;padding:20px 16px 40px}
+.wrap{max-width:1100px;margin:0 auto}
+h1{font:700 26px Georgia,serif;margin:0 0 4px}.sub{color:var(--muted);margin:0 0 18px}
+select,button,a.btn{font:600 15px system-ui;border-radius:10px;border:1px solid #5b3a8c;background:#2a1547;color:var(--ink);padding:9px 14px;text-decoration:none;cursor:pointer}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-top:16px}
+.grid figure{margin:0}.grid img{width:100%;border-radius:10px;display:block;background:#2a1547;aspect-ratio:4/5}
+.grid figcaption{display:flex;justify-content:space-between;align-items:center;margin-top:6px;color:var(--muted);font-size:14px}
+textarea{width:100%;box-sizing:border-box;min-height:140px;background:#2a1547;color:var(--ink);border:1px solid #5b3a8c;border-radius:10px;padding:10px;font:15px/1.5 system-ui;margin-top:8px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+</style></head><body><div class="wrap">
+<h1>Conjuntura Diária · slides do dia</h1>
+<p class="sub">Toca numa imagem para a abrir em tamanho real e guardar (no telemóvel: toque longo → Guardar imagem).</p>
+<div class="row"><select id="day" aria-label="Dia"></select><button id="copy" type="button">Copiar legenda</button></div>
+<textarea id="cap" readonly aria-label="Legenda"></textarea>
+<div class="grid" id="grid"></div></div>
+<script>
+const $=id=>document.getElementById(id);let info=null;
+async function load(day){const r=await fetch(`slides/${day}/info.json?v=${Date.now()}`);info=await r.json();$('cap').value=info.legenda||'';
+$('grid').innerHTML=info.slides.map((s,i)=>`<figure><a href="slides/${day}/${s}" target="_blank" rel="noopener"><img src="slides/${day}/${s}" alt="Slide ${i+1}" loading="lazy"></a><figcaption><span>${i+1}/${info.slides.length}</span><a class="btn" href="slides/${day}/${s}" download="conjuntura-${day}-${s}">Descarregar</a></figcaption></figure>`).join('');}
+(async()=>{const idx=await (await fetch('slides/index.json?v='+Date.now())).json();$('day').innerHTML=idx.map(x=>`<option value="${x.dia}">${x.dia.split('-').reverse().join('/')}</option>`).join('');$('day').onchange=e=>load(e.target.value);if(idx[0])load(idx[0].dia);})();
+$('copy').onclick=async()=>{try{await navigator.clipboard.writeText($('cap').value);$('copy').textContent='Copiada ✓'}catch(e){$('cap').select()}setTimeout(()=>$('copy').textContent='Copiar legenda',2000)};
+</script></body></html>
