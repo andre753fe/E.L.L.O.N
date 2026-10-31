@@ -6,7 +6,7 @@ import io, json, os, re, sys, textwrap, urllib.parse, urllib.request
 from datetime import datetime
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
-VERSION = 4
+VERSION = 5
 W, H = 1080, 1350
 DARK, MID, LIGHT = (38, 12, 69), (116, 36, 208), (226, 210, 248)
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -142,9 +142,12 @@ def footer(im, n, total, credit):
 def pill(im, x, y, text, hot=False):
     d = ImageDraw.Draw(im)
     f = sans(30, True)
-    w = int(d.textlength(text, font=f)) + 44
+    pad = 50 if hot else 22
+    w = int(d.textlength(text, font=f)) + pad + 22
     d.rounded_rectangle((x, y, x + w, y + 54), radius=27, fill=(255, 255, 255) if hot else MID)
-    d.text((x + 22, y + 11), text, font=f, fill=MID if hot else (255, 255, 255))
+    if hot:
+        d.ellipse((x + 18, y + 17, x + 38, y + 37), fill=(220, 38, 38))
+    d.text((x + pad, y + 11), text, font=f, fill=MID if hot else (255, 255, 255))
     return y + 54
 
 
@@ -161,7 +164,7 @@ def slide_news(s, n, total, date_txt, used, credits):
     bl = wrap(d, s.get("texto", ""), bf, W - 120)[:7]
     block = 54 + 30 + len(tl) * int(tf.size * 1.18) + 26 + len(bl) * 52
     y = H - 120 - block
-    y = pill(im, 60, y, ("⚡ ÚLTIMA HORA" if hot else (s.get("tag") or "MERCADOS").upper()), hot) + 30
+    y = pill(im, 60, y, ("ÚLTIMA HORA" if hot else (s.get("tag") or "MERCADOS").upper()), hot) + 30
     for ln in tl:
         d.text((60, y), ln, font=tf, fill=(255, 255, 255))
         y += int(tf.size * 1.18)
