@@ -6,7 +6,7 @@ import io, json, os, re, sys, textwrap, urllib.parse, urllib.request
 from datetime import datetime
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
-VERSION = 2
+VERSION = 3
 W, H = 1080, 1350
 DARK, MID, LIGHT = (38, 12, 69), (116, 36, 208), (226, 210, 248)
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -99,7 +99,7 @@ def overlay(bg, start=0.30):
     y0 = int(H * start)
     for y in range(y0, H):
         t = (y - y0) / (H - y0)
-        d.line([(0, y), (W, y)], fill=DARK + (int(255 * min(1, 0.15 + t * 1.05)),))
+        d.line([(0, y), (W, y)], fill=DARK + (int(255 * min(1, (t ** 0.8) * 1.12)),))
     for y in range(0, 230):
         d.line([(0, y), (W, y)], fill=DARK + (int(150 * (1 - y / 230)),))
     out = bg.convert("RGBA")
