@@ -1,3 +1,4 @@
+# v2: chave Pixabay ativa
 """Slides diários da Conjuntura Diária (Instagram, 1080x1350), feitos sem Claude.
 Lê a edição mais recente de data/edicoes.json; se tiver "slides" usa-os, senão monta-os a partir do resumo e dos temas.
 Fotografias: Pixabay (chave no segredo PIXABAY_KEY) e, em reserva, Openverse só com licenças CC0/domínio público.
