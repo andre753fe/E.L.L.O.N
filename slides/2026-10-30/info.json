@@ -1,4 +1,5 @@
 {
+ "v": 2,
  "dia": "2026-10-30",
  "slides": [
   "01.png",
@@ -10,12 +11,12 @@
   "07.png"
  ],
  "creditos": [
-  null,
-  null,
-  null,
-  null,
-  null,
-  null
+  "Foto: Pixabay",
+  "Foto: Pixabay",
+  "Foto: Pixabay",
+  "Foto: Pixabay",
+  "Foto: Pixabay",
+  "Foto: Pixabay"
  ],
  "legenda": "Wall Street fechou em baixa na quinta-feira: o Nasdaq caiu 1,4% e o S&P 500 0,3%, com a Alphabet a afundar cerca de 13% por causa dos gastos em IA. Depois do fecho, a Amazon caiu cerca de 6% e a Intel mais de 20%, os futuros do Nasdaq 100 recuam cerca de 2% e a Ásia caiu forte, com o Kospi a perder 5%. A Fed manteve os juros e o BCE fez uma pausa, enquanto o petróleo sobe com os ataques à Arábia Saudita. Hoje há ainda os resultados da Coinbase.\n\n#mercados #economia #bolsa #investimentos #portugal"
 }
