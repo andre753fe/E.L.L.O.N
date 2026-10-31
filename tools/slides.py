@@ -1,4 +1,3 @@
-# v2: chave Pixabay ativa
 """Slides diários da Conjuntura Diária (Instagram, 1080x1350), feitos sem Claude.
 Lê a edição mais recente de data/edicoes.json; se tiver "slides" usa-os, senão monta-os a partir do resumo e dos temas.
 Fotografias: Pixabay (chave no segredo PIXABAY_KEY) e, em reserva, Openverse só com licenças CC0/domínio público.
@@ -7,6 +6,7 @@ import io, json, os, re, sys, textwrap, urllib.parse, urllib.request
 from datetime import datetime
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
+VERSION = 2
 W, H = 1080, 1350
 DARK, MID, LIGHT = (38, 12, 69), (116, 36, 208), (226, 210, 248)
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -232,8 +232,12 @@ def main():
     day = ed["id"]
     outdir = os.path.join(ROOT, "slides", day)
     force = os.environ.get("FORCE") == "1"
-    if os.path.exists(os.path.join(outdir, "01.png")) and not force:
-        print("já existem slides para", day); return
+    ip = os.path.join(outdir, "info.json")
+    if os.path.exists(ip) and not force:
+        old = json.load(open(ip))
+        sem_fotos = os.environ.get("PIXABAY_KEY") and not any(old.get("creditos") or [])
+        if old.get("v") == VERSION and not sem_fotos:
+            print("já existem slides para", day); return
     os.makedirs(outdir, exist_ok=True)
     for f in os.listdir(outdir):
         os.remove(os.path.join(outdir, f))
@@ -250,7 +254,7 @@ def main():
     for i, im in enumerate(ims):
         im.convert("RGB").save(os.path.join(outdir, f"{i + 1:02d}.png"), optimize=True)
     caption = ed.get("legenda") or (ed.get("summary", "")[:600] + "\n\n#mercados #economia #bolsa #investimentos #portugal")
-    json.dump({"dia": day, "slides": [f"{i + 1:02d}.png" for i in range(len(ims))], "creditos": credits, "legenda": caption}, open(os.path.join(outdir, "info.json"), "w"), ensure_ascii=False, indent=1)
+    json.dump({"v": VERSION, "dia": day, "slides": [f"{i + 1:02d}.png" for i in range(len(ims))], "creditos": credits, "legenda": caption}, open(os.path.join(outdir, "info.json"), "w"), ensure_ascii=False, indent=1)
     idx_path = os.path.join(ROOT, "slides", "index.json")
     idx = json.load(open(idx_path)) if os.path.exists(idx_path) else []
     idx = [x for x in idx if x.get("dia") != day]
